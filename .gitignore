@@ -1,1 +1,4 @@
 /MVCpontoCerto/dist/
+*.netbeans_automatic_build
+*.netbeans_update_resources
+*.class
