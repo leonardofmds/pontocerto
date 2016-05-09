@@ -11,13 +11,15 @@ package mvcpontocerto;
  */
 public class DisciplinaModel 
 {
-    private String nome;
-    private NotaModel nota[];
-    
-    DisciplinaModel(String nome,int n)
-    {
+    private String nome, professor;
+    private boolean favorito;
+    private NotaModel[] notas;  
+
+    public DisciplinaModel(String nome, String professor, boolean favorito, NotaModel[] notas) {
         this.nome = nome;
-        nota = new NotaModel[n];
+        this.professor = professor;
+        this.favorito = favorito;
+        this.notas = notas;
     }
 
     public String getNome() {
@@ -28,11 +30,28 @@ public class DisciplinaModel
         this.nome = nome;
     }
 
-    public NotaModel[] getNota() {
-        return nota;
+    public String getProfessor() {
+        return professor;
     }
 
-    public void setNota(NotaModel[] nota) {
-        this.nota = nota;
+    public void setProfessor(String professor) {
+        this.professor = professor;
     }
+
+    public boolean isFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
+    }
+
+    public NotaModel[] getNotas() {
+        return notas;
+    }
+
+    public void setNotas(NotaModel[] notas) {
+        this.notas = notas;
+    }
+        
 }
