@@ -5,17 +5,22 @@
  */
 package mvcpontocerto;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Leonardo
  */
 public class HomeView extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form homeView
      */
     public HomeView() {
         initComponents();
+        LogoLb = new JLabel(new ImageIcon("src//Imagens//PontoCerto.png"));
     }
 
     /**
@@ -28,8 +33,8 @@ public class HomeView extends javax.swing.JFrame {
     private void initComponents() {
 
         LogoLb = new javax.swing.JLabel();
-        ControleNotBt = new javax.swing.JButton();
-        ProvasAntBt = new javax.swing.JButton();
+        DisciplinasBt = new javax.swing.JButton();
+        EnviarBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo");
@@ -38,16 +43,23 @@ public class HomeView extends javax.swing.JFrame {
         LogoLb.setText("Ponto Certo");
         LogoLb.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        ControleNotBt.setText("Controle de Notas");
-        ControleNotBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ControleNotBt.addActionListener(new java.awt.event.ActionListener() {
+        DisciplinasBt.setActionCommand("Disciplinas");
+        DisciplinasBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DisciplinasBt.setLabel("Disciplinas");
+        DisciplinasBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ControleNotBtActionPerformed(evt);
+                DisciplinasBtActionPerformed(evt);
             }
         });
 
-        ProvasAntBt.setText("Provas Antigas");
-        ProvasAntBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EnviarBt.setText("Enviar Material");
+        EnviarBt.setActionCommand("Enviar");
+        EnviarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EnviarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnviarBtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -56,39 +68,42 @@ public class HomeView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
+                        .addGap(88, 88, 88)
                         .addComponent(LogoLb))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(ControleNotBt, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ProvasAntBt, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EnviarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DisciplinasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LogoLb)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ControleNotBt, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ProvasAntBt, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(DisciplinasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(EnviarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
-
-        getAccessibleContext().setAccessibleName("Ponto Certo");
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ControleNotBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ControleNotBtActionPerformed
+    private void DisciplinasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinasBtActionPerformed
         // TODO add your handling code here:
         ControleFavoritosView controlDiscView = new ControleFavoritosView();
         controlDiscView.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_ControleNotBtActionPerformed
+        this.setVisible(false);        
+        
+    }//GEN-LAST:event_DisciplinasBtActionPerformed
+
+    private void EnviarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EnviarBtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,8 +142,8 @@ public class HomeView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ControleNotBt;
+    private javax.swing.JButton DisciplinasBt;
+    private javax.swing.JButton EnviarBt;
     private javax.swing.JLabel LogoLb;
-    private javax.swing.JButton ProvasAntBt;
     // End of variables declaration//GEN-END:variables
 }
