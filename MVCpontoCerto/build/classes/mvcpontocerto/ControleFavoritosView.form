@@ -24,34 +24,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="DisciplinasSP" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="ImportarFavBt" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="ImportarFavLb" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Component id="InstrucoesLb" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="FavoritosSP" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Component id="RemoverBt" min="-2" pref="95" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="EditarBt" min="-2" pref="99" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Component id="DisciplinasLb" min="-2" max="-2" attributes="0"/>
@@ -59,10 +31,35 @@
               <Component id="FavoritosLb" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="VoltarBt" min="-2" pref="95" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="DisciplinasSP" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="ImportarFavBt" max="32767" attributes="0"/>
+                                  <Component id="RemoverBt" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="InstrucoesLb" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="FavoritosSP" min="-2" pref="204" max="-2" attributes="0"/>
+                          <Component id="EditarBt" min="-2" pref="99" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="VoltarBt" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="48" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="149" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,33 +71,30 @@
                   <Component id="FavoritosLb" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="DisciplinasLb" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="ImportarFavLb" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ImportarFavBt" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="FavoritosSP" min="-2" pref="144" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="RemoverBt" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="EditarBt" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="FavoritosSP" min="-2" pref="144" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="DisciplinasSP" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="InstrucoesLb" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="ImportarFavBt" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="RemoverBt" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="EditarBt" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="DisciplinasSP" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="InstrucoesLb" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="57" max="32767" attributes="0"/>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="36" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Component id="VoltarBt" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -118,7 +112,7 @@
         <Component class="javax.swing.JList" name="DisciplinasLt">
           <Properties>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-              <StringArray count="35">
+              <StringArray count="61">
                 <StringItem index="0" value="Administra&#xe7;&#xe3;o Financeira"/>
                 <StringItem index="1" value="&#xc1;lgebra Linear"/>
                 <StringItem index="2" value="An&#xe1;lise de Algoritmo"/>
@@ -154,6 +148,32 @@
                 <StringItem index="32" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o I"/>
                 <StringItem index="33" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o II"/>
                 <StringItem index="34" value="Teorias e Pr&#xe1;ticas Discursivas"/>
+                <StringItem index="35" value="Administ. de Banco de Dados"/>
+                <StringItem index="36" value="Algoritmos p/ Prob. Combinat."/>
+                <StringItem index="37" value="Ambiente Operacional Unix"/>
+                <StringItem index="38" value="Compiladores"/>
+                <StringItem index="39" value="Computa&#xe7;&#xe3;o Gr&#xe1;fica"/>
+                <StringItem index="40" value="Comunic. e Seguran&#xe7;a de Dados"/>
+                <StringItem index="41" value="Desenvolv. de Servidor Web"/>
+                <StringItem index="42" value="Fluxos em Redes"/>
+                <StringItem index="43" value="Fund. Repr. Conh. e Racioc&#xed;nio"/>
+                <StringItem index="44" value="Ger&#xea;ncia de Dados em Amb. Distribu&#xed;dos e Paralelos"/>
+                <StringItem index="45" value="Gest. de Processos de Neg&#xf3;cios"/>
+                <StringItem index="46" value="Inform&#xe1;tica na Educa&#xe7;&#xe3;o"/>
+                <StringItem index="47" value="Intelig&#xe9;ncia Artificial"/>
+                <StringItem index="48" value="Programa&#xe7;&#xe3;o Linear"/>
+                <StringItem index="49" value="Sistemas Colaborativos"/>
+                <StringItem index="50" value="Sistemas Multim&#xed;dia"/>
+                <StringItem index="51" value="T&#xf3;p. Avan&#xe7;ados em Algoritmos"/>
+                <StringItem index="52" value="T&#xf3;p. Avan&#xe7;ados em BD I"/>
+                <StringItem index="53" value="T&#xf3;p. Avan&#xe7;ados em BD II"/>
+                <StringItem index="54" value="T&#xf3;p. Avan&#xe7;ados em BD III"/>
+                <StringItem index="55" value="T&#xf3;p. Avan&#xe7;ados em Eng. Sw. I"/>
+                <StringItem index="56" value="T&#xf3;p. Avan&#xe7;ados em Eng. Sw. II"/>
+                <StringItem index="57" value="T&#xf3;p. Avan. em Redes de Comp. I"/>
+                <StringItem index="58" value="T&#xf3;p. Avan. em Redes de Comp. II"/>
+                <StringItem index="59" value="T&#xf3;p. Avan. em Redes de Comp. III"/>
+                <StringItem index="60" value=" "/>
               </StringArray>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -177,14 +197,6 @@
     <Component class="javax.swing.JLabel" name="FavoritosLb">
       <Properties>
         <Property name="text" type="java.lang.String" value="Favoritos"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Cursor de Texto"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="ImportarFavLb">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt; Importar &lt;br&gt; Favoritos &lt;/html&gt;"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor de Texto"/>
         </Property>
@@ -241,7 +253,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="RemoverBt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Remover"/>
+        <Property name="text" type="java.lang.String" value="&lt;&lt;&lt;&lt;"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor em Forma de M&#xe3;o"/>
         </Property>
@@ -259,6 +271,17 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VoltarBtActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="VER MATERIAIS"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor em Forma de M&#xe3;o"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

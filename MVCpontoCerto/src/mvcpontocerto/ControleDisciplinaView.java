@@ -7,7 +7,7 @@ package mvcpontocerto;
 
 /**
  *
- * @author Leonardo
+ * @author labccet
  */
 public class ControleDisciplinaView extends javax.swing.JFrame {
 
@@ -27,14 +27,50 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DisciplinaLb = new javax.swing.JLabel();
+        DisciplinasSP = new javax.swing.JScrollPane();
+        DisciplinasLt = new javax.swing.JList<>();
+        DisciplinasLb = new javax.swing.JLabel();
+        InstrucoesLb = new javax.swing.JLabel();
+        FavoritosSP = new javax.swing.JScrollPane();
+        FavoritosLt = new javax.swing.JList<>();
+        FavoritosLb = new javax.swing.JLabel();
+        RemoverBt = new javax.swing.JButton();
         VoltarBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ponto Certo");
+        setPreferredSize(new java.awt.Dimension(636, 300));
 
-        DisciplinaLb.setText("\" X\"");
-        DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        DisciplinasLt.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas", "Administ. de Banco de Dados", "Algoritmos p/ Prob. Combinat.", "Ambiente Operacional Unix", "Compiladores", "Computação Gráfica", "Comunic. e Segurança de Dados", "Desenvolv. de Servidor Web", "Fluxos em Redes", "Fund. Repr. Conh. e Raciocínio", "Gerência de Dados em Amb. Distribuídos e Paralelos", "Gest. de Processos de Negócios", "Informática na Educação", "Inteligéncia Artificial", "Programação Linear", "Sistemas Colaborativos", "Sistemas Multimídia", "Tóp. Avançados em Algoritmos", "Tóp. Avançados em BD I", "Tóp. Avançados em BD II", "Tóp. Avançados em BD III", "Tóp. Avançados em Eng. Sw. I", "Tóp. Avançados em Eng. Sw. II", "Tóp. Avan. em Redes de Comp. I", "Tóp. Avan. em Redes de Comp. II", "Tóp. Avan. em Redes de Comp. III", " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        DisciplinasLt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        DisciplinasSP.setViewportView(DisciplinasLt);
+
+        DisciplinasLb.setText("Disciplinas");
+        DisciplinasLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        InstrucoesLb.setText("<html>\nPara selecionar multiplas disciplinas <br>\npressione 'control' e clique.");
+        InstrucoesLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        FavoritosLt.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "2015.2", "2015.1", "2014.2", "2014.1", "2013.2", "2013.1", "2012.2", "2012.1" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        FavoritosSP.setViewportView(FavoritosLt);
+
+        FavoritosLb.setText("Favoritos");
+        FavoritosLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        RemoverBt.setText("Remover");
+        RemoverBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RemoverBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoverBtActionPerformed(evt);
+            }
+        });
 
         VoltarBt.setText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -49,25 +85,74 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(DisciplinasLb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(FavoritosLb)
+                .addGap(77, 77, 77))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DisciplinaLb)
-                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(329, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(RemoverBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(DisciplinaLb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DisciplinasLb)
+                    .addComponent(FavoritosLb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16)
+                .addComponent(RemoverBt)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(VoltarBt)
                 .addContainerGap())
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void RemoverBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverBtActionPerformed
+        // TODO add your handling code here:
+        if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)
+        {
+            JOptionPane.showMessageDialog(null, "Selecione uma disciplina nos favoritos.");
+        }
+        else
+        {
+            DefaultListModel<String> listModel = new DefaultListModel<>();
+            for(int i = 0;i< FavoritosLt.getModel().getSize();i++)
+            {
+                if(!FavoritosLt.getModel().getElementAt(i).equals(FavoritosLt.getSelectedValue()))
+                listModel.addElement(FavoritosLt.getModel().getElementAt(i));
+            }
+
+            FavoritosLt.setModel(listModel);
+
+        }
+    }//GEN-LAST:event_RemoverBtActionPerformed
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         new HomeView().show();
@@ -108,14 +193,16 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void setNomeDisciplina(String nome)
-    {
-        DisciplinaLb.setText(nome);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel DisciplinaLb;
+    private javax.swing.JLabel DisciplinasLb;
+    private javax.swing.JList<String> DisciplinasLt;
+    private javax.swing.JScrollPane DisciplinasSP;
+    private javax.swing.JLabel FavoritosLb;
+    private javax.swing.JList<String> FavoritosLt;
+    private javax.swing.JScrollPane FavoritosSP;
+    private javax.swing.JLabel InstrucoesLb;
+    private javax.swing.JButton RemoverBt;
     private javax.swing.JButton VoltarBt;
     // End of variables declaration//GEN-END:variables
 }

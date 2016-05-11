@@ -33,7 +33,6 @@ public class ControleFavoritosView extends javax.swing.JFrame {
         DisciplinasLt = new javax.swing.JList<>();
         DisciplinasLb = new javax.swing.JLabel();
         FavoritosLb = new javax.swing.JLabel();
-        ImportarFavLb = new javax.swing.JLabel();
         ImportarFavBt = new javax.swing.JButton();
         FavoritosSP = new javax.swing.JScrollPane();
         FavoritosLt = new javax.swing.JList<>();
@@ -41,12 +40,13 @@ public class ControleFavoritosView extends javax.swing.JFrame {
         InstrucoesLb = new javax.swing.JLabel();
         RemoverBt = new javax.swing.JButton();
         VoltarBt = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo");
 
         DisciplinasLt.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas" };
+            String[] strings = { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas", "Administ. de Banco de Dados", "Algoritmos p/ Prob. Combinat.", "Ambiente Operacional Unix", "Compiladores", "Computação Gráfica", "Comunic. e Segurança de Dados", "Desenvolv. de Servidor Web", "Fluxos em Redes", "Fund. Repr. Conh. e Raciocínio", "Gerência de Dados em Amb. Distribuídos e Paralelos", "Gest. de Processos de Negócios", "Informática na Educação", "Inteligéncia Artificial", "Programação Linear", "Sistemas Colaborativos", "Sistemas Multimídia", "Tóp. Avançados em Algoritmos", "Tóp. Avançados em BD I", "Tóp. Avançados em BD II", "Tóp. Avançados em BD III", "Tóp. Avançados em Eng. Sw. I", "Tóp. Avançados em Eng. Sw. II", "Tóp. Avan. em Redes de Comp. I", "Tóp. Avan. em Redes de Comp. II", "Tóp. Avan. em Redes de Comp. III", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -58,9 +58,6 @@ public class ControleFavoritosView extends javax.swing.JFrame {
 
         FavoritosLb.setText("Favoritos");
         FavoritosLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
-        ImportarFavLb.setText("<html> Importar <br> Favoritos </html>");
-        ImportarFavLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         ImportarFavBt.setText(">>>>");
         ImportarFavBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -83,7 +80,7 @@ public class ControleFavoritosView extends javax.swing.JFrame {
         InstrucoesLb.setText("<html>\nPara selecionar multiplas disciplinas <br>\npressione 'control' e clique.");
         InstrucoesLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        RemoverBt.setText("Remover");
+        RemoverBt.setText("<<<<");
         RemoverBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         RemoverBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,31 +96,18 @@ public class ControleFavoritosView extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("VER MATERIAIS");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ImportarFavBt)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(ImportarFavLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(RemoverBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(60, 60, 60))
             .addGroup(layout.createSequentialGroup()
                 .addGap(66, 66, 66)
                 .addComponent(DisciplinasLb)
@@ -132,8 +116,26 @@ public class ControleFavoritosView extends javax.swing.JFrame {
                 .addGap(136, 136, 136))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(ImportarFavBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(RemoverBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(238, 238, 238))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,26 +144,25 @@ public class ControleFavoritosView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(FavoritosLb, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(DisciplinasLb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(ImportarFavLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ImportarFavBt))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(RemoverBt)
-                                    .addComponent(EditarBt)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                                .addGap(33, 33, 33)
+                                .addComponent(ImportarFavBt)
+                                .addGap(18, 18, 18)
+                                .addComponent(RemoverBt)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EditarBt))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
                 .addComponent(VoltarBt)
                 .addContainerGap())
         );
@@ -177,6 +178,7 @@ public class ControleFavoritosView extends javax.swing.JFrame {
     for(int i = 0;i< DisciplinasLt.getSelectedIndices().length;i++)
     {
         listModel.addElement(DisciplinasLt.getSelectedValuesList().get(i));
+        //DisciplinasLt.set;
     }
     
     FavoritosLt.setModel(listModel);
@@ -195,7 +197,7 @@ public class ControleFavoritosView extends javax.swing.JFrame {
 
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
         // TODO add your handling code here:
-        ControleDisciplinaView DiscView = new ControleDisciplinaView();
+        ControleNotaView DiscView = new ControleNotaView();
         if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)
         {
             JOptionPane.showMessageDialog(null, "Selecione uma disciplina nos favoritos.");
@@ -233,6 +235,10 @@ public class ControleFavoritosView extends javax.swing.JFrame {
         new HomeView().show();
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,9 +287,9 @@ public class ControleFavoritosView extends javax.swing.JFrame {
     private javax.swing.JList<String> FavoritosLt;
     private javax.swing.JScrollPane FavoritosSP;
     private javax.swing.JButton ImportarFavBt;
-    private javax.swing.JLabel ImportarFavLb;
     private javax.swing.JLabel InstrucoesLb;
     private javax.swing.JButton RemoverBt;
     private javax.swing.JButton VoltarBt;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
