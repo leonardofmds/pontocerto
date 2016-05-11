@@ -27,11 +27,22 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        DisciplinaLb = new javax.swing.JLabel();
+        VoltarBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ponto Certo");
 
-        jLabel1.setText("Disciplina:\" X\"");
+        DisciplinaLb.setText("\" X\"");
+        DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        VoltarBt.setText("Voltar");
+        VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VoltarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarBtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -39,20 +50,29 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DisciplinaLb)
+                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addComponent(DisciplinaLb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
+                .addComponent(VoltarBt)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
+        new HomeView().show();
+        dispose();
+    }//GEN-LAST:event_VoltarBtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -91,10 +111,11 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
     
     public void setNomeDisciplina(String nome)
     {
-        jLabel1.setText(nome);
+        DisciplinaLb.setText(nome);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel DisciplinaLb;
+    private javax.swing.JButton VoltarBt;
     // End of variables declaration//GEN-END:variables
 }
