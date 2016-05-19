@@ -102,7 +102,9 @@ public class HomeView extends javax.swing.JFrame {
     }//GEN-LAST:event_DisciplinasBtActionPerformed
 
     private void EnviarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarBtActionPerformed
-        // TODO add your handling code here:
+        EnviarMaterialView controlEnvView = new EnviarMaterialView();
+        controlEnvView.setVisible(true);
+        this.setVisible(false); 
     }//GEN-LAST:event_EnviarBtActionPerformed
 
     /**

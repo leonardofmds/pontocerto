@@ -5,6 +5,15 @@
  */
 package mvcpontocerto;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JEditorPane;
+
 /**
  *
  * @author labccet
@@ -30,7 +39,7 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
         DisciplinaLb = new javax.swing.JLabel();
         VoltarBt = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        MaterialLt = new javax.swing.JList<>();
         VisualizarBt = new javax.swing.JButton();
         BaixarBt = new javax.swing.JButton();
         DenunciarBt = new javax.swing.JButton();
@@ -41,10 +50,11 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
-        setPreferredSize(new java.awt.Dimension(636, 300));
+        setMaximumSize(new java.awt.Dimension(300, 300));
+        setPreferredSize(new java.awt.Dimension(630, 300));
         setResizable(false);
 
-        VoltarBt.setText("<-");
+        VoltarBt.setText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,21 +62,31 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Prova1 2016.1", "Prova2 2016.1" };
+        MaterialLt.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Prova2 2016.1" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(MaterialLt);
 
         VisualizarBt.setText("Visualizar");
         VisualizarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VisualizarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisualizarBtActionPerformed(evt);
+            }
+        });
 
         BaixarBt.setText("Baixar");
         BaixarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         DenunciarBt.setText("Denunciar");
         DenunciarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DenunciarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DenunciarBtActionPerformed(evt);
+            }
+        });
 
         DisciplinaLb1.setText("\" X\"");
         DisciplinaLb1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -109,12 +129,32 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         new ControleFavoritosView().show();
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
+
+    private void VisualizarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarBtActionPerformed
+        // TODO add your handling code here:
+        
+        hiperlink hp = new hiperlink();
+        
+        try {
+            hp.open(new URI(MaterialLt.getModel().getElementAt(0)));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(ControleDisciplinaView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+
+    }//GEN-LAST:event_VisualizarBtActionPerformed
+
+    private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
+        new DenunciarView().show();
+        dispose();
+    }//GEN-LAST:event_DenunciarBtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,7 +193,7 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
     
     public void setNomeDisciplina(String nome)
     {
-        DisciplinaLb.setText(nome);
+        DisciplinaLb1.setText(nome);
     }
 
 
@@ -162,9 +202,9 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
     private javax.swing.JButton DenunciarBt;
     private javax.swing.JLabel DisciplinaLb;
     private javax.swing.JLabel DisciplinaLb1;
+    private javax.swing.JList<String> MaterialLt;
     private javax.swing.JButton VisualizarBt;
     private javax.swing.JButton VoltarBt;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

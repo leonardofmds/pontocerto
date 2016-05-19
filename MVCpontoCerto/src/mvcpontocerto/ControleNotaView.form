@@ -126,7 +126,7 @@
               <Table columnCount="4" rowCount="1">
                 <Column editable="true" title="Tipo" type="java.lang.String"/>
                 <Column editable="true" title="Nota" type="java.lang.Double"/>
-                <Column editable="true" title="Peso" type="java.lang.Integer"/>
+                <Column editable="true" title="Peso" type="java.lang.Double"/>
                 <Column editable="false" title="Nota Final" type="java.lang.Double"/>
               </Table>
             </Property>
@@ -141,6 +141,9 @@
           <Color id="Cursor em Forma de M&#xe3;o"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalvarNotaBtActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ExcluirNotaBt">
       <Properties>

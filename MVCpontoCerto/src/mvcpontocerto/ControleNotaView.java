@@ -74,7 +74,7 @@ public class ControleNotaView extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
                 true, true, true, false
@@ -92,6 +92,11 @@ public class ControleNotaView extends javax.swing.JFrame {
 
         SalvarNotaBt.setText("Salvar");
         SalvarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalvarNotaBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarNotaBtActionPerformed(evt);
+            }
+        });
 
         ExcluirNotaBt.setText("Excluir");
         ExcluirNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -160,6 +165,20 @@ public class ControleNotaView extends javax.swing.JFrame {
     private void NovaNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovaNotaBtActionPerformed
        
     }//GEN-LAST:event_NovaNotaBtActionPerformed
+
+    private void SalvarNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarNotaBtActionPerformed
+         NotasTb.selectAll();   
+        int line = NotasTb.getSelectedRow();
+        
+        
+        
+        double media = (double) NotasTb.getModel().getValueAt(line, 1) * (double) (NotasTb.getModel().getValueAt(line, 2))/10;
+        NotasTb.setValueAt(media, line, 3);
+        
+        
+        
+        
+    }//GEN-LAST:event_SalvarNotaBtActionPerformed
 
     /**
      * @param args the command line arguments

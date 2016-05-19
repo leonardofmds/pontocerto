@@ -88,7 +88,7 @@ public class ControleFavoritosView extends javax.swing.JFrame {
             }
         });
 
-        VoltarBt.setText("<-");
+        VoltarBt.setText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,9 +163,9 @@ public class ControleFavoritosView extends javax.swing.JFrame {
                             .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EditarBt))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EditarBt)
+                    .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -176,27 +176,30 @@ public class ControleFavoritosView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ImportarFavBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportarFavBtActionPerformed
-        // TODO add your handling code here:
-    DefaultListModel<String> listModel = new DefaultListModel<>();
+   DefaultListModel<String> listModel = new DefaultListModel<>();
         
     for(int i = 0;i< DisciplinasLt.getSelectedIndices().length;i++)
     {
         listModel.addElement(DisciplinasLt.getSelectedValuesList().get(i));
-        //DisciplinasLt.set;
+    }    
+    for(int i = 0;i< FavoritosLt.getModel().getSize();i++)
+    {
+        listModel.addElement(FavoritosLt.getModel().getElementAt(i));
     }
     
     FavoritosLt.setModel(listModel);
-     
-     
-     
-     
-     
-     
-     
-        
-        
-        
-        
+       
+    DefaultListModel<String> listModel2 = new DefaultListModel<>();
+    
+    for(int i = 0; i< DisciplinasLt.getModel().getSize();i++)
+    {
+        if(!DisciplinasLt.isSelectedIndex(i))
+        {
+            listModel2.addElement(DisciplinasLt.getModel().getElementAt(i));
+        }        
+    }
+    
+    DisciplinasLt.setModel(listModel2);
     }//GEN-LAST:event_ImportarFavBtActionPerformed
 
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
@@ -216,23 +219,31 @@ public class ControleFavoritosView extends javax.swing.JFrame {
     }//GEN-LAST:event_EditarBtActionPerformed
 
     private void RemoverBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoverBtActionPerformed
-        // TODO add your handling code here:
-        if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)
-        {
-            JOptionPane.showMessageDialog(null, "Selecione uma disciplina nos favoritos.");
-        }
-        else
-        {
-            DefaultListModel<String> listModel = new DefaultListModel<>();
-            for(int i = 0;i< FavoritosLt.getModel().getSize();i++)
-            {
-                if(!FavoritosLt.getModel().getElementAt(i).equals(FavoritosLt.getSelectedValue()))
-                listModel.addElement(FavoritosLt.getModel().getElementAt(i));
-            }
+    DefaultListModel<String> listModel = new DefaultListModel<>();
+        
+    for(int i = 0;i< FavoritosLt.getSelectedIndices().length;i++)
+    {
+        listModel.addElement(FavoritosLt.getSelectedValuesList().get(i));
+    }    
+    for(int i = 0;i< DisciplinasLt.getModel().getSize();i++)
+    {
+        listModel.addElement(DisciplinasLt.getModel().getElementAt(i));
+    }
     
-            FavoritosLt.setModel(listModel);
-            
-        }
+    DisciplinasLt.setModel(listModel);
+       
+    DefaultListModel<String> listModel2 = new DefaultListModel<>();
+    
+    for(int i = 0; i< FavoritosLt.getModel().getSize();i++)
+    {
+        if(!FavoritosLt.isSelectedIndex(i))
+        {
+            listModel2.addElement(FavoritosLt.getModel().getElementAt(i));
+        }        
+    }
+    
+    FavoritosLt.setModel(listModel2);
+
     }//GEN-LAST:event_RemoverBtActionPerformed
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
@@ -246,10 +257,16 @@ public class ControleFavoritosView extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "Selecione uma disciplina.");
         }
-        else
+        else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
         {
             DiscView.setVisible(true);
             DiscView.setNomeDisciplina(FavoritosLt.getSelectedValue());
+            this.setVisible(false);
+        }
+        else
+        {
+            DiscView.setVisible(true);
+            DiscView.setNomeDisciplina(DisciplinasLt.getSelectedValue());
             this.setVisible(false);
         }
     }//GEN-LAST:event_VerMateriasBtActionPerformed
