@@ -167,8 +167,10 @@ public class ControleNotaView extends javax.swing.JFrame {
     }//GEN-LAST:event_NovaNotaBtActionPerformed
 
     private void SalvarNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarNotaBtActionPerformed
-         NotasTb.selectAll();   
-        int line = NotasTb.getSelectedRow();
+        NotasTb.selectAll();   
+        int line = NotasTb.getSelectedRow();     
+        
+                
         
         
         

@@ -11,18 +11,35 @@ package mvcpontocerto;
  */
 public class AlunoModel 
 {
-    private String name;
+    private 
+        String name, matricula;
     
-    AlunoModel(String name)
+    AlunoModel(String name, String matricula)
     {
         this.name = name;
+        this.matricula = matricula;
     }
 
-    public String getName() {
+    public String getNome() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setNome(String name) {
         this.name = name;
+    }
+    
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+    
+    public boolean EstaNomeado(){
+        if(getNome()!= null)
+            return true;
+        else
+            return false;
     }
 }

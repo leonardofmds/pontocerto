@@ -11,13 +11,26 @@ package mvcpontocerto;
  */
 public class NotaModel 
 {
-    private double nota,peso;
+    private 
+        double nota,nfinal;
+        int peso; 
+        String tipo;
 
-    public NotaModel(double nota, double peso) {
+    public NotaModel(String tipo, double nota, int peso, double nfinal) {
+        this.tipo = tipo;
         this.nota = nota;
         this.peso = peso;
+        this.nfinal = nfinal;        
+    };
+
+    public String getTipo() {
+        return tipo;
     }
 
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
     public double getNota() {
         return nota;
     }
@@ -26,11 +39,27 @@ public class NotaModel
         this.nota = nota;
     }
 
-    public double getPeso() {
+    public int getPeso() {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
+    
+    public double getNFinal() {
+        return nfinal;
+    }
+
+    public void setNFinal(double nfinal) {
+             
+        double nota = getNota();
+        int peso = getPeso();
+        
+        nfinal = nota*(peso/10);
+        
+        this.nfinal = nfinal;
+    }
+    
+
 }
