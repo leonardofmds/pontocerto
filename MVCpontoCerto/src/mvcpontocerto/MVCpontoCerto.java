@@ -5,6 +5,8 @@
  */
 package mvcpontocerto;
 
+import View.HomeView;
+
 /**
  *
  * @author Leonardo

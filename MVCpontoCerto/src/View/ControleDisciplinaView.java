@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mvcpontocerto;
+package View;
 
 import java.awt.Desktop;
 import java.io.IOException;
@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JEditorPane;
+import mvcpontocerto.hiperlink;
 
 /**
  *
@@ -50,8 +51,6 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
-        setMaximumSize(new java.awt.Dimension(300, 300));
-        setPreferredSize(new java.awt.Dimension(630, 300));
         setResizable(false);
 
         VoltarBt.setText("Voltar");
