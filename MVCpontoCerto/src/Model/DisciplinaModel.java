@@ -11,31 +11,33 @@ package Model;
  */
 public class DisciplinaModel 
 {
-    private String nome, professor;
+    private int iddisc;
+    private String nomedisc;
+    private double media;
     private boolean favorito;
     private NotaModel[] notas;  
 
-    public DisciplinaModel(String nome, String professor, boolean favorito, NotaModel[] notas) {
-        this.nome = nome;
-        this.professor = professor;
+    public DisciplinaModel(String nomedisc, double media, boolean favorito, NotaModel[] notas) {
+        this.nomedisc = nomedisc;
+        this.media = media;
         this.favorito = favorito;
         this.notas = notas;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeDisc() {
+        return nomedisc;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeDisc(String nomedisc) {
+        this.nomedisc = nomedisc;
     }
 
-    public String getProfessor() {
-        return professor;
+    public double getMedia() {
+        return media;
     }
 
-    public void setProfessor(String professor) {
-        this.professor = professor;
+    public void setMedia(double media) {
+        this.media = media;
     }
 
     public boolean isFavorito() {

@@ -12,13 +12,14 @@ package Model;
 public class NotaModel 
 {
     private double nota,nfinal;
-    private int peso; 
+    private int peso, idnota; 
     private String tipo;
 
-    public NotaModel(String tipo, double nota, int peso, double nfinal) {
+    public NotaModel(String tipo, double nota, int peso, double nfinal, int idnota) {
         this.tipo = tipo;
         this.nota = nota;
         this.peso = peso;
+        this.idnota = idnota;
         this.nfinal = nfinal;        
     };
 
@@ -44,6 +45,14 @@ public class NotaModel
 
     public void setPeso(int peso) {
         this.peso = peso;
+    }
+    
+    public int getIdNota() {
+        return idnota;
+    }
+
+    public void setIdNota(int idnota) {
+        this.idnota = idnota;
     }
     
     public double getNFinal() {
