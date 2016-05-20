@@ -11,10 +11,9 @@ package mvcpontocerto;
  */
 public class NotaModel 
 {
-    private 
-        double nota,nfinal;
-        int peso; 
-        String tipo;
+    private double nota,nfinal;
+    private int peso; 
+    private String tipo;
 
     public NotaModel(String tipo, double nota, int peso, double nfinal) {
         this.tipo = tipo;

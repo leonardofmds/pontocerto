@@ -11,8 +11,7 @@ package mvcpontocerto;
  */
 public class AlunoModel 
 {
-    private 
-        String name, matricula;
+    private String name, matricula;
     
     AlunoModel(String name, String matricula)
     {
