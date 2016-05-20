@@ -5,7 +5,6 @@
  */
 package View;
 import javax.swing.*;
-import Controle.ControleNotaView;
 //import javax.swing.ListModel;
 
 /**

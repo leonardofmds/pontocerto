@@ -52,10 +52,10 @@ public class NotaModel
 
     public void setNFinal(double nfinal) {
              
-        double nota = getNota();
-        int peso = getPeso();
+        double nt = getNota();
+        int pes = getPeso();
         
-        nfinal = nota*(peso/10);
+        nfinal = nt*(pes/10);
         
         this.nfinal = nfinal;
     }
