@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package View;
+import Model.FavoritosModel;
+import java.io.Serializable;
 import javax.swing.*;
 //import javax.swing.ListModel;
 
@@ -11,13 +13,21 @@ import javax.swing.*;
  *
  * @author Leonardo
  */
-public class ControleFavoritosView extends javax.swing.JFrame {
-
+public class ControleFavoritosView extends javax.swing.JFrame implements Serializable {
+    FavoritosModel fav;
     /**
      * Creates new form controleDisciplinasView
      */
     public ControleFavoritosView() {
         initComponents();
+        fav = new FavoritosModel();
+        
+        if(fav.getNomeFavoritos().getSize()>0)
+        {
+            FavoritosLt.setModel(fav.getNomeFavoritos());
+            //System.out.println(FavoritosLt.getModel());
+        }
+        
     }
 
     /**
@@ -41,6 +51,7 @@ public class ControleFavoritosView extends javax.swing.JFrame {
         RemoverBt = new javax.swing.JButton();
         VoltarBt = new javax.swing.JButton();
         VerMateriasBt = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo");
@@ -104,6 +115,13 @@ public class ControleFavoritosView extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Salvar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -118,6 +136,8 @@ public class ControleFavoritosView extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(203, 203, 203)
+                                .addComponent(jButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
@@ -164,10 +184,15 @@ public class ControleFavoritosView extends javax.swing.JFrame {
                             .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EditarBt)
-                    .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditarBt)
+                            .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                        .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -271,6 +296,13 @@ public class ControleFavoritosView extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_VerMateriasBtActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
+        System.out.println(fav.getNomeFavoritos());
+        fav.saveListNomeFavoritos();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -322,5 +354,6 @@ public class ControleFavoritosView extends javax.swing.JFrame {
     private javax.swing.JButton RemoverBt;
     private javax.swing.JButton VerMateriasBt;
     private javax.swing.JButton VoltarBt;
+    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
