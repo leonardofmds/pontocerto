@@ -102,8 +102,8 @@ public class HomeView extends javax.swing.JFrame {
         FluxoTelasController.cfv.setVisible(true);
         this.setVisible(false);
         
-        DisciplinasController dc = new DisciplinasController();
-        dc.saveListNomeFavoritos();
+        //DisciplinasController dc = new DisciplinasController();
+        //dc.saveListNomeFavoritos();
         
     }//GEN-LAST:event_DisciplinasBtActionPerformed
 

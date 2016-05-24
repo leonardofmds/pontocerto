@@ -6,11 +6,6 @@
 package View;
 import Controller.DisciplinasController;
 import Controller.FluxoTelasController;
-import Model.DisciplinaModel;
-import Model.FavoritosModel;
-import java.beans.XMLEncoder;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.Serializable;
 import javax.swing.*;
 //import javax.swing.ListModel;
@@ -313,7 +308,7 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
 //        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
 //        System.out.println(fav.getNomeFavoritos());
 //        fav.saveListNomeFavoritos();
-        dc.setFavoritos(FavoritosLt.getModel());
+        dc.setFavoritos(FavoritosLt.getModel()); System.out.println(FavoritosLt.getModel());
         dc.escreveArquivos();       
     }//GEN-LAST:event_jButton1ActionPerformed
 

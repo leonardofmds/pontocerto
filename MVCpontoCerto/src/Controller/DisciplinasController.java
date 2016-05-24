@@ -36,12 +36,14 @@ public class DisciplinasController
         {
             disciplinas[i] = new DisciplinaModel();
             disciplinas[i].setNomeDisc(d[i]);
+            disciplinas[i].setFavorito(false);
         }
         int fCont = 0;
         for(int i = d.length; i<(d.length+f.length);i++)
         {
             disciplinas[i] = new DisciplinaModel();
             disciplinas[i].setNomeDisc(f[fCont]);
+            disciplinas[i].setFavorito(true);
             fCont++;
         }
     }
@@ -57,11 +59,12 @@ public class DisciplinasController
         
         for(int i = 0; i< disciplinas.length;i++)
         {
-            if(!disciplinas[i].isFavorito())
+            if(disciplinas[i].isFavorito()==false)
                 ltModel.addElement(disciplinas[i].getNomeDisc());
         }
-        
+        //System.out.println(ltModel);
         return ltModel;
+
     }
     
     public DefaultListModel<String> listaFavoritos()
@@ -71,15 +74,19 @@ public class DisciplinasController
         for(int i = 0; i< disciplinas.length;i++)
         {
             if(disciplinas[i].isFavorito())
-            ltModel.addElement(disciplinas[i].getNomeDisc());
+                ltModel.addElement(disciplinas[i].getNomeDisc());
         }
-        
+        System.out.println(ltModel);
         return ltModel;
     }    
     
     public void setFavoritos(ListModel<String> lt)
     {
         String s[] = new String[lt.getSize()];
+        if(lt.getSize()==0)
+        {
+            for(int i = 0; i < disciplinas.length; i++) disciplinas[i].setFavorito(false);
+        }
         for(int i = 0; i < lt.getSize(); i++) s[i] = lt.getElementAt(i);
         
         for(int i = 0; i< disciplinas.length;i++)
