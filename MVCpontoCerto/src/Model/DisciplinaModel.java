@@ -11,12 +11,17 @@ package Model;
  */
 public class DisciplinaModel 
 {
-    private int iddisc;
-    private String nomedisc;
-    private double media;
-    private boolean favorito;
-    private NotaModel[] notas;  
+    private int iddisc = 0;
+    private String nomedisc = null;
+    private double media = 0;
+    private boolean favorito = false;
+    private NotaModel[] notas = null;  
 
+    public DisciplinaModel()
+    {
+        
+    }
+    
     public DisciplinaModel(String nomedisc, double media, boolean favorito, NotaModel[] notas) {
         this.nomedisc = nomedisc;
         this.media = media;

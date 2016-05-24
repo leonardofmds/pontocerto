@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.FluxoTelasController;
 import View.ControleFavoritosView;
 
 /**
@@ -160,7 +161,8 @@ public class ControleNotaView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
-        new ControleFavoritosView().show();
+        //new ControleFavoritosView().show();
+        FluxoTelasController.cfv.setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
 

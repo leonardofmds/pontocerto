@@ -5,6 +5,8 @@
  */
 package View;
 
+import Controller.FluxoTelasController;
+
 /**
  *
  * @author labccet
@@ -65,6 +67,11 @@ public class EnviarMaterialView extends javax.swing.JFrame {
 
         EnviarMaterialBt.setText("Enviar");
         EnviarMaterialBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EnviarMaterialBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EnviarMaterialBtActionPerformed(evt);
+            }
+        });
 
         SubLb.setText("Sub-Tipo:");
 
@@ -133,9 +140,14 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     }//GEN-LAST:event_TipoMaterialCbActionPerformed
 
     private void CancelaMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelaMaterialBtActionPerformed
-        new HomeView().show();
+        //new HomeView().show();
+        FluxoTelasController.hv.setVisible(true);
         dispose();
     }//GEN-LAST:event_CancelaMaterialBtActionPerformed
+
+    private void EnviarMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMaterialBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EnviarMaterialBtActionPerformed
 
     /**
      * @param args the command line arguments

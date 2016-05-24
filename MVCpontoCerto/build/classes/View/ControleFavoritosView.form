@@ -130,69 +130,7 @@
         <Component class="javax.swing.JList" name="DisciplinasLt">
           <Properties>
             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-              <StringArray count="61">
-                <StringItem index="0" value="Administra&#xe7;&#xe3;o Financeira"/>
-                <StringItem index="1" value="&#xc1;lgebra Linear"/>
-                <StringItem index="2" value="An&#xe1;lise de Algoritmo"/>
-                <StringItem index="3" value="An&#xe1;lise de Sistemas"/>
-                <StringItem index="4" value="An&#xe1;lise Empresarial e Admin."/>
-                <StringItem index="5" value="Banco de Dados I"/>
-                <StringItem index="6" value="Banco de Dados II"/>
-                <StringItem index="7" value="C&#xe1;lculo Diferenc. e Integral I"/>
-                <StringItem index="8" value="C&#xe1;lculo Diferenc. e Integral II"/>
-                <StringItem index="9" value="Desenvolv. de P&#xe1;ginas Web"/>
-                <StringItem index="10" value="Empreendedorismo"/>
-                <StringItem index="11" value="Estat&#xed;stica"/>
-                <StringItem index="12" value="Estruturas de Dados I"/>
-                <StringItem index="13" value="Estruturas de Dados II"/>
-                <StringItem index="14" value="Estruturas Discretas"/>
-                <StringItem index="15" value="Fund. de Sist. de Informa&#xe7;&#xe3;o"/>
-                <StringItem index="16" value="Ger&#xea;ncia de Proj. de Informat."/>
-                <StringItem index="17" value="Intera&#xe7;&#xe3;o Humano Computador"/>
-                <StringItem index="18" value="Introdu&#xe7;&#xe3;o &#xe0; L&#xf3;gica Computac."/>
-                <StringItem index="19" value="Linguag. Formais e Aut&#xf4;matos"/>
-                <StringItem index="20" value="Matem&#xe1;tica B&#xe1;sica"/>
-                <StringItem index="21" value="Organiza&#xe7;&#xe3;o de Computadores"/>
-                <StringItem index="22" value="Probabilidade"/>
-                <StringItem index="23" value="Processos de Software"/>
-                <StringItem index="24" value="Programa&#xe7;&#xe3;o Modular"/>
-                <StringItem index="25" value="Projeto de Gradua&#xe7;&#xe3;o I"/>
-                <StringItem index="26" value="Projeto de Gradua&#xe7;&#xe3;o II"/>
-                <StringItem index="27" value="Proj. e Const. de Sistemas"/>
-                <StringItem index="28" value="Proj. Const. Sistemas-SGBD"/>
-                <StringItem index="29" value="Redes de Computadores I"/>
-                <StringItem index="30" value="Redes de Computadores II"/>
-                <StringItem index="31" value="Sistemas Operacionais"/>
-                <StringItem index="32" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o I"/>
-                <StringItem index="33" value="T&#xe9;cnicas de Programa&#xe7;&#xe3;o II"/>
-                <StringItem index="34" value="Teorias e Pr&#xe1;ticas Discursivas"/>
-                <StringItem index="35" value="Administ. de Banco de Dados"/>
-                <StringItem index="36" value="Algoritmos p/ Prob. Combinat."/>
-                <StringItem index="37" value="Ambiente Operacional Unix"/>
-                <StringItem index="38" value="Compiladores"/>
-                <StringItem index="39" value="Computa&#xe7;&#xe3;o Gr&#xe1;fica"/>
-                <StringItem index="40" value="Comunic. e Seguran&#xe7;a de Dados"/>
-                <StringItem index="41" value="Desenvolv. de Servidor Web"/>
-                <StringItem index="42" value="Fluxos em Redes"/>
-                <StringItem index="43" value="Fund. Repr. Conh. e Racioc&#xed;nio"/>
-                <StringItem index="44" value="Ger&#xea;ncia de Dados em Amb. Distribu&#xed;dos e Paralelos"/>
-                <StringItem index="45" value="Gest. de Processos de Neg&#xf3;cios"/>
-                <StringItem index="46" value="Inform&#xe1;tica na Educa&#xe7;&#xe3;o"/>
-                <StringItem index="47" value="Intelig&#xe9;ncia Artificial"/>
-                <StringItem index="48" value="Programa&#xe7;&#xe3;o Linear"/>
-                <StringItem index="49" value="Sistemas Colaborativos"/>
-                <StringItem index="50" value="Sistemas Multim&#xed;dia"/>
-                <StringItem index="51" value="T&#xf3;p. Avan&#xe7;ados em Algoritmos"/>
-                <StringItem index="52" value="T&#xf3;p. Avan&#xe7;ados em BD I"/>
-                <StringItem index="53" value="T&#xf3;p. Avan&#xe7;ados em BD II"/>
-                <StringItem index="54" value="T&#xf3;p. Avan&#xe7;ados em BD III"/>
-                <StringItem index="55" value="T&#xf3;p. Avan&#xe7;ados em Eng. Sw. I"/>
-                <StringItem index="56" value="T&#xf3;p. Avan&#xe7;ados em Eng. Sw. II"/>
-                <StringItem index="57" value="T&#xf3;p. Avan. em Redes de Comp. I"/>
-                <StringItem index="58" value="T&#xf3;p. Avan. em Redes de Comp. II"/>
-                <StringItem index="59" value="T&#xf3;p. Avan. em Redes de Comp. III"/>
-                <StringItem index="60" value=" "/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Cursor Padr&#xe3;o"/>

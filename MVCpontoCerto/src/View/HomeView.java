@@ -5,6 +5,7 @@
  */
 package View;
 
+import Controller.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -95,15 +96,19 @@ public class HomeView extends javax.swing.JFrame {
 
     private void DisciplinasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinasBtActionPerformed
         // TODO add your handling code here:
-        ControleFavoritosView controlDiscView = new ControleFavoritosView();
-        controlDiscView.setVisible(true);
-        this.setVisible(false);        
+//        ControleFavoritosView controlDiscView = new ControleFavoritosView();
+//        controlDiscView.setVisible(true);
+        //this.setVisible(false); 
+        FluxoTelasController.cfv.setVisible(true);
+        this.setVisible(false);
+        
+        DisciplinasController dc = new DisciplinasController();
+        dc.saveListNomeFavoritos();
         
     }//GEN-LAST:event_DisciplinasBtActionPerformed
 
     private void EnviarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarBtActionPerformed
-        EnviarMaterialView controlEnvView = new EnviarMaterialView();
-        controlEnvView.setVisible(true);
+        FluxoTelasController.emv.setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_EnviarBtActionPerformed
 

@@ -4,7 +4,13 @@
  * and open the template in the editor.
  */
 package View;
+import Controller.DisciplinasController;
+import Controller.FluxoTelasController;
+import Model.DisciplinaModel;
 import Model.FavoritosModel;
+import java.beans.XMLEncoder;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
 import javax.swing.*;
 //import javax.swing.ListModel;
@@ -14,19 +20,33 @@ import javax.swing.*;
  * @author Leonardo
  */
 public class ControleFavoritosView extends javax.swing.JFrame implements Serializable {
-    FavoritosModel fav;
+    DisciplinasController dc = new DisciplinasController();
     /**
      * Creates new form controleDisciplinasView
      */
+    public DefaultListModel<String> listaDisciplinas()
+    {
+        DefaultListModel<String> ltModel = new DefaultListModel<String>();
+        DisciplinaModel disc[] = dc.getDisciplinas();
+        
+        for(int i = 0; i< disc.length;i++)
+        {
+            ltModel.addElement(disc[i].getNomeDisc());
+        }
+        
+        return ltModel;
+    }
+    
     public ControleFavoritosView() {
         initComponents();
-        fav = new FavoritosModel();
-        
-        if(fav.getNomeFavoritos().getSize()>0)
-        {
-            FavoritosLt.setModel(fav.getNomeFavoritos());
-            //System.out.println(FavoritosLt.getModel());
-        }
+        DisciplinasLt.setModel(listaDisciplinas());
+//        fav = new FavoritosModel();
+//        
+//        if(fav.getNomeFavoritos().getSize()>0)
+//        {
+//            FavoritosLt.setModel(fav.getNomeFavoritos());
+//            //System.out.println(FavoritosLt.getModel());
+//        }
         
     }
 
@@ -56,11 +76,6 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo");
 
-        DisciplinasLt.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas", "Administ. de Banco de Dados", "Algoritmos p/ Prob. Combinat.", "Ambiente Operacional Unix", "Compiladores", "Computação Gráfica", "Comunic. e Segurança de Dados", "Desenvolv. de Servidor Web", "Fluxos em Redes", "Fund. Repr. Conh. e Raciocínio", "Gerência de Dados em Amb. Distribuídos e Paralelos", "Gest. de Processos de Negócios", "Informática na Educação", "Inteligéncia Artificial", "Programação Linear", "Sistemas Colaborativos", "Sistemas Multimídia", "Tóp. Avançados em Algoritmos", "Tóp. Avançados em BD I", "Tóp. Avançados em BD II", "Tóp. Avançados em BD III", "Tóp. Avançados em Eng. Sw. I", "Tóp. Avançados em Eng. Sw. II", "Tóp. Avan. em Redes de Comp. I", "Tóp. Avan. em Redes de Comp. II", "Tóp. Avan. em Redes de Comp. III", " " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         DisciplinasLt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         DisciplinasSP.setViewportView(DisciplinasLt);
 
@@ -201,7 +216,9 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
     }// </editor-fold>//GEN-END:initComponents
 
     private void ImportarFavBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportarFavBtActionPerformed
-   DefaultListModel<String> listModel = new DefaultListModel<>();
+   
+        //System.out.println(DisciplinasLt.getModel());
+        DefaultListModel<String> listModel = new DefaultListModel<>();
         
     for(int i = 0;i< DisciplinasLt.getSelectedIndices().length;i++)
     {
@@ -229,7 +246,10 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
 
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
         // TODO add your handling code here:
-        ControleNotaView DiscView = new ControleNotaView();
+        ControleNotaView DiscView = FluxoTelasController.cnv;
+        FluxoTelasController.cnv.setVisible(true);
+        
+        
         if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)
         {
             JOptionPane.showMessageDialog(null, "Selecione uma disciplina nos favoritos.");
@@ -272,12 +292,14 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
     }//GEN-LAST:event_RemoverBtActionPerformed
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
-        new HomeView().show();
+        //new HomeView().show();
+        FluxoTelasController.hv.setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed
-        ControleDisciplinaView DiscView = new ControleDisciplinaView();
+        ControleDisciplinaView DiscView = FluxoTelasController.cdv;
+        FluxoTelasController.cdv.setVisible(true);
         if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
         {
             JOptionPane.showMessageDialog(null, "Selecione uma disciplina.");
@@ -298,9 +320,9 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
-        System.out.println(fav.getNomeFavoritos());
-        fav.saveListNomeFavoritos();
+//        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
+//        System.out.println(fav.getNomeFavoritos());
+//        fav.saveListNomeFavoritos();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -337,6 +359,7 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ControleFavoritosView().setVisible(true);
+                
             }
         });
     }

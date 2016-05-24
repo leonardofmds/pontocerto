@@ -5,6 +5,8 @@
  */
 package View;
 
+import Controller.FluxoTelasController;
+
 /**
  *
  * @author labccet
@@ -36,6 +38,11 @@ public class DenunciarView extends javax.swing.JFrame {
 
         DenunciarBt.setText("Denunciar");
         DenunciarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DenunciarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DenunciarBtActionPerformed(evt);
+            }
+        });
 
         CancelarDenunciaBt.setText("Cancelar");
         CancelarDenunciaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -82,9 +89,14 @@ public class DenunciarView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelarDenunciaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarDenunciaBtActionPerformed
-        new ControleDisciplinaView().show();
+        //new ControleDisciplinaView().show();
+        FluxoTelasController.cdv.setVisible(true);
         dispose();
     }//GEN-LAST:event_CancelarDenunciaBtActionPerformed
+
+    private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DenunciarBtActionPerformed
 
     /**
      * @param args the command line arguments
