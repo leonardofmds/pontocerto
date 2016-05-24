@@ -24,35 +24,12 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
     /**
      * Creates new form controleDisciplinasView
      */
-    public DefaultListModel<String> listaDisciplinas()
-    {
-        DefaultListModel<String> ltModel = new DefaultListModel<String>();
-        DisciplinaModel disc[] = dc.getDisciplinas();
-        
-        for(int i = 0; i< disc.length;i++)
-        {
-            ltModel.addElement(disc[i].getNomeDisc());
-        }
-        
-        return ltModel;
-    }
-    
-        public DefaultListModel<String> listaFavoritos()
-    {
-        DefaultListModel<String> ltModel = new DefaultListModel<String>();
-        DisciplinaModel disc[] = dc.getDisciplinas();
-        
-        for(int i = 0; i< disc.length;i++)
-        {
-            ltModel.addElement(disc[i].getNomeDisc());
-        }
-        
-        return ltModel;
-    }
+
     
     public ControleFavoritosView() {
         initComponents();
-        DisciplinasLt.setModel(listaDisciplinas());
+        DisciplinasLt.setModel(dc.listaDisciplinas());
+        FavoritosLt.setModel(dc.listaFavoritos());
 //        fav = new FavoritosModel();
 //        
 //        if(fav.getNomeFavoritos().getSize()>0)
@@ -336,6 +313,8 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
 //        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
 //        System.out.println(fav.getNomeFavoritos());
 //        fav.saveListNomeFavoritos();
+        dc.setFavoritos(FavoritosLt.getModel());
+        dc.escreveArquivos();       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

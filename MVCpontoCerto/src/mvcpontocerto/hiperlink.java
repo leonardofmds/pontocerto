@@ -23,7 +23,7 @@ import javax.swing.SwingConstants;
 public class hiperlink {
     
      public void main(String[] args) throws URISyntaxException {
-    URI uri = new URI("http://java.sun.com");
+    final URI uri = new URI("http://java.sun.com");
     class OpenUrlAction implements ActionListener {
       @Override public void actionPerformed(ActionEvent e) {
         open(uri);

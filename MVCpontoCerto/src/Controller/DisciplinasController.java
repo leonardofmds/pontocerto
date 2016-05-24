@@ -11,6 +11,10 @@ import java.beans.XMLEncoder;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
+import mvcpontocerto.XML;
 
 /**
  *
@@ -20,17 +24,25 @@ public class DisciplinasController
 {
     DisciplinaModel disciplinas[];
     int nDisc;
-    String [] t = null;
+    String [] d,f = null;
     
     public DisciplinasController() 
     {
-        saveListNomeFavoritos();
+        //saveListNomeFavoritos();
         leDisciplinas();
+        leFavoritos();
         disciplinas = new DisciplinaModel[nDisc];
-        for(int i = 0; i<nDisc;i++)
+        for(int i = 0; i<d.length;i++)
         {
             disciplinas[i] = new DisciplinaModel();
-            disciplinas[i].setNomeDisc(t[i]);
+            disciplinas[i].setNomeDisc(d[i]);
+        }
+        int fCont = 0;
+        for(int i = d.length; i<(d.length+f.length);i++)
+        {
+            disciplinas[i] = new DisciplinaModel();
+            disciplinas[i].setNomeDisc(f[fCont]);
+            fCont++;
         }
     }
     
@@ -39,14 +51,74 @@ public class DisciplinasController
         return disciplinas;
     }
     
-    void leDisciplinas()
+    public DefaultListModel<String> listaDisciplinas()
+    {
+        DefaultListModel<String> ltModel = new DefaultListModel<String>();
+        
+        for(int i = 0; i< disciplinas.length;i++)
+        {
+            if(!disciplinas[i].isFavorito())
+                ltModel.addElement(disciplinas[i].getNomeDisc());
+        }
+        
+        return ltModel;
+    }
+    
+    public DefaultListModel<String> listaFavoritos()
+    {
+        DefaultListModel<String> ltModel = new DefaultListModel<String>();
+        
+        for(int i = 0; i< disciplinas.length;i++)
+        {
+            if(disciplinas[i].isFavorito())
+            ltModel.addElement(disciplinas[i].getNomeDisc());
+        }
+        
+        return ltModel;
+    }    
+    
+    public void setFavoritos(ListModel<String> lt)
+    {
+        String s[] = new String[lt.getSize()];
+        for(int i = 0; i < lt.getSize(); i++) s[i] = lt.getElementAt(i);
+        
+        for(int i = 0; i< disciplinas.length;i++)
+        {
+            for(int j = 0; j< s.length;j++)
+            {
+                if(disciplinas[i].getNomeDisc().equals(s[j]))
+                {
+                    disciplinas[i].setFavorito(true);
+                    break;
+                }
+                else
+                    disciplinas[i].setFavorito(false);
+            }
+        }
+    }
+    
+    public void escreveArquivos()
+    {
+        ListModel<String> listaDisc = listaDisciplinas();
+        ListModel<String> listaFav = listaFavoritos();
+              
+        String[] vDisc = new String[listaDisc.getSize()];
+        String[] vFav = new String[listaFav.getSize()];
+        
+        for(int i = 0; i < listaDisc.getSize(); i++) vDisc[i] = listaDisc.getElementAt(i);
+        for(int i = 0; i < listaFav.getSize(); i++) vFav[i] = listaFav.getElementAt(i);
+        
+        XML.writter(vDisc, "Disciplinas");
+        XML.writter(vFav, "Favoritos");
+    }
+    private void leDisciplinas()
     {
         try{
             XMLDecoder xmlDecoder = null;
             try{
                 xmlDecoder = new XMLDecoder(
-                        new FileInputStream("Favoritos.xml"));
-                t = (String[]) xmlDecoder.readObject();   
+                        new FileInputStream("Disciplinas.xml"));
+                d = (String[]) xmlDecoder.readObject();   
             } finally{
                 if(xmlDecoder != null)
                     xmlDecoder.close();
@@ -56,33 +128,33 @@ public class DisciplinasController
             System.out.println(e.getMessage());
         } 
         
-        nDisc = t.length;
+        nDisc = nDisc + d.length;
+    }
+    private void leFavoritos()
+    {
+        try{
+            XMLDecoder xmlDecoder = null;
+            try{
+                xmlDecoder = new XMLDecoder(
+                        new FileInputStream("Favoritos.xml"));
+                f = (String[]) xmlDecoder.readObject();   
+            } finally{
+                if(xmlDecoder != null)
+                    xmlDecoder.close();
+            }
+        } catch(IOException e)
+        {
+            System.out.println(e.getMessage());
+        } 
+        
+        nDisc = nDisc + f.length;
     }
     
     public void saveListNomeFavoritos()
     {
         String[] strings = { "Administração Financeira", "Álgebra Linear", "Análise de Algoritmo", "Análise de Sistemas", "Análise Empresarial e Admin.", "Banco de Dados I", "Banco de Dados II", "Cálculo Diferenc. e Integral I", "Cálculo Diferenc. e Integral II", "Desenvolv. de Páginas Web", "Empreendedorismo", "Estatística", "Estruturas de Dados I", "Estruturas de Dados II", "Estruturas Discretas", "Fund. de Sist. de Informação", "Gerência de Proj. de Informat.", "Interação Humano Computador", "Introdução à Lógica Computac.", "Linguag. Formais e Autômatos", "Matemática Básica", "Organização de Computadores", "Probabilidade", "Processos de Software", "Programação Modular", "Projeto de Graduação I", "Projeto de Graduação II", "Proj. e Const. de Sistemas", "Proj. Const. Sistemas-SGBD", "Redes de Computadores I", "Redes de Computadores II", "Sistemas Operacionais", "Técnicas de Programação I", "Técnicas de Programação II", "Teorias e Práticas Discursivas", "Administ. de Banco de Dados", "Algoritmos p/ Prob. Combinat.", "Ambiente Operacional Unix", "Compiladores", "Computação Gráfica", "Comunic. e Segurança de Dados", "Desenvolv. de Servidor Web", "Fluxos em Redes", "Fund. Repr. Conh. e Raciocínio", "Gerência de Dados em Amb. Distribuídos e Paralelos", "Gest. de Processos de Negócios", "Informática na Educação", "Inteligéncia Artificial", "Programação Linear", "Sistemas Colaborativos", "Sistemas Multimídia", "Tóp. Avançados em Algoritmos", "Tóp. Avançados em BD I", "Tóp. Avançados em BD II", "Tóp. Avançados em BD III", "Tóp. Avançados em Eng. Sw. I", "Tóp. Avançados em Eng. Sw. II", "Tóp. Avan. em Redes de Comp. I", "Tóp. Avan. em Redes de Comp. II", "Tóp. Avan. em Redes de Comp. III" };
-
         
-        
-                try{
-            XMLEncoder xmlEncoder = null;
-                    try{
-            xmlEncoder = new XMLEncoder(
-                    new FileOutputStream("Favoritos.xml"));
-            xmlEncoder.writeObject(strings);
-            
-        }
-                    finally{
-                        if(xmlEncoder != null)
-                        {
-                            xmlEncoder.close();
-                        }
-                    }
-        }catch(IOException e)
-        {
-            System.out.println(e.getMessage());
-        }
+        XML.writter(strings, "Disciplinas");
     }
     
 }
