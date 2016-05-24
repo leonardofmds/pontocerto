@@ -37,6 +37,19 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
         return ltModel;
     }
     
+        public DefaultListModel<String> listaFavoritos()
+    {
+        DefaultListModel<String> ltModel = new DefaultListModel<String>();
+        DisciplinaModel disc[] = dc.getDisciplinas();
+        
+        for(int i = 0; i< disc.length;i++)
+        {
+            ltModel.addElement(disc[i].getNomeDisc());
+        }
+        
+        return ltModel;
+    }
+    
     public ControleFavoritosView() {
         initComponents();
         DisciplinasLt.setModel(listaDisciplinas());
