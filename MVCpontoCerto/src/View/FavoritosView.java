@@ -6,8 +6,12 @@
 package View;
 import Controller.DisciplinasController;
 import Controller.FluxoTelasController;
+import Util.Order;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.*;
+import Util.*;
 //import javax.swing.ListModel;
 
 /**
@@ -24,7 +28,8 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     public FavoritosView() {
         initComponents();
         DisciplinasLt.setModel(dc.listaDisciplinas());
-        FavoritosLt.setModel(dc.listaFavoritos());
+        FavoritosLt.setModel(dc.listaFavoritos());        
+        
 //        fav = new FavoritosModel();
 //        
 //        if(fav.getNomeFavoritos().getSize()>0)
@@ -45,12 +50,12 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void initComponents() {
 
         DisciplinasSP = new javax.swing.JScrollPane();
-        DisciplinasLt = new javax.swing.JList<>();
+        DisciplinasLt = new javax.swing.JList<String>();
         DisciplinasLb = new javax.swing.JLabel();
         FavoritosLb = new javax.swing.JLabel();
         ImportarFavBt = new javax.swing.JButton();
         FavoritosSP = new javax.swing.JScrollPane();
-        FavoritosLt = new javax.swing.JList<>();
+        FavoritosLt = new javax.swing.JList<String>();
         EditarBt = new javax.swing.JButton();
         InstrucoesLb = new javax.swing.JLabel();
         RemoverBt = new javax.swing.JButton();
@@ -197,7 +202,6 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ImportarFavBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportarFavBtActionPerformed
@@ -227,6 +231,9 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     }
     
     DisciplinasLt.setModel(listModel2);
+    
+    DisciplinasLt.setModel(Order.ordenaListModel((DefaultListModel)DisciplinasLt.getModel()));
+    FavoritosLt.setModel(Order.ordenaListModel((DefaultListModel)FavoritosLt.getModel()));
     }//GEN-LAST:event_ImportarFavBtActionPerformed
 
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
@@ -273,7 +280,9 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     }
     
     FavoritosLt.setModel(listModel2);
-
+    
+    DisciplinasLt.setModel(Order.ordenaListModel((DefaultListModel)DisciplinasLt.getModel()));
+    FavoritosLt.setModel(Order.ordenaListModel((DefaultListModel)FavoritosLt.getModel()));
     }//GEN-LAST:event_RemoverBtActionPerformed
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
