@@ -6,18 +6,18 @@
 package View;
 
 import Controller.FluxoTelasController;
-import View.ControleFavoritosView;
+import View.FavoritosView;
 
 /**
  *
  * @author Leonardo
  */
-public class ControleNotaView extends javax.swing.JFrame {
+public class NotaView extends javax.swing.JFrame {
 
     /**
      * Creates new form ControleDisciplinaView
      */
-    public ControleNotaView() {
+    public NotaView() {
         initComponents();
     }
 
@@ -161,7 +161,7 @@ public class ControleNotaView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
-        //new ControleFavoritosView().show();
+        //new FavoritosView().show();
         FluxoTelasController.cfv.setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
@@ -178,8 +178,8 @@ public class ControleNotaView extends javax.swing.JFrame {
         
         
         
-        double media = (double) NotasTb.getModel().getValueAt(line, 1) * (double) (NotasTb.getModel().getValueAt(line, 2))/10;
-        NotasTb.setValueAt(media, line, 3);
+        //double media = (double) NotasTb.getModel().getValueAt(line, 1) * (double) (NotasTb.getModel().getValueAt(line, 2))/10;
+        //NotasTb.setValueAt(media, line, 3);
         
         
         
@@ -203,21 +203,23 @@ public class ControleNotaView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ControleNotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ControleNotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ControleNotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ControleNotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NotaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ControleNotaView().setVisible(true);
+                new NotaView().setVisible(true);
             }
         });
     }

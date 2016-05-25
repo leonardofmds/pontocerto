@@ -20,12 +20,12 @@ import mvcpontocerto.hiperlink;
  *
  * @author labccet
  */
-public class ControleDisciplinaView extends javax.swing.JFrame {
+public class DisciplinaView extends javax.swing.JFrame {
 
     /**
      * Creates new form ControleDisciplinaView
      */
-    public ControleDisciplinaView() {
+    public DisciplinaView() {
         initComponents();
     }
 
@@ -133,7 +133,7 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
-        //new ControleFavoritosView().show();
+        //new FavoritosView().show();
         FluxoTelasController.cfv.setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
@@ -146,7 +146,7 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
         try {
             hp.open(new URI(MaterialLt.getModel().getElementAt(0)));
         } catch (URISyntaxException ex) {
-            Logger.getLogger(ControleDisciplinaView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(DisciplinaView.class.getName()).log(Level.SEVERE, null, ex);
         }
         
 
@@ -174,20 +174,21 @@ public class ControleDisciplinaView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ControleDisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ControleDisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ControleDisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ControleDisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ControleDisciplinaView().setVisible(true);
+                new DisciplinaView().setVisible(true);
             }
         });
     }

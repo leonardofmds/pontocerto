@@ -89,7 +89,7 @@ public class DenunciarView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelarDenunciaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarDenunciaBtActionPerformed
-        //new ControleDisciplinaView().show();
+        //new DisciplinaView().show();
         FluxoTelasController.cdv.setVisible(true);
         dispose();
     }//GEN-LAST:event_CancelarDenunciaBtActionPerformed

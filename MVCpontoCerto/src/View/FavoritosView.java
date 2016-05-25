@@ -14,14 +14,14 @@ import javax.swing.*;
  *
  * @author Leonardo
  */
-public class ControleFavoritosView extends javax.swing.JFrame implements Serializable {
+public class FavoritosView extends javax.swing.JFrame implements Serializable {
     DisciplinasController dc = new DisciplinasController();
     /**
      * Creates new form controleDisciplinasView
      */
 
     
-    public ControleFavoritosView() {
+    public FavoritosView() {
         initComponents();
         DisciplinasLt.setModel(dc.listaDisciplinas());
         FavoritosLt.setModel(dc.listaFavoritos());
@@ -128,8 +128,8 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(VoltarBt)
@@ -141,7 +141,7 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(DisciplinasLb)
                             .addGroup(layout.createSequentialGroup()
@@ -156,11 +156,11 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
                                 .addComponent(FavoritosLb)
                                 .addGap(159, 193, Short.MAX_VALUE))
                             .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(10, 10, 10))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(202, 202, 202))
+                        .addGap(10, 10, 10))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(202, 202, 202))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -231,7 +231,7 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
 
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
         // TODO add your handling code here:
-        ControleNotaView DiscView = FluxoTelasController.cnv;
+        NotaView DiscView = FluxoTelasController.cnv;
         FluxoTelasController.cnv.setVisible(true);
         
         
@@ -283,7 +283,7 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed
-        ControleDisciplinaView DiscView = FluxoTelasController.cdv;
+        DisciplinaView DiscView = FluxoTelasController.cdv;
         FluxoTelasController.cdv.setVisible(true);
         if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
         {
@@ -329,14 +329,18 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ControleFavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ControleFavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ControleFavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ControleFavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FavoritosView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -345,7 +349,7 @@ public class ControleFavoritosView extends javax.swing.JFrame implements Seriali
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ControleFavoritosView().setVisible(true);
+                new FavoritosView().setVisible(true);
                 
             }
         });

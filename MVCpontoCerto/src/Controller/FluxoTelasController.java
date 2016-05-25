@@ -16,9 +16,9 @@ public class FluxoTelasController
     public static HomeView hv = new HomeView();
     public static EnviarMaterialView emv = new EnviarMaterialView();
     public static DenunciarView dv = new DenunciarView();
-    public static ControleNotaView cnv = new ControleNotaView();
-    public static ControleFavoritosView cfv = new ControleFavoritosView();
-    public static ControleDisciplinaView cdv = new ControleDisciplinaView(); 
+    public static NotaView cnv = new NotaView();
+    public static FavoritosView cfv = new FavoritosView();
+    public static DisciplinaView cdv = new DisciplinaView(); 
     
     public FluxoTelasController()
     {

@@ -96,7 +96,7 @@ public class HomeView extends javax.swing.JFrame {
 
     private void DisciplinasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinasBtActionPerformed
         // TODO add your handling code here:
-//        ControleFavoritosView controlDiscView = new ControleFavoritosView();
+//        FavoritosView controlDiscView = new FavoritosView();
 //        controlDiscView.setVisible(true);
         //this.setVisible(false); 
         FluxoTelasController.cfv.setVisible(true);
