@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
-import mvcpontocerto.XML;
+import Util.XML;
 
 /**
  *

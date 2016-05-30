@@ -12,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 import javax.swing.*;
 import Util.*;
+import Util.MySQL_POST;
 //import javax.swing.ListModel;
 
 /**
@@ -23,12 +24,15 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     /**
      * Creates new form controleDisciplinasView
      */
-
+    
     
     public FavoritosView() {
+        //this.setLocationRelativeTo(null);
         initComponents();
-        DisciplinasLt.setModel(dc.listaDisciplinas());
-        FavoritosLt.setModel(dc.listaFavoritos());        
+        //this.setLocationRelativeTo(null);
+        //DisciplinasLt.setModel(dc.listaDisciplinas());
+        FavoritosLt.setModel(dc.listaFavoritos());  
+        DisciplinasLt.setModel(MySQL_POST.carregaListaDisc("select nome from disciplina"));
         
 //        fav = new FavoritosModel();
 //        
@@ -50,12 +54,12 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void initComponents() {
 
         DisciplinasSP = new javax.swing.JScrollPane();
-        DisciplinasLt = new javax.swing.JList<String>();
+        DisciplinasLt = new javax.swing.JList<>();
         DisciplinasLb = new javax.swing.JLabel();
         FavoritosLb = new javax.swing.JLabel();
         ImportarFavBt = new javax.swing.JButton();
         FavoritosSP = new javax.swing.JScrollPane();
-        FavoritosLt = new javax.swing.JList<String>();
+        FavoritosLt = new javax.swing.JList<>();
         EditarBt = new javax.swing.JButton();
         InstrucoesLb = new javax.swing.JLabel();
         RemoverBt = new javax.swing.JButton();
@@ -202,6 +206,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ImportarFavBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportarFavBtActionPerformed

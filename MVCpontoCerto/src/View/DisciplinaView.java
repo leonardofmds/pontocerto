@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JEditorPane;
-import mvcpontocerto.hiperlink;
+import Util.hiperlink;
 
 /**
  *

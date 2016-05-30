@@ -8,6 +8,7 @@ package View;
 import Controller.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import Util.MySQL_POST;
 
 /**
  *
@@ -99,6 +100,8 @@ public class HomeView extends javax.swing.JFrame {
 //        FavoritosView controlDiscView = new FavoritosView();
 //        controlDiscView.setVisible(true);
         //this.setVisible(false); 
+        //MySQL_POST.main("select nome from disciplinas");
+        //MySQL_POST.carregaListaDisc("select nome from disciplina");
         FluxoTelasController.cfv.setVisible(true);
         this.setVisible(false);
         
