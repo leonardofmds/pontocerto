@@ -4,7 +4,9 @@
  */
 package Util;
 
+import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -14,6 +16,27 @@ import java.io.IOException;
  */
 public class XML 
 {
+    public static Object reader(String filename)
+    {
+        Object o = new Object();
+        try{
+            XMLDecoder xmlDecoder = null;
+            try{
+                xmlDecoder = new XMLDecoder(
+                        new FileInputStream(filename+".xml"));
+                o = xmlDecoder.readObject();   
+            } finally{
+                if(xmlDecoder != null)
+                    xmlDecoder.close();
+            }
+        } catch(IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        
+        return o;
+    }
+    
     public static void writter(Object o, String file)
     {
     try{

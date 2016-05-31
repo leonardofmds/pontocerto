@@ -5,36 +5,49 @@
  */
 package Model;
 
+import Util.XML;
+import java.io.Serializable;
+
 /**
  *
  * @author Leonardo
  */
-public class DisciplinaModel 
+public class DisciplinaModel implements Serializable
 {
     private int iddisc = 0;
-    private String nomedisc = null;
+    private String nomeDisc = null;
     private double media = 0;
     private boolean favorito = false;
     private NotaModel[] notas = null;  
 
+    public int getIddisc() {
+        return iddisc;
+    }
+
+    public void setIddisc(int iddisc) {
+        this.iddisc = iddisc;
+    }
+
+
     public DisciplinaModel()
     {
-        
+
     }
     
+    
     public DisciplinaModel(String nomedisc, double media, boolean favorito, NotaModel[] notas) {
-        this.nomedisc = nomedisc;
+        this.nomeDisc = nomedisc;
         this.media = media;
         this.favorito = favorito;
         this.notas = notas;
     }
 
     public String getNomeDisc() {
-        return nomedisc;
+        return nomeDisc;
     }
 
     public void setNomeDisc(String nomedisc) {
-        this.nomedisc = nomedisc;
+        this.nomeDisc = nomedisc;
     }
 
     public double getMedia() {
@@ -59,6 +72,11 @@ public class DisciplinaModel
 
     public void setNotas(NotaModel[] notas) {
         this.notas = notas;
+    }
+    
+    public void salvaDisciplina()
+    {
+        XML.writter(this, ("Disciplinas/"+this.hashCode()));
     }
         
 }

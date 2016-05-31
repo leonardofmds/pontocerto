@@ -15,7 +15,7 @@ import javax.crypto.spec.SecretKeySpec;
  */
 public class Crypt 
 {
-    private static final String KEY = "nops";
+    private static final String KEY = "13456212a573321cbb2f8bf984565090";
     
     public static String encrypt(final String plaintext) throws GeneralSecurityException 
     {

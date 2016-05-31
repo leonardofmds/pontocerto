@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package View;
-import Controller.DisciplinasController;
+import Controller.*;
 import Controller.FluxoTelasController;
 import Util.Order;
 import java.io.Serializable;
@@ -21,6 +21,7 @@ import Util.MySQL_POST;
  */
 public class FavoritosView extends javax.swing.JFrame implements Serializable {
     DisciplinasController dc = new DisciplinasController();
+    //DisciplinasController2 dc2 = new DisciplinasController2();
     /**
      * Creates new form controleDisciplinasView
      */
@@ -30,9 +31,11 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         //this.setLocationRelativeTo(null);
         initComponents();
         //this.setLocationRelativeTo(null);
-        //DisciplinasLt.setModel(dc.listaDisciplinas());
+        DisciplinasLt.setModel(dc.listaDisciplinas());
         FavoritosLt.setModel(dc.listaFavoritos());  
-        DisciplinasLt.setModel(MySQL_POST.carregaListaDisc("select nome from disciplina"));
+        DisciplinasLt.setModel(Order.ordenaListModel((DefaultListModel)DisciplinasLt.getModel()));
+        FavoritosLt.setModel(Order.ordenaListModel((DefaultListModel)FavoritosLt.getModel()));
+        //DisciplinasLt.setModel(MySQL_POST.carregaListaDisc("select nome from disciplina"));
         
 //        fav = new FavoritosModel();
 //        

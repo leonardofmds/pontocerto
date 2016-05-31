@@ -6,6 +6,7 @@
 package Controller;
 
 import Model.*;
+import Util.MySQL_POST;
 import java.beans.XMLDecoder;
 import java.beans.XMLEncoder;
 import java.io.FileInputStream;
@@ -15,6 +16,7 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 import Util.XML;
+import java.util.Arrays;
 
 /**
  *
@@ -28,9 +30,12 @@ public class DisciplinasController
     
     public DisciplinasController() 
     {
-        //saveListNomeFavoritos();
+        //saveListNomeFavoritos()
+        //MySQL_POST.carregaListaDisc("select nome from disciplina");
         leDisciplinas();
         leFavoritos();
+        
+        //d = MySQL_POST.carregaListaDisc("select nome from disciplina").getItems();
         disciplinas = new DisciplinaModel[nDisc];
         for(int i = 0; i<d.length;i++)
         {
@@ -120,39 +125,13 @@ public class DisciplinasController
     }
     private void leDisciplinas()
     {
-        try{
-            XMLDecoder xmlDecoder = null;
-            try{
-                xmlDecoder = new XMLDecoder(
-                        new FileInputStream("Disciplinas.xml"));
-                d = (String[]) xmlDecoder.readObject();   
-            } finally{
-                if(xmlDecoder != null)
-                    xmlDecoder.close();
-            }
-        } catch(IOException e)
-        {
-            System.out.println(e.getMessage());
-        } 
+        d = (String[])XML.reader("Disciplinas");
         
         nDisc = nDisc + d.length;
     }
     private void leFavoritos()
     {
-        try{
-            XMLDecoder xmlDecoder = null;
-            try{
-                xmlDecoder = new XMLDecoder(
-                        new FileInputStream("Favoritos.xml"));
-                f = (String[]) xmlDecoder.readObject();   
-            } finally{
-                if(xmlDecoder != null)
-                    xmlDecoder.close();
-            }
-        } catch(IOException e)
-        {
-            System.out.println(e.getMessage());
-        } 
+       f = (String[])XML.reader("Favoritos");
         
         nDisc = nDisc + f.length;
     }

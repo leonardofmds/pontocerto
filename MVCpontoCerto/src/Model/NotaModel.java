@@ -5,23 +5,47 @@
  */
 package Model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Leonardo
  */
-public class NotaModel 
+public class NotaModel implements Serializable
 {
     private double nota,nfinal;
     private int peso, idnota; 
     private String tipo;
 
+    public NotaModel()
+    {
+        
+    }
+            
     public NotaModel(String tipo, double nota, int peso, double nfinal, int idnota) {
         this.tipo = tipo;
         this.nota = nota;
         this.peso = peso;
         this.idnota = idnota;
         this.nfinal = nfinal;        
-    };
+    }
+
+    public double getNfinal() {
+        return nfinal;
+    }
+
+    public void setNfinal(double nfinal) {
+        this.nfinal = nfinal;
+    }
+
+    public int getIdnota() {
+        return idnota;
+    }
+
+    public void setIdnota(int idnota) {
+        this.idnota = idnota;
+    }
+
 
     public String getTipo() {
         return tipo;

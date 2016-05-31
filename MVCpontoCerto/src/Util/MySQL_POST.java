@@ -12,6 +12,7 @@ import java.io.*;
 import java.net.*;
 import java.applet.*;
 import java.security.*;
+import java.util.Arrays;
 
 public class MySQL_POST {
     
@@ -49,7 +50,7 @@ public class MySQL_POST {
     }
     }
     
-    public static DefaultListModel<String> carregaListaDisc(String qr)
+    public static DefaultListModel<String> carregaListaDiscModel(String qr)
     {
         DefaultListModel<String> lt = new DefaultListModel<>();
         HttpURLConnection conn=null;
@@ -90,5 +91,48 @@ public class MySQL_POST {
         System.out.print(lt);
         return lt;
     }
+    
+    public static List carregaListaDisc(String qr)
+    {
+        List lt = new List();
+        HttpURLConnection conn=null;
+        try{
+        URL url=new URL("http://leonardomenezes.pe.hu/conn.php");
+        String agent="Applet";
+        String query="query=" + Crypt.encrypt(qr);
+        String type="application/x-www-form-urlencoded";
+        conn=(HttpURLConnection)url.openConnection();
+        conn.setDoInput(true);
+        conn.setDoOutput(true);
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty( "User-Agent", agent );
+        conn.setRequestProperty( "Content-Type", type );
+        conn.setRequestProperty( "Content-Length", ""+query.length());
+
+        OutputStream out=conn.getOutputStream();
+        out.write(query.getBytes());
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        boolean removeQry = false;
+        while((inputLine=in.readLine())!=null){
+            if(removeQry)
+                //System.out.print(inputLine.replaceAll(" ", agent));
+                lt.add(inputLine);
+            removeQry = true;            
+        };
+        in.close();
+        int rc = conn.getResponseCode();
+        System.out.print("Response Code = "+rc+"\n");
+        String rm=conn.getResponseMessage();
+        System.out.print("Response Message = "+rm+"\n");
+        }catch(Exception e){
+        e.printStackTrace();
+        }finally{
+        conn.disconnect();
+        }
+        //System.out.println(Arrays.toString(lt.getItems()));
+        return lt;
+    }
+    
 
     }

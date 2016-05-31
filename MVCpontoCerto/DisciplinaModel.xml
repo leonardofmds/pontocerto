@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_73" class="java.beans.XMLDecoder">
+ <object class="Model.DisciplinaModel">
+  <void property="nomeDisc">
+   <string>	60	Tóp Avan em Redes de Comp III</string>
+  </void>
+ </object>
+</java>
