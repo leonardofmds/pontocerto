@@ -29,7 +29,7 @@ public class DisciplinasController2
     {
         for(int i = 0;i< disciplinas.length;i++)
         {
-            disciplinas[i].salvaDisciplina();
+            //disciplinas[i].salvaDisciplina();
         }
     }
     
