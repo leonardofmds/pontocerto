@@ -13,6 +13,7 @@ import java.io.Serializable;
  */
 public class NotaModel implements Serializable
 {
+    private DisciplinaModel disciplina;
     private double nota,nfinal;
     private int peso, idnota; 
     private String tipo;
@@ -29,20 +30,6 @@ public class NotaModel implements Serializable
 //        this.idnota = idnota;
 //        this.nfinal = nfinal;        
 //    }
-
-   
-
-//    public void setNFinal(double nfinal) {
-//             
-//        double nt = getNota();
-//        int pes = getPeso();
-//        
-//        nfinal = nt*(pes/10);
-//        
-//        this.nfinal = nfinal;
-//    }
-    
-    
 
     public double getNota() {
         return nota;

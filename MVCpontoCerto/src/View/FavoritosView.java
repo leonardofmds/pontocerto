@@ -5,7 +5,6 @@
  */
 package View;
 import Controller.*;
-import Controller.FluxoTelasController;
 import Util.Order;
 import java.io.Serializable;
 import java.util.Arrays;
@@ -21,12 +20,18 @@ import Util.MySQL_POST;
  */
 public class FavoritosView extends javax.swing.JFrame implements Serializable {
     DisciplinasController dc = new DisciplinasController();
-    //DisciplinasController2 dc2 = new DisciplinasController2();
+    DisciplinasController2 dc2 = new DisciplinasController2();
     /**
      * Creates new form controleDisciplinasView
      */
     
+    public DisciplinasController2 getDisciplinaController2()
+    {
+        return dc2;
+    }
     
+            
+            
     public FavoritosView() {
         //this.setLocationRelativeTo(null);
         initComponents();
@@ -247,7 +252,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
         // TODO add your handling code here:
         NotaView DiscView = FluxoTelasController.cnv;
-        FluxoTelasController.cnv.setVisible(true);
+        DiscView.setVisible(true);
         
         
         if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)

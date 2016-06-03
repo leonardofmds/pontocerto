@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_45" class="java.beans.XMLDecoder">
+ <object class="Model.DisciplinaModel">
+  <void property="favorito">
+   <boolean>true</boolean>
+  </void>
+  <void property="iddisc">
+   <int>24</int>
+  </void>
+  <void property="media">
+   <double>10.0</double>
+  </void>
+  <void property="nomeDisc">
+   <string>PCS</string>
+  </void>
+  <void property="notas">
+   <array class="Model.NotaModel" length="10">
+    <void index="0">
+     <object class="Model.NotaModel"/>
+    </void>
+    <void index="1">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>1.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="2">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>2.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="3">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>3.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="4">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>4.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="5">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>5.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="6">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>6.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="7">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>7.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="8">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>8.0</double>
+      </void>
+     </object>
+    </void>
+    <void index="9">
+     <object class="Model.NotaModel">
+      <void property="nota">
+       <double>9.0</double>
+      </void>
+     </object>
+    </void>
+   </array>
+  </void>
+ </object>
+</java>

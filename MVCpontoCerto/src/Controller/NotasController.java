@@ -6,6 +6,12 @@
 package Controller;
 
 import Model.*;
+import java.beans.XMLDecoder;
+import java.beans.XMLEncoder;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -14,7 +20,7 @@ import Model.*;
 public class NotasController {
     NotaModel notas[];
     
-    public double CalculaNotaPeso(double nota, int peso){
+    public double CalculaNotaPeso(double nota, double peso){
         double notapeso;
         
         notapeso = nota*(peso/10);

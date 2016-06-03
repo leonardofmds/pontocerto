@@ -9,6 +9,7 @@ import Model.DisciplinaModel;
 import Model.NotaModel;
 import Util.XML;
 import View.*;
+import Controller.*;
 
 /**
  *
@@ -21,17 +22,21 @@ public class FluxoTelasController
     public static DenunciarView dv = new DenunciarView();
     public static NotaView cnv = new NotaView();
     public static FavoritosView cfv = new FavoritosView();
-    public static DisciplinaView cdv = new DisciplinaView(); 
+    public static DisciplinaView cdv = new DisciplinaView();
+    
+    public static DisciplinasController2 dc2 = new DisciplinasController2();
+    public static NotasController nc = new NotasController();
+    public static DisciplinasController dc = new DisciplinasController();
     
     public FluxoTelasController()
     {
-
+        
     }
     
     public static void main(String[] args) {
 //        // TODO code application logic here
 //        ftc = new FluxoTelasController(); 
-        //hv.setVisible(true);
+        hv.setVisible(true);
         DisciplinaModel dm = new DisciplinaModel();
         dm.setIddisc(24);
         dm.setNomeDisc("PCS");

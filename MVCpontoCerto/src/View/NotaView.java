@@ -5,15 +5,21 @@
  */
 package View;
 
-import Controller.FluxoTelasController;
+import Controller.*;
 import View.FavoritosView;
+import java.util.Vector;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Leonardo
  */
 public class NotaView extends javax.swing.JFrame {
-
+    NotasController nt = new NotasController();
+    
+    DisciplinasController dc;
+    
     /**
      * Creates new form ControleDisciplinaView
      */
@@ -167,22 +173,27 @@ public class NotaView extends javax.swing.JFrame {
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void NovaNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovaNotaBtActionPerformed
-       
+
+        DefaultTableModel dtmAdd = new DefaultTableModel();
+
+        dtmAdd = (DefaultTableModel) NotasTb.getModel();
+        dtmAdd.setRowCount(dtmAdd.getRowCount()+1);
+        NotasTb.setModel(dtmAdd); 
     }//GEN-LAST:event_NovaNotaBtActionPerformed
 
     private void SalvarNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarNotaBtActionPerformed
         NotasTb.selectAll();   
         int line = NotasTb.getSelectedRow();     
         
+        double media = nt.CalculaNotaPeso((double) NotasTb.getModel().getValueAt(line, 1), (double)NotasTb.getModel().getValueAt(line, 2));
+        NotasTb.setValueAt(media, line, 3); 
+        
+        NotasTb.setEditingRow(line);
+        
+        DisciplinasController2 dc = FluxoTelasController.cfv.getDisciplinaController2();
+        
+        dc.getDisciplinas();
                 
-        
-        
-        
-        //double media = (double) NotasTb.getModel().getValueAt(line, 1) * (double) (NotasTb.getModel().getValueAt(line, 2))/10;
-        //NotasTb.setValueAt(media, line, 3);
-        
-        
-        
         
     }//GEN-LAST:event_SalvarNotaBtActionPerformed
 

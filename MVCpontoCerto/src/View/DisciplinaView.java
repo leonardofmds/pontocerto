@@ -62,11 +62,6 @@ public class DisciplinaView extends javax.swing.JFrame {
             }
         });
 
-        MaterialLt.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Prova2 2016.1" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(MaterialLt);
 
         VisualizarBt.setText("Visualizar");
@@ -79,6 +74,11 @@ public class DisciplinaView extends javax.swing.JFrame {
 
         BaixarBt.setText("Baixar");
         BaixarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BaixarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BaixarBtActionPerformed(evt);
+            }
+        });
 
         DenunciarBt.setText("Denunciar");
         DenunciarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -156,6 +156,10 @@ public class DisciplinaView extends javax.swing.JFrame {
         new DenunciarView().show();
         dispose();
     }//GEN-LAST:event_DenunciarBtActionPerformed
+
+    private void BaixarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaixarBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BaixarBtActionPerformed
 
     /**
      * @param args the command line arguments
