@@ -7,6 +7,7 @@ package Model;
 
 import Util.XML;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,8 +19,8 @@ public class DisciplinaModel implements Serializable
     private String nomeDisc;
     private double media;
     private boolean favorito;
-    private NotaModel[] notas;  
-
+    //private NotaModel[] notas;  
+    ArrayList<NotaModel> notas = new ArrayList<NotaModel>();
     public DisciplinaModel()
     {
 
@@ -34,14 +35,14 @@ public class DisciplinaModel implements Serializable
 //        this.notas = notas;
 //    }
 
-    public NotaModel[] getNotas() {
+    public ArrayList<NotaModel> getNotas() {
         return notas;
     }
 
-    public void setNotas(NotaModel[] notas) {
+    public void setNotas(ArrayList<NotaModel> notas) {
         this.notas = notas;
     }
-   
+    
     public int getIddisc() {
         return iddisc;
     }

@@ -13,7 +13,6 @@ import java.io.Serializable;
  */
 public class NotaModel implements Serializable
 {
-    private DisciplinaModel disciplina;
     private double nota,nfinal;
     private int peso, idnota; 
     private String tipo;

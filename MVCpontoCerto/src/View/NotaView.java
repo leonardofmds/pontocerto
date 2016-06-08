@@ -19,8 +19,10 @@ public class NotaView extends javax.swing.JFrame {
     /**
      * Creates new form ControleDisciplinaView
      */
+    DisciplinasController2 dc;
     public NotaView() {
         initComponents();
+        dc = FluxoTelasController.getDc2();
     }
 
     /**
