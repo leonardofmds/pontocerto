@@ -7,11 +7,8 @@ package View;
 import Controller.*;
 import Util.Order;
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.List;
 import javax.swing.*;
-import Util.*;
-import Util.MySQL_POST;
+
 //import javax.swing.ListModel;
 
 /**
@@ -25,6 +22,10 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
      * Creates new form controleDisciplinasView
      */
     
+    /**
+     * Creates new form controleDisciplinasView
+     * @return
+     */
     public DisciplinasController2 getDisciplinaController2()
     {
         return dc2;

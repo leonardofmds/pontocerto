@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_45" class="java.beans.XMLDecoder">
- <array class="java.lang.String" length="55">
+ <array class="java.lang.String" length="57">
   <void index="0">
    <string>Introdução à Lógica Computac.</string>
   </void>
@@ -165,6 +165,12 @@
   </void>
   <void index="54">
    <string>Administração Financeira</string>
+  </void>
+  <void index="55">
+   <string>Banco de Dados II</string>
+  </void>
+  <void index="56">
+   <string>Compiladores</string>
   </void>
  </array>
 </java>

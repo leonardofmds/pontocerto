@@ -6,17 +6,9 @@
 package Controller;
 
 import Model.*;
-import Util.MySQL_POST;
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 import Util.XML;
-import java.util.Arrays;
 
 /**
  *

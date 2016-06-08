@@ -6,9 +6,7 @@
 package View;
 
 import Controller.*;
-import View.FavoritosView;
-import java.util.Vector;
-import javax.swing.JTable;
+import Model.DisciplinaModel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -16,9 +14,8 @@ import javax.swing.table.DefaultTableModel;
  * @author Leonardo
  */
 public class NotaView extends javax.swing.JFrame {
-    NotasController nt = new NotasController();
-    
-    DisciplinasController dc;
+     
+    DisciplinasController dc = new DisciplinasController();
     
     /**
      * Creates new form ControleDisciplinaView
@@ -185,10 +182,18 @@ public class NotaView extends javax.swing.JFrame {
         NotasTb.selectAll();   
         int line = NotasTb.getSelectedRow();     
         
-        double media = nt.CalculaNotaPeso((double) NotasTb.getModel().getValueAt(line, 1), (double)NotasTb.getModel().getValueAt(line, 2));
-        NotasTb.setValueAt(media, line, 3); 
         
-        NotasTb.setEditingRow(line);
+        DisciplinaModel[] dm = dc.getDisciplinas();
+        dm[0].getNotas()
+        
+        //double media = nt.CalculaNotaPeso((double) NotasTb.getModel().getValueAt(line, 1), (double)NotasTb.getModel().getValueAt(line, 2));
+        //NotasTb.setValueAt(media, line, 3);         
+        
+        DefaultTableModel dtmAdd = new DefaultTableModel();
+
+        dtmAdd = (DefaultTableModel) NotasTb.getModel();      
+                         
+        NotasTb.setModel(dtmAdd); 
         
         DisciplinasController2 dc = FluxoTelasController.cfv.getDisciplinaController2();
         

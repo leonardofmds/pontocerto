@@ -6,12 +6,7 @@
 package Controller;
 
 import Model.*;
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import javax.swing.table.TableModel;
+import Controller.FluxoTelasController;
 
 /**
  *

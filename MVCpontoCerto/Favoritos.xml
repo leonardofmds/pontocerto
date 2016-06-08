@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_45" class="java.beans.XMLDecoder">
- <array class="java.lang.String" length="5">
+ <array class="java.lang.String" length="3">
   <void index="0">
    <string>Administ. de Banco de Dados</string>
   </void>
@@ -8,13 +8,7 @@
    <string>Análise Empresarial e Admin.</string>
   </void>
   <void index="2">
-   <string>Compiladores</string>
-  </void>
-  <void index="3">
    <string>Comunic. e Segurança de Dados</string>
-  </void>
-  <void index="4">
-   <string>Banco de Dados II</string>
   </void>
  </array>
 </java>

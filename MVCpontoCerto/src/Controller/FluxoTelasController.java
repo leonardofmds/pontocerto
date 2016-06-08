@@ -49,5 +49,29 @@ public class FluxoTelasController
         
     }
         
+    
+    public DisciplinasController2 getDisciplina2() {
+        return dc2;
+    }
+
+    public void setDisciplina2(DisciplinasController2 dc2) {
+        this.dc2 = dc2;
+    }
+    
+    public DisciplinasController getDisciplina() {
+        return dc;
+    }
+
+    public void setDisciplina2(DisciplinasController dc) {
+        this.dc = dc;
+    }
+    
+    public NotasController getNotas() {
+        return nc;
+    }
+
+    public void setNotas(NotasController nc) {
+        this.nc = nc;
+    }
    
 }
