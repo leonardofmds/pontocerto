@@ -102,7 +102,7 @@ public class HomeView extends javax.swing.JFrame {
         //this.setVisible(false); 
         //MySQL_POST.main("select nome from disciplinas");
         //MySQL_POST.carregaListaDisc("select nome from disciplina");
-        FluxoTelasController.cfv.setVisible(true);
+        FluxoTelasController.getCfv().setVisible(true);
         this.setVisible(false);
         
         //DisciplinasController dc = new DisciplinasController();
@@ -111,7 +111,7 @@ public class HomeView extends javax.swing.JFrame {
     }//GEN-LAST:event_DisciplinasBtActionPerformed
 
     private void EnviarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarBtActionPerformed
-        FluxoTelasController.emv.setVisible(true);
+        FluxoTelasController.getEmv().setVisible(true);
         this.setVisible(false); 
     }//GEN-LAST:event_EnviarBtActionPerformed
 

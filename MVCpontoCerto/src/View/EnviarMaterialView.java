@@ -5,15 +5,13 @@
  */
 package View;
 
-import Controller.*;
+import Controller.FluxoTelasController;
 
 /**
  *
  * @author labccet
  */
 public class EnviarMaterialView extends javax.swing.JFrame {
-    
-    MateriaisController material = new MateriaisController();
 
     /**
      * Creates new form EnviarMaterialView
@@ -143,13 +141,12 @@ public class EnviarMaterialView extends javax.swing.JFrame {
 
     private void CancelaMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelaMaterialBtActionPerformed
         //new HomeView().show();
-        FluxoTelasController.hv.setVisible(true);
+        FluxoTelasController.getHv().setVisible(true);
         dispose();
     }//GEN-LAST:event_CancelaMaterialBtActionPerformed
 
     private void EnviarMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMaterialBtActionPerformed
         // TODO add your handling code here:
-        material.EnviaMaterial();
     }//GEN-LAST:event_EnviarMaterialBtActionPerformed
 
     /**

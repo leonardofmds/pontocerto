@@ -134,7 +134,7 @@ public class DisciplinaView extends javax.swing.JFrame {
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         //new FavoritosView().show();
-        FluxoTelasController.cfv.setVisible(true);
+        FluxoTelasController.getCfv().setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
 

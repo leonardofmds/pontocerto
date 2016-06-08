@@ -7,6 +7,7 @@ package Controller;
 
 import Model.DisciplinaModel;
 import Util.MySQL_POST;
+import Util.XML;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 
@@ -27,23 +28,32 @@ public class DisciplinasController2
     
     public void serializaDisciplinas()
     {
-        for(int i = 0;i< disciplinas.length;i++)
-        {
-            //disciplinas[i].salvaDisciplina();
+//        for(int i = 0;i< disciplinas.length;i++)
+//        {
+//            //disciplinas[i].salvaDisciplina();
+//        }       
+        XML.writter(disciplinas, "Disciplinas/Disciplinas");
         }
-    }
     
     public void carregaDisciplinas()
     {
-        d = MySQL_POST.carregaListaDisc("select nome from disciplina").getItems();
-        //String id[] = MySQL_POST.carregaListaDisc("select id from disciplina").getItems();
-        disciplinas = new DisciplinaModel[d.length];
-        for(int i = 0; i< d.length; i++)
-        {
-            disciplinas[i] = new DisciplinaModel();
-            disciplinas[i].setNomeDisc(d[i]);
-            disciplinas[i].setFavorito(false);
-        }
+        //Object o = XML.reader("Projeto e Construção de Sistemas");
+        
+        
+//        d = MySQL_POST.carregaListaDisc("select nome from disciplina").getItems();
+//        //String id[] = MySQL_POST.carregaListaDisc("select id from disciplina").getItems();
+//        disciplinas = new DisciplinaModel[d.length];
+//        for(int i = 0; i< d.length; i++)
+//        {
+//            disciplinas[i] = new DisciplinaModel();
+//            disciplinas[i].setNomeDisc(d[i]);
+//            disciplinas[i].setFavorito(false);
+//        }
+        
+        disciplinas = (DisciplinaModel[])XML.reader("Disciplinas/Disciplinas");
+        
+        
+        
     }
     
     public DefaultListModel<String> listaDisciplinas()
@@ -106,7 +116,5 @@ public class DisciplinasController2
     {
         this.disciplinas = disciplinas;
     }
-    
-    
-        
+           
 }

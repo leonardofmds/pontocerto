@@ -7,7 +7,6 @@ package Model;
 
 import Util.XML;
 import java.io.Serializable;
-import Model.NotaModel;
 
 /**
  *
@@ -23,16 +22,17 @@ public class DisciplinaModel implements Serializable
 
     public DisciplinaModel()
     {
-       notas = new NotaModel[2];
+
     }
-       
+    
+    
         
-    public DisciplinaModel(String nomedisc, double media, boolean favorito, NotaModel[] notas) {;
-        this.nomeDisc = nomedisc;
-        this.media = media;
-        this.favorito = favorito;
-        this.notas = notas;
-    }
+//    public DisciplinaModel(String nomedisc, double media, boolean favorito, NotaModel[] notas) {
+//        this.nomeDisc = nomedisc;
+//        this.media = media;
+//        this.favorito = favorito;
+//        this.notas = notas;
+//    }
 
     public NotaModel[] getNotas() {
         return notas;

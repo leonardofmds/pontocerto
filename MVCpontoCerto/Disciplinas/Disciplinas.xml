@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_45" class="java.beans.XMLDecoder">
+ <array class="Model.DisciplinaModel" length="60">
+  <void index="0">
+   <object class="Model.DisciplinaModel">
+    <void property="favorito">
+     <boolean>true</boolean>
+    </void>
+    <void property="nomeDisc">
+     <string>	Administração Financeira</string>
+    </void>
+   </object>
+  </void>
+  <void index="1">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Álgebra Linear</string>
+    </void>
+   </object>
+  </void>
+  <void index="2">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Análise de Algoritmo</string>
+    </void>
+   </object>
+  </void>
+  <void index="3">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Análise de Sistemas</string>
+    </void>
+   </object>
+  </void>
+  <void index="4">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Análise Empresarial e Admin</string>
+    </void>
+   </object>
+  </void>
+  <void index="5">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Banco de Dados I</string>
+    </void>
+   </object>
+  </void>
+  <void index="6">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Banco de Dados II</string>
+    </void>
+   </object>
+  </void>
+  <void index="7">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Cálculo Diferenc e Integral I</string>
+    </void>
+   </object>
+  </void>
+  <void index="8">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Cálculo Diferenc e Integral II</string>
+    </void>
+   </object>
+  </void>
+  <void index="9">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Desenvolv de Páginas Web</string>
+    </void>
+   </object>
+  </void>
+  <void index="10">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Empreendedorismo</string>
+    </void>
+   </object>
+  </void>
+  <void index="11">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Estatística</string>
+    </void>
+   </object>
+  </void>
+  <void index="12">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Estruturas de Dados I</string>
+    </void>
+   </object>
+  </void>
+  <void index="13">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Estruturas de Dados II</string>
+    </void>
+   </object>
+  </void>
+  <void index="14">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Estruturas Discretas</string>
+    </void>
+   </object>
+  </void>
+  <void index="15">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Fund de Sist de Informação</string>
+    </void>
+   </object>
+  </void>
+  <void index="16">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Gerência de Proj de Informat</string>
+    </void>
+   </object>
+  </void>
+  <void index="17">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Interação Humano Computador</string>
+    </void>
+   </object>
+  </void>
+  <void index="18">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Introdução à Lógica Computac</string>
+    </void>
+   </object>
+  </void>
+  <void index="19">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Linguag Formais e Autômatos</string>
+    </void>
+   </object>
+  </void>
+  <void index="20">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Matemática Básica</string>
+    </void>
+   </object>
+  </void>
+  <void index="21">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Organização de Computadores</string>
+    </void>
+   </object>
+  </void>
+  <void index="22">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Probabilidade</string>
+    </void>
+   </object>
+  </void>
+  <void index="23">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Processos de Software</string>
+    </void>
+   </object>
+  </void>
+  <void index="24">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Programação Modular</string>
+    </void>
+   </object>
+  </void>
+  <void index="25">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Projeto de Graduação I</string>
+    </void>
+   </object>
+  </void>
+  <void index="26">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Projeto de Graduação II</string>
+    </void>
+   </object>
+  </void>
+  <void index="27">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Proj e Const de Sistemas</string>
+    </void>
+   </object>
+  </void>
+  <void index="28">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Proj Const Sistemas-SGBD</string>
+    </void>
+   </object>
+  </void>
+  <void index="29">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Redes de Computadores I</string>
+    </void>
+   </object>
+  </void>
+  <void index="30">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Redes de Computadores II</string>
+    </void>
+   </object>
+  </void>
+  <void index="31">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Sistemas Operacionais</string>
+    </void>
+   </object>
+  </void>
+  <void index="32">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Técnicas de Programação I</string>
+    </void>
+   </object>
+  </void>
+  <void index="33">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Técnicas de Programação II</string>
+    </void>
+   </object>
+  </void>
+  <void index="34">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Teorias e Práticas Discursivas</string>
+    </void>
+   </object>
+  </void>
+  <void index="35">
+   <object class="Model.DisciplinaModel">
+    <void property="favorito">
+     <boolean>true</boolean>
+    </void>
+    <void property="nomeDisc">
+     <string>	Administ de Banco de Dados</string>
+    </void>
+   </object>
+  </void>
+  <void index="36">
+   <object class="Model.DisciplinaModel">
+    <void property="favorito">
+     <boolean>true</boolean>
+    </void>
+    <void property="nomeDisc">
+     <string>	Algoritmos p/ Prob Combinat</string>
+    </void>
+   </object>
+  </void>
+  <void index="37">
+   <object class="Model.DisciplinaModel">
+    <void property="favorito">
+     <boolean>true</boolean>
+    </void>
+    <void property="nomeDisc">
+     <string>	Ambiente Operacional Unix</string>
+    </void>
+   </object>
+  </void>
+  <void index="38">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Compiladores</string>
+    </void>
+   </object>
+  </void>
+  <void index="39">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Computação Gráfica</string>
+    </void>
+   </object>
+  </void>
+  <void index="40">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Comunic e Segurança de Dados</string>
+    </void>
+   </object>
+  </void>
+  <void index="41">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Desenvolv de Servidor Web</string>
+    </void>
+   </object>
+  </void>
+  <void index="42">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Fluxos em Redes</string>
+    </void>
+   </object>
+  </void>
+  <void index="43">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Fund Repr Conh e Raciocínio</string>
+    </void>
+   </object>
+  </void>
+  <void index="44">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Gerência de Dados em Amb Distribuídos e Paralelos</string>
+    </void>
+   </object>
+  </void>
+  <void index="45">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Gest de Processos de Negócios</string>
+    </void>
+   </object>
+  </void>
+  <void index="46">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Informática na Educação</string>
+    </void>
+   </object>
+  </void>
+  <void index="47">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Inteligéncia Artificial</string>
+    </void>
+   </object>
+  </void>
+  <void index="48">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Programação Linear</string>
+    </void>
+   </object>
+  </void>
+  <void index="49">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Sistemas Colaborativos</string>
+    </void>
+   </object>
+  </void>
+  <void index="50">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Sistemas Multimídia</string>
+    </void>
+   </object>
+  </void>
+  <void index="51">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avançados em Algoritmos</string>
+    </void>
+   </object>
+  </void>
+  <void index="52">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avançados em BD I</string>
+    </void>
+   </object>
+  </void>
+  <void index="53">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avançados em BD II</string>
+    </void>
+   </object>
+  </void>
+  <void index="54">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avançados em BD III</string>
+    </void>
+   </object>
+  </void>
+  <void index="55">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avançados em Eng Sw I</string>
+    </void>
+   </object>
+  </void>
+  <void index="56">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avançados em Eng Sw II</string>
+    </void>
+   </object>
+  </void>
+  <void index="57">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avan em Redes de Comp I</string>
+    </void>
+   </object>
+  </void>
+  <void index="58">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avan em Redes de Comp II</string>
+    </void>
+   </object>
+  </void>
+  <void index="59">
+   <object class="Model.DisciplinaModel">
+    <void property="nomeDisc">
+     <string>	Tóp Avan em Redes de Comp III</string>
+    </void>
+   </object>
+  </void>
+ </array>
+</java>

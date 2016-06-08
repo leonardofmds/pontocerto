@@ -5,10 +5,14 @@
  */
 package View;
 import Controller.*;
+import Model.DisciplinaModel;
 import Util.Order;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.*;
-
+import Util.*;
+import Util.MySQL_POST;
 //import javax.swing.ListModel;
 
 /**
@@ -16,31 +20,28 @@ import javax.swing.*;
  * @author Leonardo
  */
 public class FavoritosView extends javax.swing.JFrame implements Serializable {
-    DisciplinasController dc = new DisciplinasController();
-    DisciplinasController2 dc2 = new DisciplinasController2();
+    //DisciplinasController dc = FluxoTelasController.getDc();
+    DisciplinasController2 dc = FluxoTelasController.getDc2();
+    //DisciplinasController2 dc2 = FluxoTelasController.getDc2();
     /**
      * Creates new form controleDisciplinasView
      */
-    
-    /**
-     * Creates new form controleDisciplinasView
-     * @return
-     */
-    public DisciplinasController2 getDisciplinaController2()
-    {
-        return dc2;
-    }
-    
-            
+//    
+//    public DisciplinasController2 getDisciplinaController2()
+//    {
+//        return dc2;       
+//    }
+//    
+//            
             
     public FavoritosView() {
         //this.setLocationRelativeTo(null);
         initComponents();
         //this.setLocationRelativeTo(null);
-        DisciplinasLt.setModel(dc.listaDisciplinas());
-        FavoritosLt.setModel(dc.listaFavoritos());  
-        DisciplinasLt.setModel(Order.ordenaListModel((DefaultListModel)DisciplinasLt.getModel()));
-        FavoritosLt.setModel(Order.ordenaListModel((DefaultListModel)FavoritosLt.getModel()));
+        DisciplinasLt.setModel(Order.ordenaListModel(dc.listaDisciplinas()));
+        FavoritosLt.setModel(Order.ordenaListModel(dc.listaFavoritos()));  
+//        DisciplinasLt.setModel(Order.ordenaListModel((DefaultListModel)DisciplinasLt.getModel()));
+//        FavoritosLt.setModel(Order.ordenaListModel((DefaultListModel)FavoritosLt.getModel()));
         //DisciplinasLt.setModel(MySQL_POST.carregaListaDisc("select nome from disciplina"));
         
 //        fav = new FavoritosModel();
@@ -252,7 +253,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
         // TODO add your handling code here:
-        NotaView DiscView = FluxoTelasController.cnv;
+        NotaView DiscView = FluxoTelasController.getCnv();
         DiscView.setVisible(true);
         
         
@@ -301,13 +302,13 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         //new HomeView().show();
-        FluxoTelasController.hv.setVisible(true);
+        FluxoTelasController.getHv().setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed
-        DisciplinaView DiscView = FluxoTelasController.cdv;
-        FluxoTelasController.cdv.setVisible(true);
+        DisciplinaView DiscView = FluxoTelasController.getCdv();
+        DiscView.setVisible(true);
         if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
         {
             JOptionPane.showMessageDialog(null, "Selecione uma disciplina.");
@@ -332,7 +333,8 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 //        System.out.println(fav.getNomeFavoritos());
 //        fav.saveListNomeFavoritos();
         dc.setFavoritos(FavoritosLt.getModel()); System.out.println(FavoritosLt.getModel());
-        dc.escreveArquivos();       
+        dc.serializaDisciplinas();
+        //dc.escreveArquivos();       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
