@@ -35,17 +35,26 @@ public class DenunciarView extends javax.swing.JFrame {
         DenunciaTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ponto Certo");
 
-        DenunciarBt.setText("Denunciar");
+        DenunciarBt.setBackground(new java.awt.Color(255, 255, 255));
+        DenunciarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Enviar.png"))); // NOI18N
         DenunciarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DenunciarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        DenunciarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        DenunciarBt.setPreferredSize(new java.awt.Dimension(60, 60));
         DenunciarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenunciarBtActionPerformed(evt);
             }
         });
 
-        CancelarDenunciaBt.setText("Cancelar");
+        CancelarDenunciaBt.setBackground(new java.awt.Color(255, 255, 255));
+        CancelarDenunciaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar.png"))); // NOI18N
         CancelarDenunciaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CancelarDenunciaBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        CancelarDenunciaBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        CancelarDenunciaBt.setPreferredSize(new java.awt.Dimension(60, 60));
         CancelarDenunciaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelarDenunciaBtActionPerformed(evt);
@@ -62,15 +71,14 @@ public class DenunciarView extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(DenunciarBt)
-                .addGap(18, 18, 18)
-                .addComponent(CancelarDenunciaBt)
-                .addContainerGap(125, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DenunciarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CancelarDenunciaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -79,9 +87,9 @@ public class DenunciarView extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DenunciarBt)
-                    .addComponent(CancelarDenunciaBt))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(DenunciarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CancelarDenunciaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

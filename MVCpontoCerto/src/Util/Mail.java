@@ -3,6 +3,7 @@ package Util;
 import java.io.InputStream;
 import java.util.Properties;
 import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -24,11 +25,11 @@ import javax.mail.util.ByteArrayDataSource;
 */
 public class Mail {    
 
-       public static void main(String disciplina, String tipo, String subtipo, String ano, String semestre) {            
-            new Mail().enviar(disciplina, tipo, subtipo, ano, semestre);
+       public static void main(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds) {            
+            new Mail().enviar(disciplina, tipo, subtipo, ano, semestre, fds);
 	}
 
-	public void enviar(String disciplina, String tipo, String subtipo, String ano, String semestre) {
+	public void enviar(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds) {
                     
 		try {
 
@@ -74,13 +75,13 @@ public class Mail {
 			Multipart mp = new MimeMultipart();
 			mp.addBodyPart(mbpMensagem);
 			
-                        String imagem = "";
-                        InputStream is = getClass().getResourceAsStream(imagem);
+                       // String imagem = "";
+                       // InputStream is = getClass().getResourceAsStream(imagem);
 
 			//setando o anexo
 			MimeBodyPart mbpAnexo = new MimeBodyPart();
-			mbpAnexo.setDataHandler(new DataHandler(new ByteArrayDataSource(is, "application/image")));		
-			mbpAnexo.setFileName(imagem);
+			mbpAnexo.setDataHandler(new DataHandler(fds));		
+			mbpAnexo.setFileName(fds.getName());
 			mp.addBodyPart(mbpAnexo);
 
 			//assunto do email

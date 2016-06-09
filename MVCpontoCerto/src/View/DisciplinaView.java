@@ -54,8 +54,12 @@ public class DisciplinaView extends javax.swing.JFrame {
         setLocationByPlatform(true);
         setResizable(false);
 
-        VoltarBt.setText("Voltar");
+        VoltarBt.setBackground(new java.awt.Color(255, 255, 255));
+        VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarBtActionPerformed(evt);
@@ -64,30 +68,43 @@ public class DisciplinaView extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(MaterialLt);
 
-        VisualizarBt.setText("Visualizar");
+        VisualizarBt.setBackground(new java.awt.Color(255, 255, 255));
+        VisualizarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Visualizar.png"))); // NOI18N
         VisualizarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VisualizarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        VisualizarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        VisualizarBt.setPreferredSize(new java.awt.Dimension(60, 60));
         VisualizarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VisualizarBtActionPerformed(evt);
             }
         });
 
-        BaixarBt.setText("Baixar");
+        BaixarBt.setBackground(new java.awt.Color(255, 255, 255));
+        BaixarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Baixar.png"))); // NOI18N
         BaixarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BaixarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        BaixarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        BaixarBt.setPreferredSize(new java.awt.Dimension(60, 60));
         BaixarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BaixarBtActionPerformed(evt);
             }
         });
 
-        DenunciarBt.setText("Denunciar");
+        DenunciarBt.setBackground(new java.awt.Color(255, 255, 255));
+        DenunciarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Denunciar.png"))); // NOI18N
         DenunciarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        DenunciarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        DenunciarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        DenunciarBt.setPreferredSize(new java.awt.Dimension(60, 60));
         DenunciarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenunciarBtActionPerformed(evt);
             }
         });
 
+        DisciplinaLb1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         DisciplinaLb1.setText("\" X\"");
         DisciplinaLb1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
@@ -98,34 +115,32 @@ public class DisciplinaView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VoltarBt)
+                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DisciplinaLb1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(DenunciarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                            .addComponent(VisualizarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BaixarBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(DisciplinaLb1))
+                        .addComponent(VisualizarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(DenunciarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BaixarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(VoltarBt)
-                .addGap(20, 20, 20)
+                .addContainerGap()
+                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
                 .addComponent(DisciplinaLb1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(VisualizarBt)
-                        .addGap(18, 18, 18)
-                        .addComponent(BaixarBt)
-                        .addGap(18, 18, 18)
-                        .addComponent(DenunciarBt))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(BaixarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(VisualizarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DenunciarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

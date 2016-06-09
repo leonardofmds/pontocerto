@@ -22,7 +22,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
      */
     
     MateriaisController material = new MateriaisController();    
-    File arquivo;
+    FileDataSource fds;
     
     public EnviarMaterialView() {
         initComponents();        
@@ -51,10 +51,13 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         DisciplinaTf = new javax.swing.JTextField();
         ArquivoTf = new javax.swing.JTextField();
         AbrirBt = new javax.swing.JButton();
+        AnoMaterialLb1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ponto Certo");
+        setBackground(new java.awt.Color(204, 204, 204));
 
-        TipoMaterialCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prova", "Trabalho", "Projeto" }));
+        TipoMaterialCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prova", "Trabalho", "Projeto", "Lista" }));
         TipoMaterialCb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TipoMaterialCbActionPerformed(evt);
@@ -68,47 +71,67 @@ public class EnviarMaterialView extends javax.swing.JFrame {
             }
         });
 
+        TipoEnviarLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         TipoEnviarLb.setText("Tipo:");
 
+        AnoMaterialLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         AnoMaterialLb.setText("Ano:");
 
+        SemestreLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         SemestreLb.setText("Semestre:");
 
-        CancelaMaterialBt.setText("Cancelar");
+        CancelaMaterialBt.setBackground(new java.awt.Color(255, 255, 255));
+        CancelaMaterialBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar.png"))); // NOI18N
         CancelaMaterialBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CancelaMaterialBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        CancelaMaterialBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        CancelaMaterialBt.setName(""); // NOI18N
+        CancelaMaterialBt.setPreferredSize(new java.awt.Dimension(60, 60));
         CancelaMaterialBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelaMaterialBtActionPerformed(evt);
             }
         });
 
-        EnviarMaterialBt.setText("Enviar");
+        EnviarMaterialBt.setBackground(new java.awt.Color(255, 255, 255));
+        EnviarMaterialBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Enviar.png"))); // NOI18N
         EnviarMaterialBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EnviarMaterialBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        EnviarMaterialBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        EnviarMaterialBt.setPreferredSize(new java.awt.Dimension(60, 60));
         EnviarMaterialBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EnviarMaterialBtActionPerformed(evt);
             }
         });
 
+        SubLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         SubLb.setText("Sub-Tipo:");
 
-        SubTipoCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "Reposição" }));
+        SubTipoCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "Reposição" }));
         SubTipoCb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SubTipoCbActionPerformed(evt);
             }
         });
 
+        DisciplinaLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         DisciplinaLb.setText("Disciplina:");
 
         ArquivoTf.setEditable(false);
+        ArquivoTf.setOpaque(false);
 
+        AbrirBt.setBackground(new java.awt.Color(255, 255, 255));
+        AbrirBt.setForeground(new java.awt.Color(255, 255, 255));
         AbrirBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Abrir.png"))); // NOI18N
         AbrirBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AbrirBtActionPerformed(evt);
             }
         });
+
+        AnoMaterialLb1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        AnoMaterialLb1.setText("Arquivo:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,31 +140,38 @@ public class EnviarMaterialView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DisciplinaTf)
-                    .addComponent(TipoMaterialCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TipoEnviarLb)
-                            .addComponent(SubLb)
-                            .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DisciplinaLb)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(AnoMaterialLb, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EnviarMaterialBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                                    .addComponent(AnoTf, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SemestreLb)
-                                    .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CancelaMaterialBt))))
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ArquivoTf)
                         .addGap(18, 18, 18)
-                        .addComponent(AbrirBt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)))
-                .addContainerGap())
+                        .addComponent(AbrirBt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(DisciplinaLb)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(TipoEnviarLb)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(AnoMaterialLb)
+                                                .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(49, 49, 49)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(SemestreLb))))
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(SubLb)
+                                        .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(DisciplinaTf))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(EnviarMaterialBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(CancelaMaterialBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AnoMaterialLb1))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,31 +180,33 @@ public class EnviarMaterialView extends javax.swing.JFrame {
                 .addComponent(DisciplinaLb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DisciplinaTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TipoEnviarLb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipoEnviarLb)
+                    .addComponent(SubLb))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SubLb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AnoMaterialLb)
                     .addComponent(SemestreLb))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AbrirBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ArquivoTf))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EnviarMaterialBt)
-                    .addComponent(CancelaMaterialBt))
-                .addGap(24, 24, 24))
+                    .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(AnoMaterialLb1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ArquivoTf, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AbrirBt, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EnviarMaterialBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CancelaMaterialBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,11 +231,17 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         tipo = (String) TipoMaterialCb.getSelectedItem();
         subtipo = (String) SubTipoCb.getSelectedItem();
         ano = AnoTf.getText();
-        semestre = (String) SemestreCb.getSelectedItem();
+        semestre = (String) SemestreCb.getSelectedItem();       
         
         
         
-        material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre);
+        material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre, fds);
+        
+        DisciplinaTf.setText(" ");
+        AnoTf.setText(" ");
+        ArquivoTf.setText(" ");
+        FluxoTelasController.getHv().setVisible(true);
+        dispose();
     }//GEN-LAST:event_EnviarMaterialBtActionPerformed
 
     private void SubTipoCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTipoCbActionPerformed
@@ -223,7 +261,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         } else {
            File arquivo = file.getSelectedFile();
            ArquivoTf.setText(arquivo.getAbsolutePath());
-           FileDataSource fds = new FileDataSource(arquivo.getAbsolutePath());
+           fds = new FileDataSource(arquivo.getAbsolutePath());
         }
     }//GEN-LAST:event_AbrirBtActionPerformed
 
@@ -265,6 +303,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AbrirBt;
     private javax.swing.JLabel AnoMaterialLb;
+    private javax.swing.JLabel AnoMaterialLb1;
     private javax.swing.JTextField AnoTf;
     private javax.swing.JTextField ArquivoTf;
     private javax.swing.JButton CancelaMaterialBt;

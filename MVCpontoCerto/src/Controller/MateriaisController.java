@@ -6,7 +6,8 @@
 package Controller;
 
 import Util.Mail;
-import java.io.File;
+import javax.activation.FileDataSource;
+
 
 
 
@@ -16,7 +17,7 @@ import java.io.File;
  */
 public class MateriaisController {
     
-    public void EnviaMaterial(String disciplina, String tipo, String subtipo, String ano, String semestre){
-                Mail.main(disciplina, tipo, subtipo, ano, semestre);                
+    public void EnviaMaterial(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds){
+                Mail.main(disciplina, tipo, subtipo, ano, semestre, fds);                
     }   
 }
