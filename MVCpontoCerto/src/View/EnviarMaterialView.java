@@ -255,7 +255,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     private void AbrirBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbrirBtActionPerformed
          JFileChooser file = new JFileChooser(); 
           file.setFileSelectionMode(JFileChooser.FILES_ONLY);
-          int i= file.showSaveDialog(null);
+          int i= file.showOpenDialog(null);
         if (i==1){
             ArquivoTf.setText("");
         } else {

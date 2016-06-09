@@ -41,6 +41,9 @@
   </void>
   <void index="5">
    <object class="Model.DisciplinaModel">
+    <void property="favorito">
+     <boolean>true</boolean>
+    </void>
     <void property="nomeDisc">
      <string>	Banco de Dados I</string>
     </void>
