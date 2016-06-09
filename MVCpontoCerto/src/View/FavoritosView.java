@@ -93,6 +93,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
         ImportarFavBt.setBackground(new java.awt.Color(255, 255, 255));
         ImportarFavBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar.png"))); // NOI18N
+        ImportarFavBt.setToolTipText("Adicionar");
         ImportarFavBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ImportarFavBt.setMaximumSize(new java.awt.Dimension(60, 60));
         ImportarFavBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -107,6 +108,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
         EditarBt.setBackground(new java.awt.Color(255, 255, 255));
         EditarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Editar.png"))); // NOI18N
+        EditarBt.setToolTipText("Editar");
         EditarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EditarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         EditarBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -123,6 +125,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
         RemoverBt.setBackground(new java.awt.Color(255, 255, 255));
         RemoverBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Remover.png"))); // NOI18N
+        RemoverBt.setToolTipText("Remover");
         RemoverBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         RemoverBt.setMaximumSize(new java.awt.Dimension(60, 60));
         RemoverBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -135,6 +138,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
         VoltarBt.setBackground(new java.awt.Color(255, 255, 255));
         VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
+        VoltarBt.setToolTipText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
@@ -147,6 +151,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
         VerMateriasBt.setBackground(new java.awt.Color(255, 255, 255));
         VerMateriasBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Ver.png"))); // NOI18N
+        VerMateriasBt.setToolTipText("Ver Materiais");
         VerMateriasBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VerMateriasBt.setMaximumSize(new java.awt.Dimension(68, 68));
         VerMateriasBt.setMinimumSize(new java.awt.Dimension(68, 68));
@@ -159,6 +164,8 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
+        jButton1.setToolTipText("Salvar");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setMaximumSize(new java.awt.Dimension(60, 60));
         jButton1.setMinimumSize(new java.awt.Dimension(60, 60));
         jButton1.setPreferredSize(new java.awt.Dimension(60, 60));

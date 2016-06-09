@@ -82,6 +82,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
 
         CancelaMaterialBt.setBackground(new java.awt.Color(255, 255, 255));
         CancelaMaterialBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar.png"))); // NOI18N
+        CancelaMaterialBt.setToolTipText("Cancelar");
         CancelaMaterialBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CancelaMaterialBt.setMaximumSize(new java.awt.Dimension(60, 60));
         CancelaMaterialBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -95,6 +96,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
 
         EnviarMaterialBt.setBackground(new java.awt.Color(255, 255, 255));
         EnviarMaterialBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Enviar.png"))); // NOI18N
+        EnviarMaterialBt.setToolTipText("Enviar");
         EnviarMaterialBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EnviarMaterialBt.setMaximumSize(new java.awt.Dimension(60, 60));
         EnviarMaterialBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -124,6 +126,8 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         AbrirBt.setBackground(new java.awt.Color(255, 255, 255));
         AbrirBt.setForeground(new java.awt.Color(255, 255, 255));
         AbrirBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Abrir.png"))); // NOI18N
+        AbrirBt.setToolTipText("Abrir Arquivo");
+        AbrirBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AbrirBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AbrirBtActionPerformed(evt);
@@ -241,7 +245,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         AnoTf.setText(" ");
         ArquivoTf.setText(" ");
         FluxoTelasController.getHv().setVisible(true);
-        dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_EnviarMaterialBtActionPerformed
 
     private void SubTipoCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTipoCbActionPerformed

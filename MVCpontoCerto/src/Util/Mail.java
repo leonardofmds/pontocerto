@@ -73,10 +73,7 @@ public class Mail {
 
 			//partes do email
 			Multipart mp = new MimeMultipart();
-			mp.addBodyPart(mbpMensagem);
-			
-                       // String imagem = "";
-                       // InputStream is = getClass().getResourceAsStream(imagem);
+			mp.addBodyPart(mbpMensagem);			
 
 			//setando o anexo
 			MimeBodyPart mbpAnexo = new MimeBodyPart();

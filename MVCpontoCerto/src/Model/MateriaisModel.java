@@ -5,6 +5,8 @@
  */
 package Model;
 
+import java.net.URL;
+
 /**
  *
  * @author labccet
@@ -14,7 +16,7 @@ public class MateriaisModel {
     private int idmat, ano, semestre;
     private String tipo, subtipo;
     private DisciplinaModel[] disciplina;
-    //private URL conteudo, link;
+    private URL conteudo, link;
     
     public MateriaisModel(int idmat, int ano, int semestre, String tipo, String subtipo /*URL conteudo, URL link*/, DisciplinaModel[] disciplina){
         this.idmat = idmat;

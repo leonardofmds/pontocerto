@@ -39,6 +39,7 @@ public class DenunciarView extends javax.swing.JFrame {
 
         DenunciarBt.setBackground(new java.awt.Color(255, 255, 255));
         DenunciarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Enviar.png"))); // NOI18N
+        DenunciarBt.setToolTipText("Enviar");
         DenunciarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DenunciarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         DenunciarBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -51,6 +52,7 @@ public class DenunciarView extends javax.swing.JFrame {
 
         CancelarDenunciaBt.setBackground(new java.awt.Color(255, 255, 255));
         CancelarDenunciaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar.png"))); // NOI18N
+        CancelarDenunciaBt.setToolTipText("Cancelar");
         CancelarDenunciaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CancelarDenunciaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         CancelarDenunciaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -86,7 +88,7 @@ public class DenunciarView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(DenunciarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CancelarDenunciaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
