@@ -56,7 +56,6 @@ public class DisciplinaView extends javax.swing.JFrame {
 
         VoltarBt.setBackground(new java.awt.Color(255, 255, 255));
         VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
-        VoltarBt.setToolTipText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
@@ -71,7 +70,6 @@ public class DisciplinaView extends javax.swing.JFrame {
 
         VisualizarBt.setBackground(new java.awt.Color(255, 255, 255));
         VisualizarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Visualizar.png"))); // NOI18N
-        VisualizarBt.setToolTipText("Visualizar");
         VisualizarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VisualizarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         VisualizarBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -84,7 +82,6 @@ public class DisciplinaView extends javax.swing.JFrame {
 
         BaixarBt.setBackground(new java.awt.Color(255, 255, 255));
         BaixarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Baixar.png"))); // NOI18N
-        BaixarBt.setToolTipText("Baixar");
         BaixarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BaixarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         BaixarBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -97,7 +94,6 @@ public class DisciplinaView extends javax.swing.JFrame {
 
         DenunciarBt.setBackground(new java.awt.Color(255, 255, 255));
         DenunciarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Denunciar.png"))); // NOI18N
-        DenunciarBt.setToolTipText("Denunciar");
         DenunciarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DenunciarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         DenunciarBt.setMinimumSize(new java.awt.Dimension(60, 60));

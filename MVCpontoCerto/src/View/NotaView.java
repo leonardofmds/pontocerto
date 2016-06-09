@@ -31,8 +31,17 @@ public class NotaView extends javax.swing.JFrame {
     public void carregaNotaDisc()
     {
        //NotasTb.setModel(defaultTableModel);
+        
+//        for(int i = 0; i< NotasTb.getRowCount();i++)
+//        {
+//            for(int j = 0; j<NotasTb.getColumnCount();j++)
+//            {
+//                NotasTb.setValueAt(null, i, j);
+//            }
+//        }
        
        int nNotas = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size();
+       
        //System.out.println("tamanho:"+ dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size());
        double aNota;
        String aTipo;
@@ -48,9 +57,9 @@ public class NotaView extends javax.swing.JFrame {
            aTipo = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getTipo();
            aNota = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getNota();
            aPeso = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getPeso();           
-           NotasTb.setValueAt(aTipo, i, 1);
-           NotasTb.setValueAt(aNota, i, 2);
-           NotasTb.setValueAt(aPeso, i, 3);
+           NotasTb.setValueAt(aTipo, i, 0);
+           NotasTb.setValueAt(aNota, i, 1);
+           NotasTb.setValueAt(aPeso, i, 2);
        }
     }
     
@@ -96,7 +105,6 @@ public class NotaView extends javax.swing.JFrame {
         DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
-        VoltarBt.setToolTipText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
@@ -136,7 +144,6 @@ public class NotaView extends javax.swing.JFrame {
 
         SalvarNotaBt.setBackground(new java.awt.Color(255, 255, 255));
         SalvarNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
-        SalvarNotaBt.setToolTipText("Salvar");
         SalvarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SalvarNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         SalvarNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -148,7 +155,6 @@ public class NotaView extends javax.swing.JFrame {
         });
 
         ExcluirNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Excluir.png"))); // NOI18N
-        ExcluirNotaBt.setToolTipText("Excluir");
         ExcluirNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExcluirNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         ExcluirNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -161,7 +167,6 @@ public class NotaView extends javax.swing.JFrame {
 
         EditarNotaBt.setBackground(new java.awt.Color(255, 255, 255));
         EditarNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Editar.png"))); // NOI18N
-        EditarNotaBt.setToolTipText("Editar");
         EditarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EditarNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         EditarNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -173,7 +178,6 @@ public class NotaView extends javax.swing.JFrame {
         });
 
         NovaNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Nova.png"))); // NOI18N
-        NovaNotaBt.setToolTipText("Nova");
         NovaNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         NovaNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         NovaNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -281,7 +285,9 @@ public class NotaView extends javax.swing.JFrame {
            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setNota(aNota);
            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setPeso(aPeso);           
        }
-                
+       
+       
+       dc.serializaDisciplinas();     
         
     }//GEN-LAST:event_SalvarNotaBtActionPerformed
 

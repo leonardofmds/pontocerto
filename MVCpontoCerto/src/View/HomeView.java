@@ -39,8 +39,6 @@ public class HomeView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo");
-        setBackground(new java.awt.Color(204, 255, 255));
-        setForeground(new java.awt.Color(255, 255, 255));
         setResizable(false);
 
         LogoLb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo.png"))); // NOI18N
@@ -48,7 +46,7 @@ public class HomeView extends javax.swing.JFrame {
 
         DisciplinasBt.setBackground(new java.awt.Color(255, 255, 255));
         DisciplinasBt.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        DisciplinasBt.setText("DISCIPLINAS");
+        DisciplinasBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Disciplinas.png"))); // NOI18N
         DisciplinasBt.setActionCommand("Disciplinas");
         DisciplinasBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         DisciplinasBt.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +57,7 @@ public class HomeView extends javax.swing.JFrame {
 
         EnviarBt.setBackground(new java.awt.Color(255, 255, 255));
         EnviarBt.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
-        EnviarBt.setText("ENVIAR MATERIAL");
+        EnviarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/EnviarMat.png"))); // NOI18N
         EnviarBt.setActionCommand("Enviar");
         EnviarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EnviarBt.addActionListener(new java.awt.event.ActionListener() {
@@ -74,17 +72,15 @@ public class HomeView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(EnviarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(43, 43, 43)
+                            .addComponent(DisciplinasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(EnviarBt, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(DisciplinasBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(LogoLb)
-                .addGap(77, 77, 77))
+                        .addGap(65, 65, 65)
+                        .addComponent(LogoLb)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
