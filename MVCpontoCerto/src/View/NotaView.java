@@ -227,6 +227,7 @@ public class NotaView extends javax.swing.JFrame {
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         //new FavoritosView().show();
         FluxoTelasController.getCfv().setVisible(true);
+        dispose();
         //this.setVisible(false);
     }//GEN-LAST:event_VoltarBtActionPerformed
 
