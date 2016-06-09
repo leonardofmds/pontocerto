@@ -5,7 +5,7 @@
  */
 package View;
 
-import Controller.FluxoTelasController;
+import Controller.*;
 
 /**
  *
@@ -16,6 +16,9 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     /**
      * Creates new form EnviarMaterialView
      */
+    
+    MateriaisController material = new MateriaisController();
+    
     public EnviarMaterialView() {
         initComponents();
     }
@@ -30,7 +33,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     private void initComponents() {
 
         TipoMaterialCb = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        SemestreCb = new javax.swing.JComboBox<>();
         AnoTf = new javax.swing.JTextField();
         TipoEnviarLb = new javax.swing.JLabel();
         AnoMaterialLb = new javax.swing.JLabel();
@@ -38,7 +41,9 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         CancelaMaterialBt = new javax.swing.JButton();
         EnviarMaterialBt = new javax.swing.JButton();
         SubLb = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        SubTipoCb = new javax.swing.JComboBox<>();
+        DisciplinaLb = new javax.swing.JLabel();
+        DisciplinaTf = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,7 +54,12 @@ public class EnviarMaterialView extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        SemestreCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        SemestreCb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SemestreCbActionPerformed(evt);
+            }
+        });
 
         TipoEnviarLb.setText("Tipo:");
 
@@ -75,60 +85,77 @@ public class EnviarMaterialView extends javax.swing.JFrame {
 
         SubLb.setText("Sub-Tipo:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "Reposição" }));
+        SubTipoCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "Reposição" }));
+        SubTipoCb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubTipoCbActionPerformed(evt);
+            }
+        });
+
+        DisciplinaLb.setText("Disciplina:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(TipoEnviarLb)
-                        .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(AnoMaterialLb)
-                                .addComponent(AnoTf)
-                                .addComponent(EnviarMaterialBt, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(CancelaMaterialBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(SemestreLb)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(TipoMaterialCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(SubLb)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                                .addComponent(TipoEnviarLb)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(AnoMaterialLb)
+                                        .addComponent(AnoTf)
+                                        .addComponent(EnviarMaterialBt, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(CancelaMaterialBt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(SemestreLb)
+                                        .addComponent(SemestreCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(TipoMaterialCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(SubLb)
+                            .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 14, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(DisciplinaTf)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(DisciplinaLb)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(25, 25, 25)
+                .addComponent(DisciplinaLb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(DisciplinaTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TipoEnviarLb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SubLb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SemestreLb)
-                        .addGap(110, 110, 110))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(AnoMaterialLb)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(EnviarMaterialBt)
-                            .addComponent(CancelaMaterialBt))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AnoMaterialLb)
+                    .addComponent(SemestreLb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EnviarMaterialBt)
+                    .addComponent(CancelaMaterialBt))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
 
         pack();
@@ -147,7 +174,25 @@ public class EnviarMaterialView extends javax.swing.JFrame {
 
     private void EnviarMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMaterialBtActionPerformed
         // TODO add your handling code here:
+        String disciplina,tipo,subtipo, ano, semestre;
+                
+        disciplina = DisciplinaTf.getText();
+        tipo = (String) TipoMaterialCb.getSelectedItem();
+        subtipo = (String) SubTipoCb.getSelectedItem();
+        ano = AnoTf.getText();
+        semestre = (String) SemestreCb.getSelectedItem();
+        
+        
+        material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre);
     }//GEN-LAST:event_EnviarMaterialBtActionPerformed
+
+    private void SubTipoCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTipoCbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubTipoCbActionPerformed
+
+    private void SemestreCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SemestreCbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SemestreCbActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,12 +233,14 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     private javax.swing.JLabel AnoMaterialLb;
     private javax.swing.JTextField AnoTf;
     private javax.swing.JButton CancelaMaterialBt;
+    private javax.swing.JLabel DisciplinaLb;
+    private javax.swing.JTextField DisciplinaTf;
     private javax.swing.JButton EnviarMaterialBt;
+    private javax.swing.JComboBox<String> SemestreCb;
     private javax.swing.JLabel SemestreLb;
     private javax.swing.JLabel SubLb;
+    private javax.swing.JComboBox<String> SubTipoCb;
     private javax.swing.JLabel TipoEnviarLb;
     private javax.swing.JComboBox<String> TipoMaterialCb;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     // End of variables declaration//GEN-END:variables
 }
