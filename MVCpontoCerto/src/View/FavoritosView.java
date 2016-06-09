@@ -254,7 +254,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
         // TODO add your handling code here:
         NotaView DiscView = FluxoTelasController.getCnv();
-        DiscView.setVisible(true);
+        //DiscView.setVisible(true);
         
         
         if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)
@@ -266,7 +266,9 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
             DiscView.setVisible(true);
             DiscView.setNomeDisciplina(FavoritosLt.getSelectedValue());
             this.setVisible(false);
+            //DiscView.carregaNotaDisc();
         }
+                
         
     }//GEN-LAST:event_EditarBtActionPerformed
 

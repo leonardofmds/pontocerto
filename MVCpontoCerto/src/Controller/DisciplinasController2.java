@@ -111,6 +111,18 @@ public class DisciplinasController2
     {
         return disciplinas;
     }
+    
+    public DisciplinaModel getDisciplinasEspecifica(String nome) 
+    {
+        for(int i = 0; i< disciplinas.length; i++)
+        {
+            if(disciplinas[i].getNomeDisc().equals(nome))
+            {
+                return disciplinas[i];
+            }
+        }
+        return null;
+    }
 
     public void setDisciplinas(DisciplinaModel[] disciplinas) 
     {

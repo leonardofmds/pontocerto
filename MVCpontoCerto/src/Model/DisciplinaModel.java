@@ -20,13 +20,12 @@ public class DisciplinaModel implements Serializable
     private double media;
     private boolean favorito;
     //private NotaModel[] notas;  
-    ArrayList<NotaModel> notas = new ArrayList<NotaModel>();
+    ArrayList<NotaModel> notas;
+    
     public DisciplinaModel()
     {
-
+        notas = new ArrayList<NotaModel>();
     }
-    
-    
         
 //    public DisciplinaModel(String nomedisc, double media, boolean favorito, NotaModel[] notas) {
 //        this.nomeDisc = nomedisc;

@@ -6,6 +6,7 @@
 package View;
 
 import Controller.*;
+import Model.NotaModel;
 import View.FavoritosView;
 import java.util.Vector;
 import javax.swing.JTable;
@@ -20,11 +21,40 @@ public class NotaView extends javax.swing.JFrame {
      * Creates new form ControleDisciplinaView
      */
     DisciplinasController2 dc;
+    DefaultTableModel defaultTableModel;
     public NotaView() {
         initComponents();
-        dc = FluxoTelasController.getDc2();
+        dc = FluxoTelasController.getDc2();  
+        defaultTableModel = (DefaultTableModel) NotasTb.getModel();
     }
 
+    public void carregaNotaDisc()
+    {
+       //NotasTb.setModel(defaultTableModel);
+       
+       int nNotas = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size();
+       //System.out.println("tamanho:"+ dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size());
+       double aNota;
+       String aTipo;
+       double aPeso;
+       
+        DefaultTableModel dtmAdd = new DefaultTableModel();
+        dtmAdd = (DefaultTableModel) NotasTb.getModel();
+        dtmAdd.setRowCount(nNotas);
+        NotasTb.setModel(dtmAdd); 
+       
+       for(int i = 0; i < nNotas; i++)
+       {
+           aTipo = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getTipo();
+           aNota = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getNota();
+           aPeso = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getPeso();           
+           NotasTb.setValueAt(aTipo, i, 1);
+           NotasTb.setValueAt(aNota, i, 2);
+           NotasTb.setValueAt(aPeso, i, 3);
+       }
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -107,9 +137,19 @@ public class NotaView extends javax.swing.JFrame {
 
         ExcluirNotaBt.setText("Excluir");
         ExcluirNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExcluirNotaBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExcluirNotaBtActionPerformed(evt);
+            }
+        });
 
         EditarNotaBt.setText("Editar");
         EditarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EditarNotaBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarNotaBtActionPerformed(evt);
+            }
+        });
 
         NovaNotaBt.setText("Nova");
         NovaNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -167,7 +207,7 @@ public class NotaView extends javax.swing.JFrame {
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         //new FavoritosView().show();
         FluxoTelasController.getCfv().setVisible(true);
-        dispose();
+        //this.setVisible(false);
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void NovaNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovaNotaBtActionPerformed
@@ -191,9 +231,42 @@ public class NotaView extends javax.swing.JFrame {
 //        DisciplinasController2 dc = FluxoTelasController.getCfv().getDisciplinaController2();
 //        
 //        dc.getDisciplinas();
+
+       int nNotas = NotasTb.getModel().getRowCount();
+       double aNota;
+       String aTipo;
+       double aPeso;
+       
+       if(dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size()<nNotas)
+       {
+           for(int i = 0; i < (nNotas - dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size());i++)
+           {
+               dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().add(new NotaModel());
+           }
+       }
+       System.out.println(NotasTb.getValueAt(0,2));
+       for(int i = 0; i < nNotas; i++)
+       {
+           aTipo = (String) NotasTb.getValueAt(i, 0);
+           aNota =  (double) NotasTb.getValueAt(i, 1);
+           aPeso =  (double) NotasTb.getValueAt(i, 2);           
+           
+           dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setTipo(aTipo);
+           dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setNota(aNota);
+           dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setPeso(aPeso);           
+       }
                 
         
     }//GEN-LAST:event_SalvarNotaBtActionPerformed
+
+    private void EditarNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarNotaBtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditarNotaBtActionPerformed
+
+    private void ExcluirNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirNotaBtActionPerformed
+        // TODO add your handling code here:
+        //System.out.println("tamanho:"+ defaultTableModel.getRowCount());
+    }//GEN-LAST:event_ExcluirNotaBtActionPerformed
 
     /**
      * @param args the command line arguments

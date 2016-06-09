@@ -5,7 +5,7 @@
  */
 package Controller;
 
-import Util.Mail;
+//import Util.Mail;
 
 
 
@@ -16,7 +16,7 @@ import Util.Mail;
 public class MateriaisController {
     
     public void EnviaMaterial(){
-                Mail.main();
+                //Mail.main();
     }
     
 }
