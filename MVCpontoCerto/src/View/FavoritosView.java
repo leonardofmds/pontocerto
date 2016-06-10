@@ -75,7 +75,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         RemoverBt = new javax.swing.JButton();
         VoltarBt = new javax.swing.JButton();
         VerMateriasBt = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        SalvarBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Disciplinas");
@@ -98,6 +98,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         ImportarFavBt.setMaximumSize(new java.awt.Dimension(60, 60));
         ImportarFavBt.setMinimumSize(new java.awt.Dimension(60, 60));
         ImportarFavBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        ImportarFavBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar2.png"))); // NOI18N
         ImportarFavBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImportarFavBtActionPerformed(evt);
@@ -113,6 +114,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         EditarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         EditarBt.setMinimumSize(new java.awt.Dimension(60, 60));
         EditarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        EditarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Editar2.png"))); // NOI18N
         EditarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditarBtActionPerformed(evt);
@@ -130,6 +132,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         RemoverBt.setMaximumSize(new java.awt.Dimension(60, 60));
         RemoverBt.setMinimumSize(new java.awt.Dimension(60, 60));
         RemoverBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        RemoverBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Remover2.png"))); // NOI18N
         RemoverBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoverBtActionPerformed(evt);
@@ -143,6 +146,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar2.png"))); // NOI18N
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarBtActionPerformed(evt);
@@ -156,22 +160,24 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         VerMateriasBt.setMaximumSize(new java.awt.Dimension(68, 68));
         VerMateriasBt.setMinimumSize(new java.awt.Dimension(68, 68));
         VerMateriasBt.setPreferredSize(new java.awt.Dimension(68, 68));
+        VerMateriasBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Ver2.png"))); // NOI18N
         VerMateriasBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VerMateriasBtActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
-        jButton1.setToolTipText("Salvar");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setMaximumSize(new java.awt.Dimension(60, 60));
-        jButton1.setMinimumSize(new java.awt.Dimension(60, 60));
-        jButton1.setPreferredSize(new java.awt.Dimension(60, 60));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        SalvarBt.setBackground(new java.awt.Color(255, 255, 255));
+        SalvarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
+        SalvarBt.setToolTipText("Salvar");
+        SalvarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalvarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar2.png"))); // NOI18N
+        SalvarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalvarBtActionPerformed(evt);
             }
         });
 
@@ -185,7 +191,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
@@ -235,7 +241,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -285,7 +291,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         
         if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)
         {
-            JOptionPane.showMessageDialog(null, "Selecione uma disciplina nos favoritos.");
+            JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina nos favoritos.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
         else
         {
@@ -339,7 +345,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         //DiscView.setVisible(true);
         if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
         {
-            JOptionPane.showMessageDialog(null, "Selecione uma disciplina.");
+            JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
         else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
         {
@@ -355,15 +361,17 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         }
     }//GEN-LAST:event_VerMateriasBtActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
         // TODO add your handling code here:
 //        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
 //        System.out.println(fav.getNomeFavoritos());
 //        fav.saveListNomeFavoritos();
         dc.setFavoritos(FavoritosLt.getModel()); System.out.println(FavoritosLt.getModel());
         dc.serializaDisciplinas();
+        
+        JOptionPane.showMessageDialog(null, "Alterações salvas.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
         //dc.escreveArquivos();       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SalvarBtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -419,8 +427,8 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private javax.swing.JButton ImportarFavBt;
     private javax.swing.JLabel InstrucoesLb;
     private javax.swing.JButton RemoverBt;
+    private javax.swing.JButton SalvarBt;
     private javax.swing.JButton VerMateriasBt;
     private javax.swing.JButton VoltarBt;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

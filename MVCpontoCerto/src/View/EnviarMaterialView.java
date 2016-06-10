@@ -8,6 +8,7 @@ package View;
 import Controller.*;
 import java.io.File;
 import javax.activation.FileDataSource;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -22,7 +23,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
      * Creates new form EnviarMaterialView
      */
     
-    MateriaisController material = new MateriaisController();    
+    MateriaisController material = new MateriaisController();     
     FileDataSource fds;
     
     public EnviarMaterialView() {
@@ -89,6 +90,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         CancelaMaterialBt.setMinimumSize(new java.awt.Dimension(60, 60));
         CancelaMaterialBt.setName(""); // NOI18N
         CancelaMaterialBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        CancelaMaterialBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar2.png"))); // NOI18N
         CancelaMaterialBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelaMaterialBtActionPerformed(evt);
@@ -102,6 +104,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         EnviarMaterialBt.setMaximumSize(new java.awt.Dimension(60, 60));
         EnviarMaterialBt.setMinimumSize(new java.awt.Dimension(60, 60));
         EnviarMaterialBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        EnviarMaterialBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Enviar2.png"))); // NOI18N
         EnviarMaterialBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EnviarMaterialBtActionPerformed(evt);
@@ -129,6 +132,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         AbrirBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Abrir.png"))); // NOI18N
         AbrirBt.setToolTipText("Abrir Arquivo");
         AbrirBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AbrirBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Abrir2.png"))); // NOI18N
         AbrirBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AbrirBtActionPerformed(evt);
@@ -234,7 +238,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         String disciplina,tipo,subtipo, ano, semestre;
         
         if ( ArquivoTf.getText().trim().equals("") ) 
-             JOptionPane.showMessageDialog(null, "Por favor selecione um arquivo.");
+             JOptionPane.showMessageDialog(null, "Por favor selecione um arquivo.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         else {
             disciplina = DisciplinaTf.getText();
             tipo = (String) TipoMaterialCb.getSelectedItem();
@@ -245,7 +249,8 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         
         
             material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre, fds);
-            JOptionPane.showMessageDialog(null,"Material enviado com sucesso.");
+            
+            JOptionPane.showMessageDialog(null, "Menssagem enviada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
         
             Reseta();
             

@@ -40,12 +40,40 @@
    </object>
   </void>
   <void index="5">
-   <object class="Model.DisciplinaModel">
+   <object class="Model.DisciplinaModel" id="DisciplinaModel0">
     <void property="favorito">
      <boolean>true</boolean>
     </void>
     <void property="nomeDisc">
      <string>	Banco de Dados I</string>
+    </void>
+    <void property="notas">
+     <void method="add">
+      <object class="Model.NotaModel">
+       <void property="nota">
+        <double>10.0</double>
+       </void>
+       <void property="peso">
+        <double>1.0</double>
+       </void>
+       <void property="tipo">
+        <string>Prova</string>
+       </void>
+      </object>
+     </void>
+     <void method="add">
+      <object class="Model.NotaModel">
+       <void property="nota">
+        <double>5.0</double>
+       </void>
+       <void property="peso">
+        <double>2.0</double>
+       </void>
+       <void property="tipo">
+        <string>Trabalho</string>
+       </void>
+      </object>
+     </void>
     </void>
    </object>
   </void>
@@ -264,9 +292,6 @@
   </void>
   <void index="36">
    <object class="Model.DisciplinaModel">
-    <void property="favorito">
-     <boolean>true</boolean>
-    </void>
     <void property="nomeDisc">
      <string>	Algoritmos p/ Prob Combinat</string>
     </void>

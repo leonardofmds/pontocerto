@@ -32,10 +32,11 @@ public class Mail {
        
        public static void denuncia(String mensagem){           
             try {
-
-			//usuario e senha do seu gmail
+                        //usuario e senha do seu gmail
 			final String usuario = "pontocerto.unitec@gmail.com";
 			final String senha = "leogabru";
+                        
+                        
 
 			//config. do gmail
 			Properties mailProps = new Properties();

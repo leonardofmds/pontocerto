@@ -62,6 +62,7 @@ public class MateriaisView extends javax.swing.JFrame {
         VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar2.png"))); // NOI18N
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarBtActionPerformed(evt);
@@ -80,6 +81,7 @@ public class MateriaisView extends javax.swing.JFrame {
         VisualizarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         VisualizarBt.setMinimumSize(new java.awt.Dimension(60, 60));
         VisualizarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        VisualizarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Visualizar2.png"))); // NOI18N
         VisualizarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VisualizarBtActionPerformed(evt);
@@ -93,6 +95,7 @@ public class MateriaisView extends javax.swing.JFrame {
         BaixarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         BaixarBt.setMinimumSize(new java.awt.Dimension(60, 60));
         BaixarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        BaixarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Baixar2.png"))); // NOI18N
         BaixarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BaixarBtActionPerformed(evt);
@@ -106,6 +109,7 @@ public class MateriaisView extends javax.swing.JFrame {
         DenunciarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         DenunciarBt.setMinimumSize(new java.awt.Dimension(60, 60));
         DenunciarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        DenunciarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Denunciar2.png"))); // NOI18N
         DenunciarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenunciarBtActionPerformed(evt);

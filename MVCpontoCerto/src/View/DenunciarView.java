@@ -7,6 +7,7 @@ package View;
 
 import Controller.FluxoTelasController;
 import Controller.MateriaisController;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -48,6 +49,7 @@ public class DenunciarView extends javax.swing.JFrame {
         DenunciarBt.setMaximumSize(new java.awt.Dimension(60, 60));
         DenunciarBt.setMinimumSize(new java.awt.Dimension(60, 60));
         DenunciarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        DenunciarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Enviar2.png"))); // NOI18N
         DenunciarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenunciarBtActionPerformed(evt);
@@ -61,6 +63,7 @@ public class DenunciarView extends javax.swing.JFrame {
         CancelarDenunciaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         CancelarDenunciaBt.setMinimumSize(new java.awt.Dimension(60, 60));
         CancelarDenunciaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        CancelarDenunciaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar2.png"))); // NOI18N
         CancelarDenunciaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelarDenunciaBtActionPerformed(evt);
@@ -110,12 +113,12 @@ public class DenunciarView extends javax.swing.JFrame {
 
     private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
        if ( DenunciaTA.getText().trim().equals("") )
-           JOptionPane.showMessageDialog(null, "Por favor insira o motivo da denúncia.");
+           JOptionPane.showMessageDialog(null, "Por favor insira o motivo da denúncia", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{
            material.DenunciaMaterial(DenunciaTA.getText());
            
            DenunciaTA.setText("");
-           JOptionPane.showMessageDialog(null, "Denúncia enviada com sucesso.");
+           JOptionPane.showMessageDialog(null, "Denúncia enviada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
            FluxoTelasController.getCdv().setVisible(true);
            this.setVisible(false);

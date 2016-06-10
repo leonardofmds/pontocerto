@@ -9,6 +9,7 @@ import Controller.*;
 import Model.NotaModel;
 import View.FavoritosView;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -110,6 +111,7 @@ public class NotaView extends javax.swing.JFrame {
         VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar2.png"))); // NOI18N
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarBtActionPerformed(evt);
@@ -150,6 +152,7 @@ public class NotaView extends javax.swing.JFrame {
         SalvarNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         SalvarNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
         SalvarNotaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        SalvarNotaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar2.png"))); // NOI18N
         SalvarNotaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalvarNotaBtActionPerformed(evt);
@@ -162,6 +165,7 @@ public class NotaView extends javax.swing.JFrame {
         ExcluirNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         ExcluirNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
         ExcluirNotaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        ExcluirNotaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Excluir2.png"))); // NOI18N
         ExcluirNotaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExcluirNotaBtActionPerformed(evt);
@@ -175,6 +179,7 @@ public class NotaView extends javax.swing.JFrame {
         EditarNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         EditarNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
         EditarNotaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        EditarNotaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Editar2.png"))); // NOI18N
         EditarNotaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditarNotaBtActionPerformed(evt);
@@ -187,6 +192,7 @@ public class NotaView extends javax.swing.JFrame {
         NovaNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         NovaNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
         NovaNotaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        NovaNotaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Nova2.png"))); // NOI18N
         NovaNotaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NovaNotaBtActionPerformed(evt);
@@ -266,11 +272,11 @@ public class NotaView extends javax.swing.JFrame {
 //        DisciplinasController2 dc = FluxoTelasController.getCfv().getDisciplinaController2();
 //        
 //        dc.getDisciplinas();
-
        int nNotas = NotasTb.getModel().getRowCount();
        double aNota;
        String aTipo;
-       double aPeso;
+       double aPeso;       
+       
        
        if(dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size()<nNotas)
        {
@@ -282,9 +288,12 @@ public class NotaView extends javax.swing.JFrame {
        System.out.println(NotasTb.getValueAt(0,2));
        for(int i = 0; i < nNotas; i++)
        {
+                     
            aTipo = (String) NotasTb.getValueAt(i, 0);
            aNota =  (double) NotasTb.getValueAt(i, 1);
-           aPeso =  (double) NotasTb.getValueAt(i, 2);           
+           aPeso =  (double) NotasTb.getValueAt(i, 2);
+
+           
            
            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setTipo(aTipo);
            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setNota(aNota);
