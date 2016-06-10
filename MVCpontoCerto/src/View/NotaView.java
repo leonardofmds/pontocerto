@@ -105,6 +105,7 @@ public class NotaView extends javax.swing.JFrame {
         DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
+        VoltarBt.setToolTipText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
         VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
@@ -144,6 +145,7 @@ public class NotaView extends javax.swing.JFrame {
 
         SalvarNotaBt.setBackground(new java.awt.Color(255, 255, 255));
         SalvarNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
+        SalvarNotaBt.setToolTipText("Salvar");
         SalvarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         SalvarNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         SalvarNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -155,6 +157,7 @@ public class NotaView extends javax.swing.JFrame {
         });
 
         ExcluirNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Excluir.png"))); // NOI18N
+        ExcluirNotaBt.setToolTipText("Excluir");
         ExcluirNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ExcluirNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         ExcluirNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -167,6 +170,7 @@ public class NotaView extends javax.swing.JFrame {
 
         EditarNotaBt.setBackground(new java.awt.Color(255, 255, 255));
         EditarNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Editar.png"))); // NOI18N
+        EditarNotaBt.setToolTipText("Editar");
         EditarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EditarNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         EditarNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -178,6 +182,7 @@ public class NotaView extends javax.swing.JFrame {
         });
 
         NovaNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Nova.png"))); // NOI18N
+        NovaNotaBt.setToolTipText("Nova");
         NovaNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         NovaNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
         NovaNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
