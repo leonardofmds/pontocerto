@@ -98,7 +98,7 @@ public class NotaView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ponto Certo");
+        setTitle("Ponto Certo - Notas");
 
         DisciplinaLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         DisciplinaLb.setText("\" X\"");

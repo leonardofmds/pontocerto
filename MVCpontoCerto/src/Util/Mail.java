@@ -16,6 +16,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
+import javax.swing.JOptionPane;
 
 /**
 * Classe para enviar email em anexo usando o Gmail.
@@ -25,8 +26,8 @@ import javax.mail.util.ByteArrayDataSource;
 */
 public class Mail {    
 
-       public static void main(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds) {            
-            new Mail().enviar(disciplina, tipo, subtipo, ano, semestre, fds);
+       public static void main() {            
+            new Mail();
 	}
        
        public static void denuncia(String mensagem){           
@@ -82,13 +83,14 @@ public class Mail {
 			mailMessage.setContent(mp);
 
 			//envia o email
-			Transport.send(mailMessage);
+			Transport.send(mailMessage);                        
+                        
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
        }
 
-	public void enviar(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds) {
+	public static void enviar(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds) {
                     
 		try {
 

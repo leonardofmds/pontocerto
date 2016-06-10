@@ -25,7 +25,7 @@ public class FluxoTelasController
     private static DenunciarView dv = new DenunciarView();
     private static NotaView cnv = new NotaView();
     private static FavoritosView cfv = new FavoritosView();
-    private static DisciplinaView cdv = new DisciplinaView();
+    private static MateriaisView cdv = new MateriaisView();
     
 
     
@@ -54,7 +54,7 @@ public class FluxoTelasController
         return cfv;
     }
 
-    public static DisciplinaView getCdv() {
+    public static MateriaisView getCdv() {
         return cdv;
     }
 

@@ -10,6 +10,7 @@ import java.io.File;
 import javax.activation.FileDataSource;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -54,7 +55,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         AnoMaterialLb1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ponto Certo");
+        setTitle("Ponto Certo - Enviar Material");
         setBackground(new java.awt.Color(204, 204, 204));
 
         TipoMaterialCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prova", "Trabalho", "Projeto", "Lista" }));
@@ -222,30 +223,36 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     }//GEN-LAST:event_TipoMaterialCbActionPerformed
 
     private void CancelaMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelaMaterialBtActionPerformed
-        //new HomeView().show();
+        Reseta();
+        
         FluxoTelasController.getHv().setVisible(true);
-        dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_CancelaMaterialBtActionPerformed
 
     private void EnviarMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMaterialBtActionPerformed
         // TODO add your handling code here:
         String disciplina,tipo,subtipo, ano, semestre;
-                
-        disciplina = DisciplinaTf.getText();
-        tipo = (String) TipoMaterialCb.getSelectedItem();
-        subtipo = (String) SubTipoCb.getSelectedItem();
-        ano = AnoTf.getText();
-        semestre = (String) SemestreCb.getSelectedItem();       
+        
+        if ( ArquivoTf.getText().trim().equals("") ) 
+             JOptionPane.showMessageDialog(null, "Por favor selecione um arquivo.");
+        else {
+            disciplina = DisciplinaTf.getText();
+            tipo = (String) TipoMaterialCb.getSelectedItem();
+            subtipo = (String) SubTipoCb.getSelectedItem();
+            ano = AnoTf.getText();
+            semestre = (String) SemestreCb.getSelectedItem();       
         
         
         
-        material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre, fds);
+            material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre, fds);
+            JOptionPane.showMessageDialog(null,"Material enviado com sucesso.");
         
-        DisciplinaTf.setText(" ");
-        AnoTf.setText(" ");
-        ArquivoTf.setText(" ");
-        FluxoTelasController.getHv().setVisible(true);
-        this.setVisible(false);
+            Reseta();
+            
+            FluxoTelasController.getHv().setVisible(true);
+            this.setVisible(false);
+        }        
+        
     }//GEN-LAST:event_EnviarMaterialBtActionPerformed
 
     private void SubTipoCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTipoCbActionPerformed
@@ -268,7 +275,14 @@ public class EnviarMaterialView extends javax.swing.JFrame {
            fds = new FileDataSource(arquivo.getAbsolutePath());
         }
     }//GEN-LAST:event_AbrirBtActionPerformed
-
+    private void Reseta(){
+            DisciplinaTf.setText("");
+            AnoTf.setText("");
+            ArquivoTf.setText("");
+            TipoMaterialCb.setSelectedIndex(0);
+            SubTipoCb.setSelectedIndex(0);
+            SemestreCb.setSelectedIndex(0);
+    }
     /**
      * @param args the command line arguments
      */

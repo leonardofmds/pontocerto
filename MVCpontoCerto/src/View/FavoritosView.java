@@ -78,7 +78,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ponto Certo");
+        setTitle("Ponto Certo - Disciplinas");
 
         DisciplinasLt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         DisciplinasSP.setViewportView(DisciplinasLt);
@@ -331,11 +331,11 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         //new HomeView().show();
         FluxoTelasController.getHv().setVisible(true);
-        dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed
-        DisciplinaView DiscView = FluxoTelasController.getCdv();
+        MateriaisView DiscView = FluxoTelasController.getCdv();
         //DiscView.setVisible(true);
         if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
         {

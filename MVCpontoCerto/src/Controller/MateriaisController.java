@@ -18,10 +18,12 @@ import javax.activation.FileDataSource;
 public class MateriaisController {
     
     public void EnviaMaterial(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds){
-                Mail.main(disciplina, tipo, subtipo, ano, semestre, fds);                
+        Mail.main();
+        Mail.enviar(disciplina, tipo, subtipo, ano, semestre, fds);                
     }  
     
     public void DenunciaMaterial(String mensagem){
+        Mail.main();
         Mail.denuncia(mensagem);
     }
 }

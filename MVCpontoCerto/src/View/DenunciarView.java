@@ -7,6 +7,7 @@ package View;
 
 import Controller.FluxoTelasController;
 import Controller.MateriaisController;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -38,7 +39,7 @@ public class DenunciarView extends javax.swing.JFrame {
         DenunciaTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ponto Certo");
+        setTitle("Ponto Certo - Denunciar");
 
         DenunciarBt.setBackground(new java.awt.Color(255, 255, 255));
         DenunciarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Enviar.png"))); // NOI18N
@@ -102,17 +103,23 @@ public class DenunciarView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelarDenunciaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarDenunciaBtActionPerformed
-        //new DisciplinaView().show();
+        //new MateriaisView().show();
         FluxoTelasController.getCdv().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_CancelarDenunciaBtActionPerformed
 
     private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
-       material.DenunciaMaterial(DenunciaTA.getText());
-       
-       DenunciaTA.setText("");
-       FluxoTelasController.getHv().setVisible(true);
-       this.setVisible(false);
+       if ( DenunciaTA.getText().trim().equals("") )
+           JOptionPane.showMessageDialog(null, "Por favor insira o motivo da denúncia.");
+       else{
+           material.DenunciaMaterial(DenunciaTA.getText());
+           
+           DenunciaTA.setText("");
+           JOptionPane.showMessageDialog(null, "Denúncia enviada com sucesso.");
+           
+           FluxoTelasController.getCdv().setVisible(true);
+           this.setVisible(false);
+       }
     }//GEN-LAST:event_DenunciarBtActionPerformed
 
     /**

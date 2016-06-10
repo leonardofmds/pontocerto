@@ -20,12 +20,12 @@ import Util.hiperlink;
  *
  * @author labccet
  */
-public class DisciplinaView extends javax.swing.JFrame {
+public class MateriaisView extends javax.swing.JFrame {
 
     /**
      * Creates new form ControleDisciplinaView
      */
-    public DisciplinaView() {
+    public MateriaisView() {
         initComponents();
     }
 
@@ -51,6 +51,7 @@ public class DisciplinaView extends javax.swing.JFrame {
         DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ponto Certo - Materiais");
         setLocationByPlatform(true);
         setResizable(false);
 
@@ -67,6 +68,9 @@ public class DisciplinaView extends javax.swing.JFrame {
             }
         });
 
+        MaterialLt.setFont(new java.awt.Font("Tempus Sans ITC", 0, 13)); // NOI18N
+        MaterialLt.setToolTipText("");
+        MaterialLt.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jScrollPane1.setViewportView(MaterialLt);
 
         VisualizarBt.setBackground(new java.awt.Color(255, 255, 255));
@@ -154,7 +158,7 @@ public class DisciplinaView extends javax.swing.JFrame {
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         //new FavoritosView().show();
         FluxoTelasController.getCfv().setVisible(true);
-        dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VisualizarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarBtActionPerformed
@@ -165,7 +169,7 @@ public class DisciplinaView extends javax.swing.JFrame {
         try {
             hp.open(new URI(MaterialLt.getModel().getElementAt(0)));
         } catch (URISyntaxException ex) {
-            Logger.getLogger(DisciplinaView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MateriaisView.class.getName()).log(Level.SEVERE, null, ex);
         }
         
 
@@ -197,21 +201,23 @@ public class DisciplinaView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MateriaisView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MateriaisView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MateriaisView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DisciplinaView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MateriaisView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new DisciplinaView().setVisible(true);
+                new MateriaisView().setVisible(true);
             }
         });
     }
