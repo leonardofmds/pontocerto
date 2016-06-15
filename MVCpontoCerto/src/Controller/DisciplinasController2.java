@@ -8,6 +8,7 @@ package Controller;
 import Model.DisciplinaModel;
 import Util.MySQL_POST;
 import Util.XML;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 
@@ -70,7 +71,7 @@ public class DisciplinasController2
 
     }
     
-        public DefaultListModel<String> listaFavoritos()
+    public DefaultListModel<String> listaFavoritos()
     {
         DefaultListModel<String> ltModel = new DefaultListModel<String>();
         
@@ -83,7 +84,7 @@ public class DisciplinasController2
         return ltModel;
     }
         
-        public void setFavoritos(ListModel<String> lt)
+    public void setFavoritos(ListModel<String> lt)
     {
         String s[] = new String[lt.getSize()];
         if(lt.getSize()==0)
@@ -127,6 +128,20 @@ public class DisciplinasController2
     public void setDisciplinas(DisciplinaModel[] disciplinas) 
     {
         this.disciplinas = disciplinas;
+    }
+    
+    public DefaultComboBoxModel<String> comboDisciplinas()
+    {
+        DefaultComboBoxModel<String> cbModel = new DefaultComboBoxModel<String>();
+        
+        for(int i = 0; i< disciplinas.length;i++)
+        {            
+             cbModel.addElement(disciplinas[i].getNomeDisc());
+        }
+        
+        //System.out.println(ltModel);
+        return cbModel;
+
     }
            
 }

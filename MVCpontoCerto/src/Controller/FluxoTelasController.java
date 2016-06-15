@@ -29,6 +29,8 @@ public class FluxoTelasController
     private static FavoritosView cfv = new FavoritosView();
     private static MateriaisView cdv = new MateriaisView();
     private static LoginView lgv = new LoginView();
+    private static AddDisciplinaView adv = new AddDisciplinaView();
+    private static AddMaterialView amv = new AddMaterialView();
     
 
     
@@ -63,6 +65,14 @@ public class FluxoTelasController
     
     public static LoginView getLgv() {
         return lgv;
+    }
+    
+    public static AddDisciplinaView getAdv() {
+        return adv;
+    }
+    
+    public static AddMaterialView getAmv() {
+        return amv;
     }
 
     public static DisciplinasController2 getDc2() {

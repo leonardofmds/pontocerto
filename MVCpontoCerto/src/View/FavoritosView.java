@@ -393,8 +393,20 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     }//GEN-LAST:event_SalvarBtActionPerformed
 
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
-        // TODO add your handling code here:
-        
+        AddDisciplinaView AddView = FluxoTelasController.getAdv();
+        //DiscView.setVisible(true);
+        if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
+        {
+            JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+        }
+        else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
+        {
+            AddView.setVisible(true);
+        }
+        else
+        {
+            AddView.setVisible(true); 
+        }
     }//GEN-LAST:event_AddBtActionPerformed
 
    public JButton getAddBt()

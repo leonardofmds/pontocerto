@@ -6,6 +6,7 @@
 package View;
 
 import Controller.*;
+import Util.Order;
 import java.io.File;
 import javax.activation.FileDataSource;
 import javax.swing.ImageIcon;
@@ -19,15 +20,18 @@ import javax.swing.JOptionPane;
  */
 public class EnviarMaterialView extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form EnviarMaterialView
      */
-    
+    DisciplinasController2 dc = FluxoTelasController.getDc2();
     MateriaisController material = FluxoTelasController.getMc();     
     FileDataSource fds;
     
     public EnviarMaterialView() {
-        initComponents();        
+        initComponents(); 
+        DisciplinasCB.setModel(Order.ordenaComboModel(dc.comboDisciplinas()));
+               
     }
 
     /**
@@ -50,10 +54,10 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         SubLb = new javax.swing.JLabel();
         SubTipoCb = new javax.swing.JComboBox<>();
         DisciplinaLb = new javax.swing.JLabel();
-        DisciplinaTf = new javax.swing.JTextField();
         ArquivoTf = new javax.swing.JTextField();
         AbrirBt = new javax.swing.JButton();
         AnoMaterialLb1 = new javax.swing.JLabel();
+        DisciplinasCB = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Enviar Material");
@@ -142,6 +146,13 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         AnoMaterialLb1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         AnoMaterialLb1.setText("Arquivo:");
 
+        DisciplinasCB.setName(""); // NOI18N
+        DisciplinasCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DisciplinasCBActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,31 +161,32 @@ public class EnviarMaterialView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(DisciplinasCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(ArquivoTf)
                         .addGap(18, 18, 18)
                         .addComponent(AbrirBt, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(6, 6, 6))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(DisciplinaLb)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(TipoEnviarLb)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(AnoMaterialLb)
-                                                .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(49, 49, 49)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(SemestreLb))))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(SubLb)
-                                        .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(DisciplinaTf))
+                            .addComponent(DisciplinaLb)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TipoEnviarLb)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(AnoMaterialLb)
+                                            .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(49, 49, 49)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(SemestreLb))))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(SubLb)
+                                    .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(EnviarMaterialBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -187,9 +199,9 @@ public class EnviarMaterialView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(DisciplinaLb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DisciplinaTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DisciplinasCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TipoEnviarLb)
                     .addComponent(SubLb))
@@ -237,10 +249,10 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         // TODO add your handling code here:
         String disciplina,tipo,subtipo, ano, semestre;
         
-        if ( ArquivoTf.getText().trim().equals("") ) 
+        if ( ArquivoTf.getText().trim().equals("")) 
              JOptionPane.showMessageDialog(null, "Por favor selecione um arquivo.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         else {
-            disciplina = DisciplinaTf.getText();
+            disciplina = (String)DisciplinasCB.getSelectedItem();
             tipo = (String) TipoMaterialCb.getSelectedItem();
             subtipo = (String) SubTipoCb.getSelectedItem();
             ano = AnoTf.getText();
@@ -280,8 +292,12 @@ public class EnviarMaterialView extends javax.swing.JFrame {
            fds = new FileDataSource(arquivo.getAbsolutePath());
         }
     }//GEN-LAST:event_AbrirBtActionPerformed
+
+    private void DisciplinasCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinasCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DisciplinasCBActionPerformed
     private void Reseta(){
-            DisciplinaTf.setText("");
+            DisciplinasCB.setSelectedIndex(0);
             AnoTf.setText("");
             ArquivoTf.setText("");
             TipoMaterialCb.setSelectedIndex(0);
@@ -331,7 +347,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     private javax.swing.JTextField ArquivoTf;
     private javax.swing.JButton CancelaMaterialBt;
     private javax.swing.JLabel DisciplinaLb;
-    private javax.swing.JTextField DisciplinaTf;
+    private javax.swing.JComboBox<String> DisciplinasCB;
     private javax.swing.JButton EnviarMaterialBt;
     private javax.swing.JComboBox<String> SemestreCb;
     private javax.swing.JLabel SemestreLb;

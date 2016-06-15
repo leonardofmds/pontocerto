@@ -5,6 +5,8 @@
 package Util;
 
 import java.util.Arrays;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
 
@@ -23,6 +25,19 @@ public class Order
         for(int i = 0; i < lt.getSize();i++){lt.setElementAt(s[i],i);}
         System.out.println("teste");
         return lt;
+        
+    }
+    public static ComboBoxModel<String> ordenaComboModel(DefaultComboBoxModel<String> cb)
+    {        
+       String [] s = new String[cb.getSize()];
+        
+        
+       //for(int i = 0; i <= cb.getSize();i++)
+         //   s[i] = cb.getElementAt(i);
+       //Arrays.sort(s);
+       //for(int i = 0; i <= cb.getSize();i++){cb.insertElementAt(s[i], i);}
+        System.out.println("teste");
+        return cb;     
         
     }
 }
