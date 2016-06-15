@@ -18,6 +18,8 @@ import Controller.*;
 public class FluxoTelasController 
 {
     private static DisciplinasController2 dc2 = new DisciplinasController2();
+    private static MateriaisController mc = new MateriaisController();
+    private static AdmController adm = new AdmController();
     //private static DisciplinasController dc = new DisciplinasController();
     
     private static HomeView hv = new HomeView();
@@ -26,6 +28,7 @@ public class FluxoTelasController
     private static NotaView cnv = new NotaView();
     private static FavoritosView cfv = new FavoritosView();
     private static MateriaisView cdv = new MateriaisView();
+    private static LoginView lgv = new LoginView();
     
 
     
@@ -57,11 +60,22 @@ public class FluxoTelasController
     public static MateriaisView getCdv() {
         return cdv;
     }
+    
+    public static LoginView getLgv() {
+        return lgv;
+    }
 
     public static DisciplinasController2 getDc2() {
         return dc2;
     }
+    
+    public static MateriaisController getMc() {
+        return mc;
+    }
 
+    public static AdmController getAdm() {
+        return adm;
+    }
 //    public static DisciplinasController getDc() {
 //        return dc;
 //    }

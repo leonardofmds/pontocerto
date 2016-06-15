@@ -12,6 +12,10 @@ package Model;
 public class AdmModel {
     
     private String login, senha;
+    private boolean log = false;
+
+    public AdmModel() {
+    }
     
     public AdmModel(String login, String senha){
         this.login = login;
@@ -32,6 +36,14 @@ public class AdmModel {
     
     public void SetSenha(String senha){
         this.senha = senha;
+    }
+    
+    public boolean GetLog(){
+        return log;
+    }
+    
+    public void SetLog(boolean log){
+        this.log = log;
     }
     
 }

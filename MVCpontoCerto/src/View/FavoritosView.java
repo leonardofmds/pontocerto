@@ -76,6 +76,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         VoltarBt = new javax.swing.JButton();
         VerMateriasBt = new javax.swing.JButton();
         SalvarBt = new javax.swing.JButton();
+        AddBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Disciplinas");
@@ -181,6 +182,21 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
             }
         });
 
+        AddBt.setBackground(new java.awt.Color(255, 255, 255));
+        AddBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionaradm.png"))); // NOI18N
+        AddBt.setToolTipText("Adicionar Disciplina");
+        AddBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AddBt.setEnabled(false);
+        AddBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        AddBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        AddBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        AddBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionaradm2.png"))); // NOI18N
+        AddBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddBtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -191,20 +207,22 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DisciplinasLb)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(ImportarFavBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(RemoverBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(DisciplinasLb))
+                                    .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -241,7 +259,8 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -365,7 +384,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         // TODO add your handling code here:
 //        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
 //        System.out.println(fav.getNomeFavoritos());
-//        fav.saveListNomeFavoritos();
+//        fav.saveListNomeFavoritos();        
         dc.setFavoritos(FavoritosLt.getModel()); System.out.println(FavoritosLt.getModel());
         dc.serializaDisciplinas();
         
@@ -373,6 +392,16 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         //dc.escreveArquivos();       
     }//GEN-LAST:event_SalvarBtActionPerformed
 
+    private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_AddBtActionPerformed
+
+   public JButton getAddBt()
+   {
+       return AddBt;
+   }
+    
     /**
      * @param args the command line arguments
      */
@@ -417,6 +446,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddBt;
     private javax.swing.JLabel DisciplinasLb;
     private javax.swing.JList<String> DisciplinasLt;
     private javax.swing.JScrollPane DisciplinasSP;

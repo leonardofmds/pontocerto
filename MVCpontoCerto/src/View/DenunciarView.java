@@ -39,7 +39,6 @@ public class DenunciarView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         DenunciaTA = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Denunciar");
 
         DenunciarBt.setBackground(new java.awt.Color(255, 255, 255));
@@ -106,7 +105,7 @@ public class DenunciarView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelarDenunciaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarDenunciaBtActionPerformed
-        //new MateriaisView().show();
+        Reseta();
         FluxoTelasController.getCdv().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_CancelarDenunciaBtActionPerformed
@@ -117,7 +116,7 @@ public class DenunciarView extends javax.swing.JFrame {
        else{
            material.DenunciaMaterial(DenunciaTA.getText());
            
-           DenunciaTA.setText("");
+           Reseta();
            JOptionPane.showMessageDialog(null, "Denúncia enviada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
            FluxoTelasController.getCdv().setVisible(true);
@@ -128,6 +127,9 @@ public class DenunciarView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    private void Reseta(){
+        DenunciaTA.setText("");
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

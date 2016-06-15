@@ -23,7 +23,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
      * Creates new form EnviarMaterialView
      */
     
-    MateriaisController material = new MateriaisController();     
+    MateriaisController material = FluxoTelasController.getMc();     
     FileDataSource fds;
     
     public EnviarMaterialView() {
