@@ -62,7 +62,7 @@ public class LoginView extends javax.swing.JFrame {
         UserLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         UserLb.setText("Administrador:");
 
-        UserTf.setFont(new java.awt.Font("Tempus Sans ITC", 0, 11)); // NOI18N
+        UserTf.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         UserTf.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 UserTfKeyPressed(evt);
@@ -148,7 +148,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addComponent(SenhaLb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(SenhaPf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LoginBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CancelaLoginBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

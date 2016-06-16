@@ -63,6 +63,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         setTitle("Ponto Certo - Enviar Material");
         setBackground(new java.awt.Color(204, 204, 204));
 
+        TipoMaterialCb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         TipoMaterialCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prova", "Trabalho", "Projeto", "Lista" }));
         TipoMaterialCb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,12 +71,15 @@ public class EnviarMaterialView extends javax.swing.JFrame {
             }
         });
 
+        SemestreCb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         SemestreCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
         SemestreCb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SemestreCbActionPerformed(evt);
             }
         });
+
+        AnoTf.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
 
         TipoEnviarLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         TipoEnviarLb.setText("Tipo:");
@@ -118,6 +122,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         SubLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         SubLb.setText("Sub-Tipo:");
 
+        SubTipoCb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         SubTipoCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "Reposição" }));
         SubTipoCb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +134,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         DisciplinaLb.setText("Disciplina:");
 
         ArquivoTf.setEditable(false);
+        ArquivoTf.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         ArquivoTf.setOpaque(false);
 
         AbrirBt.setBackground(new java.awt.Color(255, 255, 255));
@@ -146,6 +152,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         AnoMaterialLb1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         AnoMaterialLb1.setText("Arquivo:");
 
+        DisciplinasCB.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         DisciplinasCB.setName(""); // NOI18N
         DisciplinasCB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
