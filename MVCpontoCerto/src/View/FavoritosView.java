@@ -81,6 +81,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Disciplinas");
 
+        DisciplinasLt.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         DisciplinasLt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         DisciplinasSP.setViewportView(DisciplinasLt);
 
@@ -106,6 +107,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
             }
         });
 
+        FavoritosLt.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         FavoritosSP.setViewportView(FavoritosLt);
 
         EditarBt.setBackground(new java.awt.Color(255, 255, 255));
@@ -122,7 +124,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
             }
         });
 
-        InstrucoesLb.setFont(new java.awt.Font("Tahoma", 2, 10)); // NOI18N
+        InstrucoesLb.setFont(new java.awt.Font("Tempus Sans ITC", 2, 10)); // NOI18N
         InstrucoesLb.setText("<html> Para selecionar multiplas disciplinas <br> pressione 'ctrl' e clique.");
         InstrucoesLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
@@ -395,18 +397,8 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
         AddDisciplinaView AddView = FluxoTelasController.getAdv();
         //DiscView.setVisible(true);
-        if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
-        {
-            JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
-        }
-        else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
-        {
-            AddView.setVisible(true);
-        }
-        else
-        {
+        
             AddView.setVisible(true); 
-        }
     }//GEN-LAST:event_AddBtActionPerformed
 
    public JButton getAddBt()

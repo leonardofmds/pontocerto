@@ -9,6 +9,7 @@ import Controller.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Util.MySQL_POST;
+import javax.swing.JButton;
 
 /**
  *
@@ -20,9 +21,11 @@ public class HomeView extends javax.swing.JFrame {
     /**
      * Creates new form homeView
      */
-    public HomeView() {
-        initComponents();
-        LogoLb = new JLabel(new ImageIcon("src//Imagens//PontoCerto.png"));
+    
+    AdmController adm = FluxoTelasController.getAdm();
+    
+    public HomeView() {        
+        initComponents();            
     }
 
     /**
@@ -37,24 +40,37 @@ public class HomeView extends javax.swing.JFrame {
         LogoLb = new javax.swing.JLabel();
         DisciplinasBt = new javax.swing.JButton();
         EnviarBt = new javax.swing.JButton();
+        AdmBt = new javax.swing.JButton();
+        AdmoutBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        LogoLb.setText("Ponto Certo");
+        LogoLb.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logo.png"))); // NOI18N
         LogoLb.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        DisciplinasBt.setBackground(new java.awt.Color(255, 255, 255));
+        DisciplinasBt.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        DisciplinasBt.setForeground(new java.awt.Color(102, 102, 102));
+        DisciplinasBt.setText("DISCIPLINAS");
         DisciplinasBt.setActionCommand("Disciplinas");
         DisciplinasBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        DisciplinasBt.setLabel("Disciplinas");
         DisciplinasBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DisciplinasBtActionPerformed(evt);
             }
         });
 
-        EnviarBt.setText("Enviar Material");
+        EnviarBt.setBackground(new java.awt.Color(255, 255, 255));
+        EnviarBt.setFont(new java.awt.Font("Tempus Sans ITC", 1, 18)); // NOI18N
+        EnviarBt.setForeground(new java.awt.Color(102, 102, 102));
+        EnviarBt.setText("ENVIAR MATERIAL");
         EnviarBt.setActionCommand("Enviar");
         EnviarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         EnviarBt.addActionListener(new java.awt.event.ActionListener() {
@@ -63,32 +79,73 @@ public class HomeView extends javax.swing.JFrame {
             }
         });
 
+        AdmBt.setBackground(new java.awt.Color(255, 255, 255));
+        AdmBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Login.png"))); // NOI18N
+        AdmBt.setToolTipText("Administrador");
+        AdmBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdmBt.setMaximumSize(new java.awt.Dimension(30, 30));
+        AdmBt.setMinimumSize(new java.awt.Dimension(30, 30));
+        AdmBt.setPreferredSize(new java.awt.Dimension(30, 30));
+        AdmBt.setRequestFocusEnabled(false);
+        AdmBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Login2.png"))); // NOI18N
+        AdmBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdmBtActionPerformed(evt);
+            }
+        });
+
+        AdmoutBt.setBackground(new java.awt.Color(255, 255, 255));
+        AdmoutBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logout.png"))); // NOI18N
+        AdmoutBt.setToolTipText("Logout");
+        AdmoutBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AdmoutBt.setMaximumSize(new java.awt.Dimension(30, 30));
+        AdmoutBt.setMinimumSize(new java.awt.Dimension(30, 30));
+        AdmoutBt.setPreferredSize(new java.awt.Dimension(30, 30));
+        AdmoutBt.setRequestFocusEnabled(false);
+        AdmoutBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Logout2.png"))); // NOI18N
+        AdmoutBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdmoutBtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(LogoLb))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 23, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EnviarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DisciplinasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(54, Short.MAX_VALUE))
+                            .addComponent(EnviarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(51, 51, 51)
+                                    .addComponent(LogoLb))
+                                .addComponent(DisciplinasBt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(AdmoutBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AdmBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(LogoLb)
-                .addGap(29, 29, 29)
-                .addComponent(DisciplinasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AdmBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AdmoutBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(EnviarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addComponent(LogoLb)
+                .addGap(34, 34, 34)
+                .addComponent(DisciplinasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(EnviarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
@@ -115,10 +172,30 @@ public class HomeView extends javax.swing.JFrame {
         this.setVisible(false); 
     }//GEN-LAST:event_EnviarBtActionPerformed
 
+    private void AdmBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmBtActionPerformed
+        FluxoTelasController.getLgv().setVisible(true);        
+    }//GEN-LAST:event_AdmBtActionPerformed
+
+    private void AdmoutBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmoutBtActionPerformed
+        adm.Desloga();
+    }//GEN-LAST:event_AdmoutBtActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        adm.ativaComponentsADM();
+    }//GEN-LAST:event_formWindowOpened
+
+    public JButton getAdmBt(){
+        return AdmBt;
+    }
+    public JButton getAdmoutBt(){
+        return AdmoutBt;
+    }    
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -152,6 +229,8 @@ public class HomeView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdmBt;
+    private javax.swing.JButton AdmoutBt;
     private javax.swing.JButton DisciplinasBt;
     private javax.swing.JButton EnviarBt;
     private javax.swing.JLabel LogoLb;

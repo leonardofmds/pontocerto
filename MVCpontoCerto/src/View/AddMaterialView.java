@@ -5,6 +5,10 @@
  */
 package View;
 
+import Controller.FluxoTelasController;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author CPD RJ
@@ -27,26 +31,209 @@ public class AddMaterialView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SalvarBt = new javax.swing.JButton();
+        CancelarAddBt = new javax.swing.JButton();
+        TipoEnviarLb = new javax.swing.JLabel();
+        TipoMaterialCb = new javax.swing.JComboBox<>();
+        SubTipoCb = new javax.swing.JComboBox<>();
+        SubLb = new javax.swing.JLabel();
+        AnoMaterialLb = new javax.swing.JLabel();
+        AnoTf = new javax.swing.JTextField();
+        SemestreCb = new javax.swing.JComboBox<>();
+        SemestreLb = new javax.swing.JLabel();
+        BaixarLb = new javax.swing.JLabel();
+        BaixarTf = new javax.swing.JTextField();
+        VisuLb1 = new javax.swing.JLabel();
+        VisuTf = new javax.swing.JTextField();
+
         setTitle("Ponto Certo - Adicionar Material");
+        setResizable(false);
+
+        SalvarBt.setBackground(new java.awt.Color(255, 255, 255));
+        SalvarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
+        SalvarBt.setToolTipText("Salvar");
+        SalvarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalvarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar2.png"))); // NOI18N
+        SalvarBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarBtActionPerformed(evt);
+            }
+        });
+
+        CancelarAddBt.setBackground(new java.awt.Color(255, 255, 255));
+        CancelarAddBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar.png"))); // NOI18N
+        CancelarAddBt.setToolTipText("Cancelar");
+        CancelarAddBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CancelarAddBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        CancelarAddBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        CancelarAddBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        CancelarAddBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar2.png"))); // NOI18N
+        CancelarAddBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelarAddBtActionPerformed(evt);
+            }
+        });
+
+        TipoEnviarLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        TipoEnviarLb.setText("Tipo:");
+
+        TipoMaterialCb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
+        TipoMaterialCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prova", "Trabalho", "Projeto", "Lista" }));
+        TipoMaterialCb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TipoMaterialCbActionPerformed(evt);
+            }
+        });
+
+        SubTipoCb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
+        SubTipoCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "Reposição" }));
+        SubTipoCb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubTipoCbActionPerformed(evt);
+            }
+        });
+
+        SubLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        SubLb.setText("Sub-Tipo:");
+
+        AnoMaterialLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        AnoMaterialLb.setText("Ano:");
+
+        AnoTf.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
+
+        SemestreCb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
+        SemestreCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        SemestreCb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SemestreCbActionPerformed(evt);
+            }
+        });
+
+        SemestreLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        SemestreLb.setText("Semestre:");
+
+        BaixarLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        BaixarLb.setText("URL Baixar:");
+
+        VisuLb1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        VisuLb1.setText("URLVisualizar:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TipoEnviarLb)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AnoMaterialLb)
+                                    .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(49, 49, 49)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(SemestreLb)
+                                    .addComponent(SemestreCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(SubLb)
+                            .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(BaixarLb)
+                    .addComponent(BaixarTf)
+                    .addComponent(VisuLb1)
+                    .addComponent(VisuTf))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipoEnviarLb)
+                    .addComponent(SubLb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AnoMaterialLb)
+                    .addComponent(SemestreLb))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SemestreCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(BaixarLb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BaixarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(VisuLb1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(VisuTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
+        if ( AnoTf.getText().trim().equals("")||BaixarTf.getText().trim().equals("")||VisuTf.getText().trim().equals("") )
+           JOptionPane.showMessageDialog(null, "Por favor insira todos os dados.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+       else{        
+           
+           Reseta();
+           JOptionPane.showMessageDialog(null, "Material adicionado com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
+           
+           FluxoTelasController.getCdv().setVisible(true);
+           this.setVisible(false);
+       }
+    }//GEN-LAST:event_SalvarBtActionPerformed
+
+    private void CancelarAddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAddBtActionPerformed
+        Reseta();
+        FluxoTelasController.getCdv().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_CancelarAddBtActionPerformed
+
+    private void TipoMaterialCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TipoMaterialCbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TipoMaterialCbActionPerformed
+
+    private void SubTipoCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubTipoCbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubTipoCbActionPerformed
+
+    private void SemestreCbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SemestreCbActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SemestreCbActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    private void Reseta(){
+        TipoMaterialCb.setSelectedItem(0);
+        SubTipoCb.setSelectedIndex(0);
+        AnoTf.setText("");
+        SemestreCb.setSelectedIndex(0);
+        BaixarTf.setText("");
+        VisuTf.setText("");
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -81,5 +268,19 @@ public class AddMaterialView extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AnoMaterialLb;
+    private javax.swing.JTextField AnoTf;
+    private javax.swing.JLabel BaixarLb;
+    private javax.swing.JTextField BaixarTf;
+    private javax.swing.JButton CancelarAddBt;
+    private javax.swing.JButton SalvarBt;
+    private javax.swing.JComboBox<String> SemestreCb;
+    private javax.swing.JLabel SemestreLb;
+    private javax.swing.JLabel SubLb;
+    private javax.swing.JComboBox<String> SubTipoCb;
+    private javax.swing.JLabel TipoEnviarLb;
+    private javax.swing.JComboBox<String> TipoMaterialCb;
+    private javax.swing.JLabel VisuLb1;
+    private javax.swing.JTextField VisuTf;
     // End of variables declaration//GEN-END:variables
 }

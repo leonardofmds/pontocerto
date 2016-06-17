@@ -39,6 +39,7 @@ public class DenunciarView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         DenunciaTA = new javax.swing.JTextArea();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Denunciar");
 
         DenunciarBt.setBackground(new java.awt.Color(255, 255, 255));
@@ -70,6 +71,7 @@ public class DenunciarView extends javax.swing.JFrame {
         });
 
         DenunciaTA.setColumns(20);
+        DenunciaTA.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         DenunciaTA.setLineWrap(true);
         DenunciaTA.setRows(5);
         jScrollPane1.setViewportView(DenunciaTA);
@@ -112,7 +114,7 @@ public class DenunciarView extends javax.swing.JFrame {
 
     private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
        if ( DenunciaTA.getText().trim().equals("") )
-           JOptionPane.showMessageDialog(null, "Por favor insira o motivo da denúncia", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+           JOptionPane.showMessageDialog(null, "Por favor insira o motivo da denúncia.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{
            material.DenunciaMaterial(DenunciaTA.getText());
            

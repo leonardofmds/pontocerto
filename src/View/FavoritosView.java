@@ -75,69 +75,127 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         RemoverBt = new javax.swing.JButton();
         VoltarBt = new javax.swing.JButton();
         VerMateriasBt = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        SalvarBt = new javax.swing.JButton();
+        AddBt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ponto Certo");
+        setTitle("Ponto Certo - Disciplinas");
 
+        DisciplinasLt.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         DisciplinasLt.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         DisciplinasSP.setViewportView(DisciplinasLt);
 
+        DisciplinasLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         DisciplinasLb.setText("Disciplinas");
         DisciplinasLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
+        FavoritosLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         FavoritosLb.setText("Favoritos");
         FavoritosLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        ImportarFavBt.setText(">>>>");
+        ImportarFavBt.setBackground(new java.awt.Color(255, 255, 255));
+        ImportarFavBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar.png"))); // NOI18N
+        ImportarFavBt.setToolTipText("Adicionar");
         ImportarFavBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ImportarFavBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        ImportarFavBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        ImportarFavBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        ImportarFavBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionar2.png"))); // NOI18N
         ImportarFavBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImportarFavBtActionPerformed(evt);
             }
         });
 
+        FavoritosLt.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         FavoritosSP.setViewportView(FavoritosLt);
 
-        EditarBt.setText("Editar");
+        EditarBt.setBackground(new java.awt.Color(255, 255, 255));
+        EditarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Editar.png"))); // NOI18N
+        EditarBt.setToolTipText("Editar");
         EditarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        EditarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        EditarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        EditarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        EditarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Editar2.png"))); // NOI18N
         EditarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditarBtActionPerformed(evt);
             }
         });
 
+        InstrucoesLb.setFont(new java.awt.Font("Tempus Sans ITC", 2, 10)); // NOI18N
         InstrucoesLb.setText("<html> Para selecionar multiplas disciplinas <br> pressione 'ctrl' e clique.");
         InstrucoesLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        RemoverBt.setText("<<<<");
+        RemoverBt.setBackground(new java.awt.Color(255, 255, 255));
+        RemoverBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Remover.png"))); // NOI18N
+        RemoverBt.setToolTipText("Remover");
         RemoverBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RemoverBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        RemoverBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        RemoverBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        RemoverBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Remover2.png"))); // NOI18N
         RemoverBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoverBtActionPerformed(evt);
             }
         });
 
-        VoltarBt.setText("Voltar");
+        VoltarBt.setBackground(new java.awt.Color(255, 255, 255));
+        VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
+        VoltarBt.setToolTipText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar2.png"))); // NOI18N
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarBtActionPerformed(evt);
             }
         });
 
-        VerMateriasBt.setText("VER MATERIAIS");
+        VerMateriasBt.setBackground(new java.awt.Color(255, 255, 255));
+        VerMateriasBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Ver.png"))); // NOI18N
+        VerMateriasBt.setToolTipText("Ver Materiais");
         VerMateriasBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VerMateriasBt.setMaximumSize(new java.awt.Dimension(68, 68));
+        VerMateriasBt.setMinimumSize(new java.awt.Dimension(68, 68));
+        VerMateriasBt.setPreferredSize(new java.awt.Dimension(68, 68));
+        VerMateriasBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Ver2.png"))); // NOI18N
         VerMateriasBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VerMateriasBtActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Salvar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        SalvarBt.setBackground(new java.awt.Color(255, 255, 255));
+        SalvarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
+        SalvarBt.setToolTipText("Salvar");
+        SalvarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalvarBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        SalvarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar2.png"))); // NOI18N
+        SalvarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalvarBtActionPerformed(evt);
+            }
+        });
+
+        AddBt.setBackground(new java.awt.Color(255, 255, 255));
+        AddBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionaradm.png"))); // NOI18N
+        AddBt.setToolTipText("Adicionar Disciplina");
+        AddBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        AddBt.setEnabled(false);
+        AddBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        AddBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        AddBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        AddBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Adicionaradm2.png"))); // NOI18N
+        AddBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddBtActionPerformed(evt);
             }
         });
 
@@ -148,70 +206,64 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(VoltarBt)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(203, 203, 203)
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DisciplinasLb)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(ImportarFavBt)
-                                    .addComponent(RemoverBt))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(DisciplinasLb)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(ImportarFavBt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(RemoverBt, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(FavoritosLb)
-                                .addGap(159, 193, Short.MAX_VALUE))
-                            .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(202, 202, 202))))
+                                .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(VoltarBt)
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap()
+                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DisciplinasLb)
                     .addComponent(FavoritosLb))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(ImportarFavBt)
+                        .addGap(32, 32, 32)
+                        .addComponent(ImportarFavBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(RemoverBt))
+                        .addComponent(RemoverBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FavoritosSP, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(FavoritosSP)
+                            .addComponent(DisciplinasSP, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(EditarBt)
-                            .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                        .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(EditarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(9, 9, 9)
+                        .addComponent(InstrucoesLb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(VerMateriasBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -254,21 +306,21 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void EditarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarBtActionPerformed
         // TODO add your handling code here:
         NotaView DiscView = FluxoTelasController.getCnv();
-        DiscView.setVisible(true);
+        //DiscView.setVisible(true);
         
         
         if(FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)
         {
-            JOptionPane.showMessageDialog(null, "Selecione uma disciplina nos favoritos.");
+            JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina nos favoritos.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
         else
         {
             DiscView.setVisible(true);
             DiscView.setNomeDisciplina(FavoritosLt.getSelectedValue());
             this.setVisible(false);
+            DiscView.carregaNotaDisc();
         }
-        
-        DiscView.carregaNotaDisc();
+                
         
     }//GEN-LAST:event_EditarBtActionPerformed
 
@@ -305,15 +357,15 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
         //new HomeView().show();
         FluxoTelasController.getHv().setVisible(true);
-        dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed
-        DisciplinaView DiscView = FluxoTelasController.getCdv();
-        DiscView.setVisible(true);
+        MateriaisView DiscView = FluxoTelasController.getCdv();
+        //DiscView.setVisible(true);
         if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
         {
-            JOptionPane.showMessageDialog(null, "Selecione uma disciplina.");
+            JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
         else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
         {
@@ -329,16 +381,29 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         }
     }//GEN-LAST:event_VerMateriasBtActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
         // TODO add your handling code here:
 //        fav.setNomeFavoritos((DefaultListModel<String>) FavoritosLt.getModel());
 //        System.out.println(fav.getNomeFavoritos());
-//        fav.saveListNomeFavoritos();
+//        fav.saveListNomeFavoritos();        
         dc.setFavoritos(FavoritosLt.getModel()); System.out.println(FavoritosLt.getModel());
         dc.serializaDisciplinas();
+        
+        JOptionPane.showMessageDialog(null, "Alterações salvas.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
         //dc.escreveArquivos();       
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SalvarBtActionPerformed
 
+    private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
+        AddDisciplinaView AddView = FluxoTelasController.getAdv();
+               
+        AddView.setVisible(true);        
+    }//GEN-LAST:event_AddBtActionPerformed
+
+   public JButton getAddBt()
+   {
+       return AddBt;
+   }
+    
     /**
      * @param args the command line arguments
      */
@@ -383,6 +448,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddBt;
     private javax.swing.JLabel DisciplinasLb;
     private javax.swing.JList<String> DisciplinasLt;
     private javax.swing.JScrollPane DisciplinasSP;
@@ -393,8 +459,8 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private javax.swing.JButton ImportarFavBt;
     private javax.swing.JLabel InstrucoesLb;
     private javax.swing.JButton RemoverBt;
+    private javax.swing.JButton SalvarBt;
     private javax.swing.JButton VerMateriasBt;
     private javax.swing.JButton VoltarBt;
-    private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }

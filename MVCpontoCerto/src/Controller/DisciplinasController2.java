@@ -6,8 +6,10 @@
 package Controller;
 
 import Model.DisciplinaModel;
+import Model.NotaModel;
 import Util.MySQL_POST;
 import Util.XML;
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
@@ -137,11 +139,15 @@ public class DisciplinasController2
         for(int i = 0; i< disciplinas.length;i++)
         {            
              cbModel.addElement(disciplinas[i].getNomeDisc());
-        }
+        }        
         
-        //System.out.println(ltModel);
         return cbModel;
 
+    }
+    
+    public void CalculaMedia(ArrayList<NotaModel> notas, int i){
+        double media=0.0;
+        disciplinas[i].setMedia(media);
     }
            
 }

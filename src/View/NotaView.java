@@ -9,6 +9,7 @@ import Controller.*;
 import Model.NotaModel;
 import View.FavoritosView;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -30,9 +31,19 @@ public class NotaView extends javax.swing.JFrame {
 
     public void carregaNotaDisc()
     {
-       NotasTb.setModel(defaultTableModel);
+       //NotasTb.setModel(defaultTableModel);
+        
+//        for(int i = 0; i< NotasTb.getRowCount();i++)
+//        {
+//            for(int j = 0; j<NotasTb.getColumnCount();j++)
+//            {
+//                NotasTb.setValueAt(null, i, j);
+//            }
+//        }
        
        int nNotas = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size();
+       
+       //System.out.println("tamanho:"+ dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size());
        double aNota;
        String aTipo;
        double aPeso;
@@ -47,9 +58,9 @@ public class NotaView extends javax.swing.JFrame {
            aTipo = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getTipo();
            aNota = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getNota();
            aPeso = dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).getPeso();           
-           NotasTb.setValueAt(aTipo, i, 1);
-           NotasTb.setValueAt(aNota, i, 2);
-           NotasTb.setValueAt(aPeso, i, 3);
+           NotasTb.setValueAt(aTipo, i, 0);
+           NotasTb.setValueAt(aNota, i, 1);
+           NotasTb.setValueAt(aPeso, i, 2);
        }
     }
     
@@ -71,7 +82,6 @@ public class NotaView extends javax.swing.JFrame {
         NotasTb = new javax.swing.JTable();
         SalvarNotaBt = new javax.swing.JButton();
         ExcluirNotaBt = new javax.swing.JButton();
-        EditarNotaBt = new javax.swing.JButton();
         NovaNotaBt = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -88,19 +98,27 @@ public class NotaView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Ponto Certo");
+        setTitle("Ponto Certo - Notas");
 
+        DisciplinaLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         DisciplinaLb.setText("\" X\"");
         DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        VoltarBt.setText("Voltar");
+        VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
+        VoltarBt.setToolTipText("Voltar");
         VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
+        VoltarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar2.png"))); // NOI18N
         VoltarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VoltarBtActionPerformed(evt);
             }
         });
 
+        NotasTb.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
+        NotasTb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         NotasTb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
@@ -126,32 +144,40 @@ public class NotaView extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(NotasTb);
 
-        SalvarNotaBt.setText("Salvar");
+        SalvarNotaBt.setBackground(new java.awt.Color(255, 255, 255));
+        SalvarNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar.png"))); // NOI18N
+        SalvarNotaBt.setToolTipText("Salvar");
         SalvarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        SalvarNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        SalvarNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        SalvarNotaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        SalvarNotaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Salvar2.png"))); // NOI18N
         SalvarNotaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalvarNotaBtActionPerformed(evt);
             }
         });
 
-        ExcluirNotaBt.setText("Excluir");
+        ExcluirNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Excluir.png"))); // NOI18N
+        ExcluirNotaBt.setToolTipText("Excluir");
         ExcluirNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ExcluirNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        ExcluirNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        ExcluirNotaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        ExcluirNotaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Excluir2.png"))); // NOI18N
         ExcluirNotaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExcluirNotaBtActionPerformed(evt);
             }
         });
 
-        EditarNotaBt.setText("Editar");
-        EditarNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        EditarNotaBt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarNotaBtActionPerformed(evt);
-            }
-        });
-
-        NovaNotaBt.setText("Nova");
+        NovaNotaBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Nova.png"))); // NOI18N
+        NovaNotaBt.setToolTipText("Nova");
         NovaNotaBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        NovaNotaBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        NovaNotaBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        NovaNotaBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        NovaNotaBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Nova2.png"))); // NOI18N
         NovaNotaBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NovaNotaBtActionPerformed(evt);
@@ -165,38 +191,35 @@ public class NotaView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SalvarNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ExcluirNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(NovaNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(DisciplinaLb)
-                            .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SalvarNotaBt)
-                        .addGap(18, 18, 18)
-                        .addComponent(ExcluirNotaBt)
-                        .addGap(18, 18, 18)
-                        .addComponent(EditarNotaBt)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(NovaNotaBt)))
+                            .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(DisciplinaLb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SalvarNotaBt)
-                    .addComponent(ExcluirNotaBt)
-                    .addComponent(EditarNotaBt)
-                    .addComponent(NovaNotaBt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(VoltarBt)
-                .addContainerGap())
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SalvarNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExcluirNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NovaNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -207,6 +230,7 @@ public class NotaView extends javax.swing.JFrame {
         //new FavoritosView().show();
         FluxoTelasController.getCfv().setVisible(true);
         dispose();
+        //this.setVisible(false);
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void NovaNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovaNotaBtActionPerformed
@@ -230,11 +254,11 @@ public class NotaView extends javax.swing.JFrame {
 //        DisciplinasController2 dc = FluxoTelasController.getCfv().getDisciplinaController2();
 //        
 //        dc.getDisciplinas();
-
        int nNotas = NotasTb.getModel().getRowCount();
        double aNota;
        String aTipo;
-       double aPeso;
+       double aPeso;       
+       
        
        if(dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size()<nNotas)
        {
@@ -246,24 +270,26 @@ public class NotaView extends javax.swing.JFrame {
        System.out.println(NotasTb.getValueAt(0,2));
        for(int i = 0; i < nNotas; i++)
        {
+                     
            aTipo = (String) NotasTb.getValueAt(i, 0);
            aNota =  (double) NotasTb.getValueAt(i, 1);
-           aPeso =  (double) NotasTb.getValueAt(i, 2);           
+           aPeso =  (double) NotasTb.getValueAt(i, 2);
+
+           
            
            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setTipo(aTipo);
            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setNota(aNota);
            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().get(i).setPeso(aPeso);           
        }
-                
+       
+       
+       dc.serializaDisciplinas();     
         
     }//GEN-LAST:event_SalvarNotaBtActionPerformed
 
-    private void EditarNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarNotaBtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditarNotaBtActionPerformed
-
     private void ExcluirNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirNotaBtActionPerformed
         // TODO add your handling code here:
+        //System.out.println("tamanho:"+ defaultTableModel.getRowCount());
     }//GEN-LAST:event_ExcluirNotaBtActionPerformed
 
     /**
@@ -311,7 +337,6 @@ public class NotaView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DisciplinaLb;
-    private javax.swing.JButton EditarNotaBt;
     private javax.swing.JButton ExcluirNotaBt;
     private javax.swing.JTable NotasTb;
     private javax.swing.JButton NovaNotaBt;
