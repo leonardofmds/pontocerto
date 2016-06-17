@@ -27,9 +27,13 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="DisciplinasCB" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" attributes="0">
                       <Component id="ArquivoTf" max="32767" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -38,31 +42,28 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="DisciplinaLb" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="TipoMaterialCb" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
-                                      <Component id="TipoEnviarLb" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="AnoMaterialLb" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="AnoTf" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="SemestreCb" min="-2" pref="88" max="-2" attributes="0"/>
-                                              <Component id="SemestreLb" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                          <Component id="DisciplinaLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="TipoMaterialCb" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
+                                  <Component id="TipoEnviarLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="AnoMaterialLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="AnoTf" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="SemestreCb" min="-2" pref="88" max="-2" attributes="0"/>
+                                          <Component id="SemestreLb" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="SubLb" min="-2" max="-2" attributes="0"/>
-                                      <Component id="SubTipoCb" min="-2" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
-                              <Component id="DisciplinaTf" alignment="0" max="32767" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="SubLb" min="-2" max="-2" attributes="0"/>
+                                  <Component id="SubTipoCb" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="EnviarMaterialBt" min="-2" max="-2" attributes="0"/>
@@ -82,9 +83,9 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="DisciplinaLb" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="DisciplinaTf" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="DisciplinasCB" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="TipoEnviarLb" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="SubLb" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -280,8 +281,6 @@
         <Property name="text" type="java.lang.String" value="Disciplina:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="DisciplinaTf">
-    </Component>
     <Component class="javax.swing.JTextField" name="ArquivoTf">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
@@ -318,6 +317,20 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Arquivo:"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="DisciplinasCB">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="" noResource="true"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DisciplinasCBActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

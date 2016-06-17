@@ -5,8 +5,6 @@
  */
 package View;
 
-import Controller.FluxoTelasController;
-
 /**
  *
  * @author CPD RJ
@@ -29,50 +27,22 @@ public class AddMaterialView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VoltarBt = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Adicionar Material");
-
-        VoltarBt.setBackground(new java.awt.Color(255, 255, 255));
-        VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
-        VoltarBt.setToolTipText("Voltar");
-        VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
-        VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
-        VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
-        VoltarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar2.png"))); // NOI18N
-        VoltarBt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VoltarBtActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(354, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(253, Short.MAX_VALUE))
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
-        FluxoTelasController.getCdv().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_VoltarBtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,6 +81,5 @@ public class AddMaterialView extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton VoltarBt;
     // End of variables declaration//GEN-END:variables
 }
