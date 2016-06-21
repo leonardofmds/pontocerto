@@ -32,11 +32,19 @@ public class Order
        String [] s = new String[cb.getSize()];
         
         
-       for(int i = 0; i < s.length;i++)
+       for(int i = 0; i < cb.getSize();i++)
             s[i] = cb.getElementAt(i);
+       
        Arrays.sort(s);
-       for(int i = 0; i < s.length;i++){cb.insertElementAt(s[i], i);}
-        System.out.println("teste");
+       
+       
+       
+       for(int i = 0; i < s.length;i++)
+       {
+           cb.insertElementAt(s[i], i);
+       }
+        //System.out.println("teste");
+        
         return cb;     
         
     }

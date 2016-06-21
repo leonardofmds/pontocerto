@@ -22,11 +22,12 @@ public class NotasController {
         
         return notapeso;
     }
-    
+    public void escreveArquivos(){
+        
+    }
     public void leNotas(){
         
     }
-    
     public void saveTableNotas(){
         
     }

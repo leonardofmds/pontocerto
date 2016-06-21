@@ -12,6 +12,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import org.w3c.dom.Notation;
 
 /**
  *
@@ -83,8 +84,6 @@ public class NotaView extends javax.swing.JFrame {
         SalvarNotaBt = new javax.swing.JButton();
         ExcluirNotaBt = new javax.swing.JButton();
         NovaNotaBt = new javax.swing.JButton();
-        MediaLb = new javax.swing.JLabel();
-        ValorLb = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,7 +119,7 @@ public class NotaView extends javax.swing.JFrame {
         });
 
         NotasTb.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
-        NotasTb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        NotasTb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         NotasTb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
@@ -186,13 +185,6 @@ public class NotaView extends javax.swing.JFrame {
             }
         });
 
-        MediaLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
-        MediaLb.setText("Média:");
-
-        ValorLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 30)); // NOI18N
-        ValorLb.setText("0.0");
-        ValorLb.setToolTipText("");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -209,34 +201,26 @@ public class NotaView extends javax.swing.JFrame {
                         .addComponent(NovaNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DisciplinaLb))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ValorLb)
-                            .addComponent(MediaLb))))
+                            .addComponent(DisciplinaLb)
+                            .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(MediaLb)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ValorLb)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(DisciplinaLb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ExcluirNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SalvarNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExcluirNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NovaNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -271,20 +255,32 @@ public class NotaView extends javax.swing.JFrame {
 //        DisciplinasController2 dc = FluxoTelasController.getCfv().getDisciplinaController2();
 //        
 //        dc.getDisciplinas();
+//       int nNotas = NotasTb.getModel().getRowCount();
+//       double aNota;
+//       String aTipo;
+//       double aPeso;       
+  
        int nNotas = NotasTb.getModel().getRowCount();
        double aNota;
        String aTipo;
-       double aPeso;       
+       double aPeso;   
        
-       
-       if(dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size()<nNotas)
-       {
-           for(int i = 0; i < (nNotas - dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size());i++)
+//       if(dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size()<nNotas)
+//       {
+//           for(int i = 0; i < (nNotas - dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size());i++)
+//           {
+//               dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().add(new NotaModel());
+//           }
+//       }
+            dc.getDisciplinasEspecifica(DisciplinaLb.getText()).deletaNotas();
+            
+            for(int i = 0; i < nNotas; i++)
            {
                dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().add(new NotaModel());
            }
-       }
-       System.out.println(NotasTb.getValueAt(0,2));
+       
+
+            //System.out.println(NotasTb.getValueAt(0,2));
        for(int i = 0; i < nNotas; i++)
        {
                      
@@ -306,7 +302,8 @@ public class NotaView extends javax.swing.JFrame {
 
     private void ExcluirNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirNotaBtActionPerformed
         // TODO add your handling code here:
-        //System.out.println("tamanho:"+ defaultTableModel.getRowCount());
+       ((DefaultTableModel)NotasTb.getModel()).removeRow(NotasTb.getSelectedRow());
+       
     }//GEN-LAST:event_ExcluirNotaBtActionPerformed
 
     /**
@@ -355,11 +352,9 @@ public class NotaView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DisciplinaLb;
     private javax.swing.JButton ExcluirNotaBt;
-    private javax.swing.JLabel MediaLb;
     private javax.swing.JTable NotasTb;
     private javax.swing.JButton NovaNotaBt;
     private javax.swing.JButton SalvarNotaBt;
-    private javax.swing.JLabel ValorLb;
     private javax.swing.JButton VoltarBt;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

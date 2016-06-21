@@ -74,6 +74,11 @@ public class DisciplinaModel implements Serializable
         this.favorito = favorito;
     }
 
+    public void deletaNotas()
+    {
+        notas.removeAll(notas);
+    }
+    
 //    public NotaModel[] getNotas() {
 //        return notas;
 //    }
