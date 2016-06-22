@@ -6,6 +6,7 @@
 package View;
 
 import Controller.FluxoTelasController;
+import Util.MySQL_POST;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -31,28 +32,13 @@ public class AddDisciplinaView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VoltarBt = new javax.swing.JButton();
         NomeLb = new javax.swing.JLabel();
         NomeTf = new javax.swing.JTextField();
         SalvarBt = new javax.swing.JButton();
-        CancelaMaterialBt = new javax.swing.JButton();
+        CancelarAddBt = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Adicionar Disciplina");
-
-        VoltarBt.setBackground(new java.awt.Color(255, 255, 255));
-        VoltarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar.png"))); // NOI18N
-        VoltarBt.setToolTipText("Voltar");
-        VoltarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        VoltarBt.setMaximumSize(new java.awt.Dimension(36, 36));
-        VoltarBt.setMinimumSize(new java.awt.Dimension(36, 36));
-        VoltarBt.setPreferredSize(new java.awt.Dimension(36, 36));
-        VoltarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Voltar2.png"))); // NOI18N
-        VoltarBt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VoltarBtActionPerformed(evt);
-            }
-        });
+        setResizable(false);
 
         NomeLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         NomeLb.setText("Nome:");
@@ -73,18 +59,17 @@ public class AddDisciplinaView extends javax.swing.JFrame {
             }
         });
 
-        CancelaMaterialBt.setBackground(new java.awt.Color(255, 255, 255));
-        CancelaMaterialBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar.png"))); // NOI18N
-        CancelaMaterialBt.setToolTipText("Cancelar");
-        CancelaMaterialBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CancelaMaterialBt.setMaximumSize(new java.awt.Dimension(60, 60));
-        CancelaMaterialBt.setMinimumSize(new java.awt.Dimension(60, 60));
-        CancelaMaterialBt.setName(""); // NOI18N
-        CancelaMaterialBt.setPreferredSize(new java.awt.Dimension(60, 60));
-        CancelaMaterialBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar2.png"))); // NOI18N
-        CancelaMaterialBt.addActionListener(new java.awt.event.ActionListener() {
+        CancelarAddBt.setBackground(new java.awt.Color(255, 255, 255));
+        CancelarAddBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar.png"))); // NOI18N
+        CancelarAddBt.setToolTipText("Cancelar");
+        CancelarAddBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CancelarAddBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        CancelarAddBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        CancelarAddBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        CancelarAddBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cancelar2.png"))); // NOI18N
+        CancelarAddBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelaMaterialBtActionPerformed(evt);
+                CancelarAddBtActionPerformed(evt);
             }
         });
 
@@ -95,54 +80,52 @@ public class AddDisciplinaView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NomeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NomeLb)
+                    .addComponent(NomeTf, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(CancelaMaterialBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(NomeLb)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NomeTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CancelaMaterialBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(NomeLb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(NomeTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void VoltarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarBtActionPerformed
-        FluxoTelasController.getCfv().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_VoltarBtActionPerformed
-
     private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
         if ( NomeTf.getText().trim().equals("") )
-           JOptionPane.showMessageDialog(null, "Por favor insira o nome da disciplina a ser adicionada.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+           JOptionPane.showMessageDialog(null, "Por favor insira o nome da disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{        
-            
-        }
+           
+            MySQL_POST.main("insert into disciplina values("+"'"+NomeTf.getText()+"');");
+            Reseta();
+           JOptionPane.showMessageDialog(null, "Disciplina adicionada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
+           
+           FluxoTelasController.getCfv().setVisible(true);
+           this.setVisible(false);
+       }
     }//GEN-LAST:event_SalvarBtActionPerformed
 
-    private void CancelaMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelaMaterialBtActionPerformed
+    private void CancelarAddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAddBtActionPerformed
         Reseta();
-
         FluxoTelasController.getCfv().setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_CancelaMaterialBtActionPerformed
+    }//GEN-LAST:event_CancelarAddBtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,10 +167,9 @@ public class AddDisciplinaView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CancelaMaterialBt;
+    private javax.swing.JButton CancelarAddBt;
     private javax.swing.JLabel NomeLb;
     private javax.swing.JTextField NomeTf;
     private javax.swing.JButton SalvarBt;
-    private javax.swing.JButton VoltarBt;
     // End of variables declaration//GEN-END:variables
 }

@@ -62,6 +62,11 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Enviar Material");
         setBackground(new java.awt.Color(204, 204, 204));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         TipoMaterialCb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
         TipoMaterialCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Prova", "Trabalho", "Projeto", "Lista" }));
@@ -257,7 +262,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
         String disciplina,tipo,subtipo, ano, semestre;
         
         if ( ArquivoTf.getText().trim().equals("")) 
-             JOptionPane.showMessageDialog(null, "Por favor selecione um arquivo.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+             JOptionPane.showMessageDialog(null, "Por favor preencha os campos.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         else {
             disciplina = (String)DisciplinasCB.getSelectedItem();
             tipo = (String) TipoMaterialCb.getSelectedItem();
@@ -303,13 +308,17 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     private void DisciplinasCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisciplinasCBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DisciplinasCBActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        Reseta();
+    }//GEN-LAST:event_formWindowOpened
     private void Reseta(){
             DisciplinasCB.setSelectedIndex(0);
             AnoTf.setText("");
             ArquivoTf.setText("");
             TipoMaterialCb.setSelectedIndex(0);
             SubTipoCb.setSelectedIndex(0);
-            SemestreCb.setSelectedIndex(0);
+            SemestreCb.setSelectedIndex(0);            
     }
     /**
      * @param args the command line arguments

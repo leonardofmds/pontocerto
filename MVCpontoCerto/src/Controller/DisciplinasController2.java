@@ -108,6 +108,19 @@ public class DisciplinasController2
         }
     }
     
+    public DefaultComboBoxModel<String> comboDisciplinas()
+    {
+        DefaultComboBoxModel<String> cbModel = new DefaultComboBoxModel<String>();
+        
+        for(int i = 0; i< disciplinas.length;i++)
+        {            
+             cbModel.addElement(disciplinas[i].getNomeDisc());            
+        }
+        
+        
+        return cbModel;
+    }
+    
     public DisciplinaModel[] getDisciplinas() 
     {
         return disciplinas;
@@ -130,18 +143,6 @@ public class DisciplinasController2
         this.disciplinas = disciplinas;
     }
     
-    public DefaultComboBoxModel<String> comboDisciplinas()
-    {
-        DefaultComboBoxModel<String> cbModel = new DefaultComboBoxModel<String>();
-        
-        for(int i = 0; i< disciplinas.length;i++)
-        {            
-             cbModel.addElement(disciplinas[i].getNomeDisc());
-        }
-        
-        //System.out.println(ltModel);
-        return cbModel;
-
-    }
+    
            
 }

@@ -64,7 +64,7 @@
      <void method="add">
       <object class="Model.NotaModel">
        <void property="nota">
-        <double>5.0</double>
+        <double>10.0</double>
        </void>
        <void property="peso">
         <double>2.0</double>

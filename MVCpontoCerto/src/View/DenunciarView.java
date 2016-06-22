@@ -21,8 +21,6 @@ public class DenunciarView extends javax.swing.JFrame {
      */
     MateriaisController material = new MateriaisController();
     
-    
-    
     public DenunciarView() {
         initComponents();
     }
@@ -134,10 +132,6 @@ public class DenunciarView extends javax.swing.JFrame {
     private void Reseta(){
         DenunciaTA.setText("");
     }
-    
-   
-
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

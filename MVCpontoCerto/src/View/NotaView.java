@@ -12,7 +12,6 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import org.w3c.dom.Notation;
 
 /**
  *
@@ -28,6 +27,38 @@ public class NotaView extends javax.swing.JFrame {
         initComponents();
         dc = FluxoTelasController.getDc2();  
         defaultTableModel = (DefaultTableModel) NotasTb.getModel();
+    }
+    
+    public void calculaMedia()
+    {
+        calculaNotaReal();
+        double somaNotaReal = 0;
+        double somaPesos = 0;
+        String media;
+        
+        for(int i = 0; i< NotasTb.getRowCount();i++)
+        {
+            somaPesos = somaPesos + (double)NotasTb.getValueAt(i, 2);
+            somaNotaReal = somaNotaReal + (double)NotasTb.getValueAt(i, 3);            
+        }
+        
+        media = format(somaNotaReal/somaPesos);
+        ValorLb.setText(media);
+    }
+    
+    public void calculaNotaReal()
+    {
+        double nota = 0;
+        double peso = 0;
+        //double notareal;
+        
+       for(int i = 0; i< NotasTb.getRowCount();i++)
+        {           
+            nota = (double)NotasTb.getValueAt(i, 1);
+            peso = (double)NotasTb.getValueAt(i, 2);
+            
+            NotasTb.setValueAt(nota*peso, i, 3);
+        } 
     }
 
     public void carregaNotaDisc()
@@ -84,6 +115,8 @@ public class NotaView extends javax.swing.JFrame {
         SalvarNotaBt = new javax.swing.JButton();
         ExcluirNotaBt = new javax.swing.JButton();
         NovaNotaBt = new javax.swing.JButton();
+        MediaLb = new javax.swing.JLabel();
+        ValorLb = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -119,13 +152,13 @@ public class NotaView extends javax.swing.JFrame {
         });
 
         NotasTb.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.lightGray, null, null));
-        NotasTb.setFont(new java.awt.Font("Tempus Sans ITC", 0, 12)); // NOI18N
+        NotasTb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         NotasTb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null}
             },
             new String [] {
-                "Tipo", "Nota", "Peso", "Nota Final"
+                "Tipo", "Nota", "Peso", "Nota Real"
             }
         ) {
             Class[] types = new Class [] {
@@ -185,6 +218,13 @@ public class NotaView extends javax.swing.JFrame {
             }
         });
 
+        MediaLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
+        MediaLb.setText("Média:");
+
+        ValorLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 30)); // NOI18N
+        ValorLb.setText("0.0");
+        ValorLb.setToolTipText("");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -201,26 +241,34 @@ public class NotaView extends javax.swing.JFrame {
                         .addComponent(NovaNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(DisciplinaLb)
-                            .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                            .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DisciplinaLb))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ValorLb)
+                            .addComponent(MediaLb))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(VoltarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(MediaLb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ValorLb)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DisciplinaLb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SalvarNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ExcluirNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SalvarNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NovaNotaBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -260,6 +308,7 @@ public class NotaView extends javax.swing.JFrame {
 //       String aTipo;
 //       double aPeso;       
   
+        
        int nNotas = NotasTb.getModel().getRowCount();
        double aNota;
        String aTipo;
@@ -297,13 +346,12 @@ public class NotaView extends javax.swing.JFrame {
        
        
        dc.serializaDisciplinas();     
+       calculaMedia();
         
     }//GEN-LAST:event_SalvarNotaBtActionPerformed
 
     private void ExcluirNotaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirNotaBtActionPerformed
-        // TODO add your handling code here:
-       ((DefaultTableModel)NotasTb.getModel()).removeRow(NotasTb.getSelectedRow());
-       
+        ((DefaultTableModel)NotasTb.getModel()).removeRow(NotasTb.getSelectedRow());
     }//GEN-LAST:event_ExcluirNotaBtActionPerformed
 
     /**
@@ -348,13 +396,21 @@ public class NotaView extends javax.swing.JFrame {
     {
         DisciplinaLb.setText(nome);
     }
+    private static String format(double x) {
+        if(x == 10)
+            return String.format("%.1f", x); 
+        else
+            return String.format("%.2f", x);  
+    }  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DisciplinaLb;
     private javax.swing.JButton ExcluirNotaBt;
+    private javax.swing.JLabel MediaLb;
     private javax.swing.JTable NotasTb;
     private javax.swing.JButton NovaNotaBt;
     private javax.swing.JButton SalvarNotaBt;
+    private javax.swing.JLabel ValorLb;
     private javax.swing.JButton VoltarBt;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
