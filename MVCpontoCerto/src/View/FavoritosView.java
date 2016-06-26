@@ -364,7 +364,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed
-        MateriaisView DiscView = FluxoTelasController.getCdv();
+        MateriaisView MatView = FluxoTelasController.getCdv();
         //DiscView.setVisible(true);
         if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
         {
@@ -378,19 +378,19 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         }
         else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
         {
-            DiscView.setVisible(true);
-            DiscView.setNomeDisciplina(FavoritosLt.getSelectedValue());
+            MatView.setVisible(true);
+            MatView.setNomeDisciplina(FavoritosLt.getSelectedValue());
             this.setVisible(false);
             Reseta();
-            DiscView.carregaMaterial();
+            MatView.carregaMaterial();
         }
         else
         {
-            DiscView.setVisible(true);
-            DiscView.setNomeDisciplina(DisciplinasLt.getSelectedValue());
+            MatView.setVisible(true);
+            MatView.setNomeDisciplina(DisciplinasLt.getSelectedValue());
             this.setVisible(false);
             Reseta();
-            DiscView.carregaMaterial();
+            MatView.carregaMaterial();
         }
     }//GEN-LAST:event_VerMateriasBtActionPerformed
 

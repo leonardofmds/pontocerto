@@ -112,7 +112,7 @@ public class AddDisciplinaView extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Por favor insira o nome da disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{        
            
-            MySQL_POST.main("insert into disciplina values("+"'"+NomeTf.getText()+"');");
+            MySQL_POST.main("INSERT INTO DISCIPLINA (NOME) VALUES("+"'"+NomeTf.getText()+"');");
             Reseta();
            JOptionPane.showMessageDialog(null, "Disciplina adicionada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
