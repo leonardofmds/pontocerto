@@ -23,7 +23,7 @@ public class Order
         for(int i = 0; i < lt.getSize();i++){s[i] = lt.getElementAt(i);}
         Arrays.sort(s);
         for(int i = 0; i < lt.getSize();i++){lt.setElementAt(s[i],i);}
-        System.out.println("teste");
+        //System.out.println("teste");
         return lt;
         
     }

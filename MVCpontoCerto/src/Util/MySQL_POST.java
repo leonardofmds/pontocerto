@@ -12,6 +12,7 @@ import java.io.*;
 import java.net.*;
 import java.applet.*;
 import java.security.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MySQL_POST {
@@ -92,9 +93,9 @@ public class MySQL_POST {
         return lt;
     }
     
-    public static List carregaListaDisc(String qr)
+    public static ArrayList carregaListaDisc(String qr)
     {
-        List lt = new List();
+        ArrayList lt = new ArrayList();
         HttpURLConnection conn=null;
         try{
         URL url=new URL("http://leonardomenezes.pe.hu/conn.php");

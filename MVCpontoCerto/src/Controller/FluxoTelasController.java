@@ -96,6 +96,7 @@ public class FluxoTelasController
 //        // TODO code application logic here
 //        ftc = new FluxoTelasController(); 
         hv.setVisible(true);
+//        Teste.Run();
 //        DisciplinaModel dm = new DisciplinaModel();
 //        dm.setIddisc(24);
 //        dm.setNomeDisc("Projeto e Construção de Sistemas");

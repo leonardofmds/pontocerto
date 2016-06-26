@@ -80,7 +80,7 @@ public class DisciplinasController2
             if(disciplinas[i].isFavorito())
                 ltModel.addElement(disciplinas[i].getNomeDisc());
         }
-        System.out.println(ltModel);
+        //System.out.println(ltModel);
         return ltModel;
     }
         

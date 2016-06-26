@@ -6,6 +6,7 @@
 package View;
 
 import Controller.FluxoTelasController;
+import Util.Download;
 import Util.MySQL_POST;
 import java.awt.Desktop;
 import java.io.IOException;
@@ -16,8 +17,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JEditorPane;
 import Util.hiperlink;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,10 +37,34 @@ public class MateriaisView extends javax.swing.JFrame {
     
      public void carregaMaterial()
     {
-        DefaultListModel<String> lt = new DefaultListModel<>();
+        //System.out.println("SELECT COUNT(1) FROM MATERIAL WHERE DISCIPLINA_NOME = '"+ DisciplinaLb1.getText().trim()+"'");
+        String c = (String) MySQL_POST.carregaListaDisc("SELECT COUNT(1) FROM MATERIAL WHERE DISCIPLINA_NOME = '"+ DisciplinaLb1.getText().trim()+"'").get(0);
+
+        int count = Integer.parseInt(c.replace("	", ""));
         
-        lt = MySQL_POST.carregaListaDiscModel("select URL from ENDERECO where NOME_DISCIPLINA = '"+ DisciplinaLb1.getText().trim() + "'");
-            System.out.println("select URL from ENDERECO where NOME_DISCIPLINA = '"+ DisciplinaLb1.getText().trim() + "'");
+        DefaultTableModel dtm= new DefaultTableModel();
+        dtm = (DefaultTableModel) materialTb.getModel();
+        
+        if(count>dtm.getRowCount())
+        {
+            dtm.setRowCount(count);
+        }
+        
+        ArrayList<String> semestres = MySQL_POST.carregaListaDisc("SELECT SEMESTRE FROM MATERIAL WHERE DISCIPLINA_NOME = '"+DisciplinaLb1.getText().trim()+"' ORDER BY SEMESTRE DESC");
+        //System.out.println("SELECT SEMESTRE FROM MATERIAL WHERE DISCIPLINA_NOME = '"+DisciplinaLb1.getText().trim()+"' ORDER BY SEMESTRE DESC");
+        ArrayList<String> tipo = MySQL_POST.carregaListaDisc("SELECT TIPO FROM MATERIAL WHERE DISCIPLINA_NOME = '"+DisciplinaLb1.getText().trim()+"' ORDER BY SEMESTRE DESC");
+        ArrayList<String> url = MySQL_POST.carregaListaDisc("SELECT URL FROM MATERIAL WHERE DISCIPLINA_NOME = '"+DisciplinaLb1.getText().trim()+"' ORDER BY SEMESTRE DESC");
+        
+        for(int i = 0; i< count ;i++)
+        {
+            dtm.setValueAt(semestres.get(i), i, 0);
+            dtm.setValueAt(tipo.get(i), i, 1);
+            dtm.setValueAt(url.get(i), i, 2);
+        }
+        
+        materialTb.setModel(dtm);
+//        lt = MySQL_POST.carregaListaDiscModel("select URL from ENDERECO where NOME_DISCIPLINA = '"+ DisciplinaLb1.getText().trim() + "'");
+//            System.out.println("select URL from ENDERECO where NOME_DISCIPLINA = '"+ DisciplinaLb1.getText().trim() + "'");
             //System.out.println(DisciplinaLb1.getText());
             //System.out.println(MySQL_POST.carregaListaDiscModel("select url from ENDERECO where NOME_DISCIPLINA = "+ DisciplinaLb1.getText()));
         
@@ -63,7 +90,7 @@ public class MateriaisView extends javax.swing.JFrame {
         DisciplinaLb1 = new javax.swing.JLabel();
         AddBt = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        materialTb = new javax.swing.JTable();
 
         DisciplinaLb.setText("\" X\"");
         DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -161,12 +188,9 @@ public class MateriaisView extends javax.swing.JFrame {
             }
         });
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        materialTb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+
             },
             new String [] {
                 "Semestre", "Tipo", "URL"
@@ -187,7 +211,8 @@ public class MateriaisView extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(jTable2);
+        materialTb.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane3.setViewportView(materialTb);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -235,6 +260,7 @@ public class MateriaisView extends javax.swing.JFrame {
         //new FavoritosView().show();
         FluxoTelasController.getCfv().setVisible(true);
         this.setVisible(false);
+        ((DefaultTableModel)materialTb.getModel()).setRowCount(0);
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VisualizarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarBtActionPerformed
@@ -242,11 +268,11 @@ public class MateriaisView extends javax.swing.JFrame {
         
         hiperlink hp = new hiperlink();
         
-//        try {
-//            hp.open(new URI(MaterialLt.getModel().getElementAt(0)));
-//        } catch (URISyntaxException ex) {
-//            Logger.getLogger(MateriaisView.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        try {
+            hp.open(new URI( materialTb.getValueAt(materialTb.getSelectedRow(), 2).toString().trim()));
+        } catch (URISyntaxException ex) {
+            Logger.getLogger(MateriaisView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
 
     }//GEN-LAST:event_VisualizarBtActionPerformed
@@ -256,7 +282,8 @@ public class MateriaisView extends javax.swing.JFrame {
     }//GEN-LAST:event_DenunciarBtActionPerformed
 
     private void BaixarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaixarBtActionPerformed
-        // TODO add your handling code here:
+            // TODO add your handling code here:
+            Download.downloadFileFromURL(materialTb.getValueAt(materialTb.getSelectedRow(), 2).toString().trim(), "Download/"+DisciplinaLb1.getText().trim()+materialTb.getValueAt(materialTb.getSelectedRow(), 0).toString().trim()+materialTb.getValueAt(materialTb.getSelectedRow(), 1).toString().trim()+".png");
     }//GEN-LAST:event_BaixarBtActionPerformed
 
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
@@ -322,6 +349,6 @@ public class MateriaisView extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable materialTb;
     // End of variables declaration//GEN-END:variables
 }
