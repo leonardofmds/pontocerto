@@ -26,38 +26,41 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="SalvarBt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="CancelarAddBt" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="TipoMaterialCb" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
-                          <Component id="TipoEnviarLb" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="AnoMaterialLb" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="AnoTf" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="SemestreLb" min="-2" max="-2" attributes="0"/>
-                                  <Component id="SemestreCb" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="SalvarBt" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="CancelarAddBt" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="TipoMaterialCb" alignment="0" min="-2" pref="248" max="-2" attributes="0"/>
+                              <Component id="TipoEnviarLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="AnoMaterialLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="AnoTf" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="SemestreLb" min="-2" max="-2" attributes="0"/>
+                                      <Component id="SemestreCb" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="SubLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="SubTipoCb" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="SubLb" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="SubTipoCb" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="BaixarLb" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="BaixarTf" alignment="0" max="32767" attributes="0"/>
+                      <Component id="VisuLb1" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="VisuTf" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="BaixarLb" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="BaixarTf" alignment="0" max="32767" attributes="0"/>
-                  <Component id="VisuLb1" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="VisuTf" alignment="0" max="32767" attributes="0"/>
+                  <Component id="DisciplinaLb" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
@@ -66,7 +69,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="DisciplinaLb" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="TipoEnviarLb" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="SubLb" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -99,7 +104,7 @@
                   <Component id="SalvarBt" min="-2" max="-2" attributes="0"/>
                   <Component id="CancelarAddBt" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -287,6 +292,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="VisuTf">
+    </Component>
+    <Component class="javax.swing.JLabel" name="DisciplinaLb">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tempus Sans ITC" size="13" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&quot;X&quot;"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

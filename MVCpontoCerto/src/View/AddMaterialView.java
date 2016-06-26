@@ -6,6 +6,7 @@
 package View;
 
 import Controller.FluxoTelasController;
+import Util.MySQL_POST;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -45,6 +46,7 @@ public class AddMaterialView extends javax.swing.JFrame {
         BaixarTf = new javax.swing.JTextField();
         VisuLb1 = new javax.swing.JLabel();
         VisuTf = new javax.swing.JTextField();
+        DisciplinaLb = new javax.swing.JLabel();
 
         setTitle("Ponto Certo - Adicionar Material");
         setResizable(false);
@@ -121,43 +123,50 @@ public class AddMaterialView extends javax.swing.JFrame {
         VisuLb1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         VisuLb1.setText("URLVisualizar:");
 
+        DisciplinaLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
+        DisciplinaLb.setText("\"X\"");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TipoEnviarLb)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(AnoMaterialLb)
-                                    .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SemestreLb)
-                                    .addComponent(SemestreCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SubLb)
-                            .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(BaixarLb)
-                    .addComponent(BaixarTf)
-                    .addComponent(VisuLb1)
-                    .addComponent(VisuTf))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(TipoMaterialCb, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TipoEnviarLb)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(AnoMaterialLb)
+                                        .addComponent(AnoTf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(49, 49, 49)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(SemestreLb)
+                                        .addComponent(SemestreCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(SubLb)
+                                .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BaixarLb)
+                        .addComponent(BaixarTf)
+                        .addComponent(VisuLb1)
+                        .addComponent(VisuTf))
+                    .addComponent(DisciplinaLb))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(DisciplinaLb)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TipoEnviarLb)
                     .addComponent(SubLb))
@@ -185,7 +194,7 @@ public class AddMaterialView extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -197,6 +206,15 @@ public class AddMaterialView extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Por favor insira todos os dados.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{        
            
+            
+            String DISCIPLINA_NOME = DisciplinaLb.getText().trim();
+            String SEMESTRE = AnoTf.getText()+"-"+SemestreCb.getSelectedItem();
+            String TIPO = TipoMaterialCb.getSelectedItem().toString()+SubTipoCb.getSelectedItem().toString();
+            String URL = BaixarTf.getText();
+            String VALUES = "'"+DISCIPLINA_NOME+"','"+SEMESTRE+"','"+TIPO+"','"+URL+"'";
+            MySQL_POST.main("INSERT INTO MATERIAL (DISCIPLINA_NOME,SEMESTRE,TIPO,URL) VALUES("+VALUES+");");
+            
+            
            Reseta();
            JOptionPane.showMessageDialog(null, "Material adicionado com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
@@ -233,6 +251,11 @@ public class AddMaterialView extends javax.swing.JFrame {
         SemestreCb.setSelectedIndex(0);
         BaixarTf.setText("");
         VisuTf.setText("");
+    }
+    
+    public void setNomeDisciplinaLb(String text)
+    {
+        DisciplinaLb.setText(text);
     }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -273,6 +296,7 @@ public class AddMaterialView extends javax.swing.JFrame {
     private javax.swing.JLabel BaixarLb;
     private javax.swing.JTextField BaixarTf;
     private javax.swing.JButton CancelarAddBt;
+    private javax.swing.JLabel DisciplinaLb;
     private javax.swing.JButton SalvarBt;
     private javax.swing.JComboBox<String> SemestreCb;
     private javax.swing.JLabel SemestreLb;

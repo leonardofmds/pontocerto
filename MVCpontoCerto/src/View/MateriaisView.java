@@ -287,7 +287,8 @@ public class MateriaisView extends javax.swing.JFrame {
     }//GEN-LAST:event_BaixarBtActionPerformed
 
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
-        FluxoTelasController.getAmv().setVisible(true);         
+        FluxoTelasController.getAmv().setVisible(true); 
+        FluxoTelasController.getAmv().setNomeDisciplinaLb(DisciplinaLb1.getText());
     }//GEN-LAST:event_AddBtActionPerformed
 
     public JButton getAddBt(){
