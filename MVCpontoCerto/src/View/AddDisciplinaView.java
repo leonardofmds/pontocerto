@@ -117,6 +117,7 @@ public class AddDisciplinaView extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Disciplina adicionada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
            FluxoTelasController.getCfv().setVisible(true);
+           FluxoTelasController.getCfv().setEnabled(true);
            this.setVisible(false);
        }
     }//GEN-LAST:event_SalvarBtActionPerformed
@@ -124,6 +125,7 @@ public class AddDisciplinaView extends javax.swing.JFrame {
     private void CancelarAddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAddBtActionPerformed
         Reseta();
         FluxoTelasController.getCfv().setVisible(true);
+        FluxoTelasController.getCfv().setEnabled(true);
         this.setVisible(false);
     }//GEN-LAST:event_CancelarAddBtActionPerformed
 

@@ -8,6 +8,7 @@ package View;
 import Controller.*;
 import Util.Order;
 import java.io.File;
+import java.util.Calendar;
 import javax.activation.FileDataSource;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -260,9 +261,23 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     private void EnviarMaterialBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnviarMaterialBtActionPerformed
         // TODO add your handling code here:
         String disciplina,tipo,subtipo, ano, semestre;
+        Calendar cal = Calendar.getInstance();
+        boolean anob=true;
         
-        if ( ArquivoTf.getText().trim().equals("")) 
-             JOptionPane.showMessageDialog(null, "Por favor preencha os campos.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+        for (char letra : AnoTf.getText().toCharArray())  
+            if(letra < '0' || letra > '9')
+                anob=false;            
+        
+        if ( ArquivoTf.getText().trim().equals("")||AnoTf.getText().trim().equals("")) 
+            JOptionPane.showMessageDialog(null, "Por favor preencha todos os campos.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+        else if(!anob){            
+            JOptionPane.showMessageDialog(null, "Ano inválido.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+            AnoTf.setText("");
+        }
+        else if(Integer.parseInt(AnoTf.getText()) < 2005 || Integer.parseInt(AnoTf.getText()) > cal.get(Calendar.YEAR)){
+            JOptionPane.showMessageDialog(null, "Ano inválido.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+            AnoTf.setText("");
+        }
         else {
             disciplina = (String)DisciplinasCB.getSelectedItem();
             tipo = (String) TipoMaterialCb.getSelectedItem();
@@ -271,11 +286,9 @@ public class EnviarMaterialView extends javax.swing.JFrame {
             semestre = (String) SemestreCb.getSelectedItem();       
         
         
-        
-            material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre, fds);
-            
-            JOptionPane.showMessageDialog(null, "Menssagem enviada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
-        
+           
+            material.EnviaMaterial(disciplina, tipo, subtipo, ano, semestre, fds);            
+          
             Reseta();
             
             FluxoTelasController.getHv().setVisible(true);

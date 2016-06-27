@@ -220,8 +220,8 @@ public class MateriaisView extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(VoltarBt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DisciplinaLb1, javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -278,6 +278,7 @@ public class MateriaisView extends javax.swing.JFrame {
     }//GEN-LAST:event_VisualizarBtActionPerformed
 
     private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
+        this.setEnabled(false);
         FluxoTelasController.getDv().setVisible(true);        
     }//GEN-LAST:event_DenunciarBtActionPerformed
 
@@ -287,6 +288,7 @@ public class MateriaisView extends javax.swing.JFrame {
     }//GEN-LAST:event_BaixarBtActionPerformed
 
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
+        this.setEnabled(false);
         FluxoTelasController.getAmv().setVisible(true); 
         FluxoTelasController.getAmv().setNomeDisciplinaLb(DisciplinaLb1.getText());
     }//GEN-LAST:event_AddBtActionPerformed

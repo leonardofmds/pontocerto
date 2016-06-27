@@ -165,11 +165,16 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_VoltarBtActionPerformed
 //Botão que efetua o login
     private void LoginBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBtActionPerformed
-       //chama o método login para verificação
+        FluxoTelasController.getHv().setEnabled(true);
+        FluxoTelasController.getHv().setVisible(true);       
+        //chama o método login para verificação
         Login();
+        
     }//GEN-LAST:event_LoginBtActionPerformed
 //Botão para cancelar o login
     private void CancelaLoginBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelaLoginBtActionPerformed
+        FluxoTelasController.getHv().setEnabled(true);
+        FluxoTelasController.getHv().setVisible(true);
         //chama o metodo para limpar todos os campos
         Reseta();
         //finaliza a tela LoginView
@@ -181,6 +186,8 @@ public class LoginView extends javax.swing.JFrame {
         //se a tecla enter for precionada
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){  
             //efetua a verificação de login
+            FluxoTelasController.getHv().setEnabled(true);
+            FluxoTelasController.getHv().setVisible(true); 
             Login();
         }
     }//GEN-LAST:event_SenhaPfKeyPressed
@@ -193,6 +200,8 @@ public class LoginView extends javax.swing.JFrame {
         //se a tecla enter for precisonada
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){  
             //efetua a verificação de login
+            FluxoTelasController.getHv().setEnabled(true);
+            FluxoTelasController.getHv().setVisible(true); 
             Login();
         }
     }//GEN-LAST:event_UserTfKeyPressed

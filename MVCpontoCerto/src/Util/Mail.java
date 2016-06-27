@@ -16,6 +16,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.util.ByteArrayDataSource;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 /**
@@ -31,7 +32,8 @@ public class Mail {
 	}
        
        public static void denuncia(String mensagem){           
-            try {
+          
+           try {
                         //usuario e senha do seu gmail
 			final String usuario = "pontocerto.unitec@gmail.com";
 			final String senha = "leogabru";
@@ -84,11 +86,14 @@ public class Mail {
 			mailMessage.setContent(mp);
 
 			//envia o email
-			Transport.send(mailMessage);                        
-                        
+			Transport.send(mailMessage);                       
+                        JOptionPane.showMessageDialog(null, "Denúncia enviada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
+            
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Denúncia não enviada.\nPor favor verifique sua conexão com a internet.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
 		}
+           
+       
        }
 
 	public static void enviar(String disciplina, String tipo, String subtipo, String ano, String semestre, FileDataSource fds) {
@@ -154,8 +159,11 @@ public class Mail {
 
 			//envia o email
 			Transport.send(mailMessage);
+                        
+                        JOptionPane.showMessageDialog(null, "Material enviado com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
+            
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "Material não enviado.\nPor favor verifique sua conexão com a internet.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
 		}
 	}
 }

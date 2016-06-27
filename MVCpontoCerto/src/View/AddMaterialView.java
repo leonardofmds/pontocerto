@@ -218,14 +218,16 @@ public class AddMaterialView extends javax.swing.JFrame {
            Reseta();
            JOptionPane.showMessageDialog(null, "Material adicionado com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
-           FluxoTelasController.getCdv().setVisible(true);
+           FluxoTelasController.getCdv().setVisible(true); 
+           FluxoTelasController.getCdv().setEnabled(true);
            this.setVisible(false);
        }
     }//GEN-LAST:event_SalvarBtActionPerformed
 
     private void CancelarAddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAddBtActionPerformed
         Reseta();
-        FluxoTelasController.getCdv().setVisible(true);
+        FluxoTelasController.getCdv().setVisible(true); 
+        FluxoTelasController.getCdv().setEnabled(true);        
         this.setVisible(false);
     }//GEN-LAST:event_CancelarAddBtActionPerformed
 

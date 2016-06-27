@@ -107,7 +107,8 @@ public class DenunciarView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CancelarDenunciaBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarDenunciaBtActionPerformed
-        Reseta();
+        Reseta();        
+        FluxoTelasController.getCdv().setEnabled(true);
         FluxoTelasController.getCdv().setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_CancelarDenunciaBtActionPerformed
@@ -118,10 +119,10 @@ public class DenunciarView extends javax.swing.JFrame {
        else{
            material.DenunciaMaterial(DenunciaTA.getText());
            
-           Reseta();
-           JOptionPane.showMessageDialog(null, "Denúncia enviada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
+           Reseta();           
            
            FluxoTelasController.getCdv().setVisible(true);
+           FluxoTelasController.getCdv().setEnabled(true);
            this.setVisible(false);
        }
     }//GEN-LAST:event_DenunciarBtActionPerformed
