@@ -19,7 +19,9 @@ import javax.swing.JEditorPane;
 import Util.hiperlink;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -85,12 +87,12 @@ public class MateriaisView extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         VoltarBt = new javax.swing.JButton();
         VisualizarBt = new javax.swing.JButton();
-        BaixarBt = new javax.swing.JButton();
         DenunciarBt = new javax.swing.JButton();
         DisciplinaLb1 = new javax.swing.JLabel();
         AddBt = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         materialTb = new javax.swing.JTable();
+        RemBt = new javax.swing.JButton();
 
         DisciplinaLb.setText("\" X\"");
         DisciplinaLb.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -138,20 +140,6 @@ public class MateriaisView extends javax.swing.JFrame {
         VisualizarBt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VisualizarBtActionPerformed(evt);
-            }
-        });
-
-        BaixarBt.setBackground(new java.awt.Color(255, 255, 255));
-        BaixarBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Baixar.png"))); // NOI18N
-        BaixarBt.setToolTipText("Baixar");
-        BaixarBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BaixarBt.setMaximumSize(new java.awt.Dimension(60, 60));
-        BaixarBt.setMinimumSize(new java.awt.Dimension(60, 60));
-        BaixarBt.setPreferredSize(new java.awt.Dimension(60, 60));
-        BaixarBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Baixar2.png"))); // NOI18N
-        BaixarBt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BaixarBtActionPerformed(evt);
             }
         });
 
@@ -214,6 +202,21 @@ public class MateriaisView extends javax.swing.JFrame {
         materialTb.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane3.setViewportView(materialTb);
 
+        RemBt.setBackground(new java.awt.Color(255, 255, 255));
+        RemBt.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Rem.png"))); // NOI18N
+        RemBt.setToolTipText("Remover Material");
+        RemBt.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RemBt.setEnabled(false);
+        RemBt.setMaximumSize(new java.awt.Dimension(60, 60));
+        RemBt.setMinimumSize(new java.awt.Dimension(60, 60));
+        RemBt.setPreferredSize(new java.awt.Dimension(60, 60));
+        RemBt.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Rem2.png"))); // NOI18N
+        RemBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemBtActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -229,9 +232,9 @@ public class MateriaisView extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DenunciarBt, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(BaixarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(RemBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -243,13 +246,13 @@ public class MateriaisView extends javax.swing.JFrame {
                 .addComponent(DisciplinaLb1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DenunciarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BaixarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VisualizarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(60, Short.MAX_VALUE))
+                    .addComponent(VisualizarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RemBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -265,27 +268,32 @@ public class MateriaisView extends javax.swing.JFrame {
 
     private void VisualizarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisualizarBtActionPerformed
         // TODO add your handling code here:
-        
-        hiperlink hp = new hiperlink();
-        
-        try {
-            hp.open(new URI( materialTb.getValueAt(materialTb.getSelectedRow(), 2).toString().trim()));
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(MateriaisView.class.getName()).log(Level.SEVERE, null, ex);
+        if(materialTb.getSelectedRow() == -1 )
+        {
+            JOptionPane.showMessageDialog(null, "Por favor selecione uma material.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
+        else{
+            hiperlink hp = new hiperlink();
         
+            try {
+                hp.open(new URI( materialTb.getValueAt(materialTb.getSelectedRow(), 2).toString().trim()));
+            } catch (URISyntaxException ex) {
+                Logger.getLogger(MateriaisView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
 
     }//GEN-LAST:event_VisualizarBtActionPerformed
 
     private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
-        this.setEnabled(false);
-        FluxoTelasController.getDv().setVisible(true);        
+         if(materialTb.getSelectedRow() == -1 )
+        {
+            JOptionPane.showMessageDialog(null, "Por favor selecione uma material.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+        }
+        else{
+            this.setEnabled(false);
+            FluxoTelasController.getDv().setVisible(true);
+         }
     }//GEN-LAST:event_DenunciarBtActionPerformed
-
-    private void BaixarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BaixarBtActionPerformed
-            // TODO add your handling code here:
-            Download.downloadFileFromURL(materialTb.getValueAt(materialTb.getSelectedRow(), 2).toString().trim(), "Download/"+DisciplinaLb1.getText().trim()+materialTb.getValueAt(materialTb.getSelectedRow(), 0).toString().trim()+materialTb.getValueAt(materialTb.getSelectedRow(), 1).toString().trim()+".png");
-    }//GEN-LAST:event_BaixarBtActionPerformed
 
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
         this.setEnabled(false);
@@ -293,10 +301,34 @@ public class MateriaisView extends javax.swing.JFrame {
         FluxoTelasController.getAmv().setNomeDisciplinaLb(DisciplinaLb1.getText());
     }//GEN-LAST:event_AddBtActionPerformed
 
+    private void RemBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemBtActionPerformed
+        int Remove = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deslogar?", "Aviso", JOptionPane.YES_NO_OPTION, 0, new ImageIcon ("src/Imagens/Pergunta.png"));  
+        
+        if(Remove != 1){
+            //remove
+        }
+    }//GEN-LAST:event_RemBtActionPerformed
+
     public JButton getAddBt(){
         return AddBt;
     }
-
+    
+    public JButton getRemBt(){
+        return RemBt;
+    }
+    
+    public String getTipo(){
+        return (String) materialTb.getValueAt(materialTb.getSelectedRow(), 1);
+    }
+    
+    public String getSemestre(){
+        return (String) materialTb.getValueAt(materialTb.getSelectedRow(), 0);
+    }
+    
+    public String getDisciplina(){
+        return DisciplinaLb1.getText();
+    }    
+   
     /**
      * @param args the command line arguments
      */
@@ -343,10 +375,10 @@ public class MateriaisView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddBt;
-    private javax.swing.JButton BaixarBt;
     private javax.swing.JButton DenunciarBt;
     private javax.swing.JLabel DisciplinaLb;
     private javax.swing.JLabel DisciplinaLb1;
+    private javax.swing.JButton RemBt;
     private javax.swing.JButton VisualizarBt;
     private javax.swing.JButton VoltarBt;
     private javax.swing.JScrollPane jScrollPane2;

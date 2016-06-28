@@ -361,6 +361,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
         //new HomeView().show();
         FluxoTelasController.getHv().setVisible(true);
         this.setVisible(false);
+        Reseta();
     }//GEN-LAST:event_VoltarBtActionPerformed
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed

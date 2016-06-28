@@ -37,6 +37,7 @@ public class AddDisciplinaView extends javax.swing.JFrame {
         SalvarBt = new javax.swing.JButton();
         CancelarAddBt = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Adicionar Disciplina");
         setResizable(false);
 
@@ -112,8 +113,8 @@ public class AddDisciplinaView extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null, "Por favor insira o nome da disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{        
            
-            MySQL_POST.main("INSERT INTO DISCIPLINA (NOME) VALUES("+"'"+NomeTf.getText()+"');");
-            Reseta();
+           MySQL_POST.main("INSERT INTO DISCIPLINA (NOME) VALUES("+"'"+NomeTf.getText()+"');");
+           Reseta();
            JOptionPane.showMessageDialog(null, "Disciplina adicionada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
            FluxoTelasController.getCfv().setVisible(true);

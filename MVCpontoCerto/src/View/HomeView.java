@@ -10,6 +10,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Util.MySQL_POST;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -25,7 +27,10 @@ public class HomeView extends javax.swing.JFrame {
     AdmController adm = FluxoTelasController.getAdm();
     
     public HomeView() {        
-        initComponents();            
+        initComponents(); 
+        
+        UIManager.put("OptionPane.noButtonText", "Não");
+        UIManager.put("OptionPane.yesButtonText", "Sim");
     }
 
     /**
@@ -178,7 +183,10 @@ public class HomeView extends javax.swing.JFrame {
     }//GEN-LAST:event_AdmBtActionPerformed
 
     private void AdmoutBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmoutBtActionPerformed
-        adm.Desloga();
+        int Desloga = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deslogar?", "Deslogar", JOptionPane.YES_NO_OPTION, 0, new ImageIcon ("src/Imagens/Pergunta.png"));
+        
+        if(Desloga != 1)
+            adm.Desloga();        
     }//GEN-LAST:event_AdmoutBtActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

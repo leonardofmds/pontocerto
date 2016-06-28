@@ -31,7 +31,7 @@ public class Mail {
             new Mail();
 	}
        
-       public static void denuncia(String mensagem){           
+       public static void denuncia(String mensagem, String disciplina, String tipo, String semestre){           
           
            try {
                         //usuario e senha do seu gmail
@@ -80,7 +80,7 @@ public class Mail {
 
 			
 			//assunto do email
-			mailMessage.setSubject("Denuncia do arquivo: " + " Disciplina: ");
+			mailMessage.setSubject("Denuncia do arquivo: "+ semestre + " " + tipo + " Disciplina: " + disciplina);
 			
 			//seleciona o conteudo
 			mailMessage.setContent(mp);

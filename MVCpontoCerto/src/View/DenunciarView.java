@@ -114,10 +114,16 @@ public class DenunciarView extends javax.swing.JFrame {
     }//GEN-LAST:event_CancelarDenunciaBtActionPerformed
 
     private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
-       if ( DenunciaTA.getText().trim().equals("") )
+       String disciplina, semestre, tipo;
+       
+       disciplina = FluxoTelasController.getCdv().getDisciplina();
+       semestre = FluxoTelasController.getCdv().getSemestre();
+       tipo = FluxoTelasController.getCdv().getTipo();
+        
+        if ( DenunciaTA.getText().trim().equals("") )
            JOptionPane.showMessageDialog(null, "Por favor insira o motivo da denúncia.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{
-           material.DenunciaMaterial(DenunciaTA.getText());
+           material.DenunciaMaterial(DenunciaTA.getText(), disciplina, tipo, semestre);
            
            Reseta();           
            

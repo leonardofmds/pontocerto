@@ -44,10 +44,9 @@ public class AddMaterialView extends javax.swing.JFrame {
         SemestreLb = new javax.swing.JLabel();
         BaixarLb = new javax.swing.JLabel();
         BaixarTf = new javax.swing.JTextField();
-        VisuLb1 = new javax.swing.JLabel();
-        VisuTf = new javax.swing.JTextField();
         DisciplinaLb = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ponto Certo - Adicionar Material");
         setResizable(false);
 
@@ -118,10 +117,7 @@ public class AddMaterialView extends javax.swing.JFrame {
         SemestreLb.setText("Semestre:");
 
         BaixarLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
-        BaixarLb.setText("URL Baixar:");
-
-        VisuLb1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
-        VisuLb1.setText("URLVisualizar:");
+        BaixarLb.setText("URL:");
 
         DisciplinaLb.setFont(new java.awt.Font("Tempus Sans ITC", 1, 13)); // NOI18N
         DisciplinaLb.setText("\"X\"");
@@ -155,11 +151,9 @@ public class AddMaterialView extends javax.swing.JFrame {
                                 .addComponent(SubLb)
                                 .addComponent(SubTipoCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addComponent(BaixarLb)
-                        .addComponent(BaixarTf)
-                        .addComponent(VisuLb1)
-                        .addComponent(VisuTf))
+                        .addComponent(BaixarTf))
                     .addComponent(DisciplinaLb))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,11 +180,7 @@ public class AddMaterialView extends javax.swing.JFrame {
                 .addComponent(BaixarLb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(BaixarTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(VisuLb1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(VisuTf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SalvarBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(CancelarAddBt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,7 +192,7 @@ public class AddMaterialView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
-        if ( AnoTf.getText().trim().equals("")||BaixarTf.getText().trim().equals("")||VisuTf.getText().trim().equals("") )
+        if ( AnoTf.getText().trim().equals("")||BaixarTf.getText().trim().equals(""))
            JOptionPane.showMessageDialog(null, "Por favor insira todos os dados.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        else{        
            
@@ -251,8 +241,7 @@ public class AddMaterialView extends javax.swing.JFrame {
         SubTipoCb.setSelectedIndex(0);
         AnoTf.setText("");
         SemestreCb.setSelectedIndex(0);
-        BaixarTf.setText("");
-        VisuTf.setText("");
+        BaixarTf.setText("");        
     }
     
     public void setNomeDisciplinaLb(String text)
@@ -306,7 +295,5 @@ public class AddMaterialView extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SubTipoCb;
     private javax.swing.JLabel TipoEnviarLb;
     private javax.swing.JComboBox<String> TipoMaterialCb;
-    private javax.swing.JLabel VisuLb1;
-    private javax.swing.JTextField VisuTf;
     // End of variables declaration//GEN-END:variables
 }

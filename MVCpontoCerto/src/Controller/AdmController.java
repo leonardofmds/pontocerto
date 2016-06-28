@@ -42,6 +42,8 @@ public class AdmController {
             FluxoTelasController.getCfv().getAddBt().setEnabled(true);
             FluxoTelasController.getCdv().getAddBt().setVisible(true);
             FluxoTelasController.getCdv().getAddBt().setEnabled(true);
+            FluxoTelasController.getCdv().getRemBt().setVisible(true);
+            FluxoTelasController.getCdv().getRemBt().setEnabled(true);
             FluxoTelasController.getHv().getAdmBt().setVisible(false);
             FluxoTelasController.getHv().getAdmBt().setEnabled(false);
             FluxoTelasController.getHv().getAdmoutBt().setVisible(true);
@@ -53,6 +55,8 @@ public class AdmController {
             FluxoTelasController.getCfv().getAddBt().setEnabled(false);
             FluxoTelasController.getCdv().getAddBt().setVisible(false);
             FluxoTelasController.getCdv().getAddBt().setEnabled(false);
+            FluxoTelasController.getCdv().getRemBt().setVisible(false);
+            FluxoTelasController.getCdv().getRemBt().setEnabled(false);
             FluxoTelasController.getHv().getAdmBt().setVisible(true);
             FluxoTelasController.getHv().getAdmBt().setEnabled(true);
             FluxoTelasController.getHv().getAdmoutBt().setVisible(false);

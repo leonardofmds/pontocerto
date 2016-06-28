@@ -23,8 +23,8 @@ public class MateriaisController {
         Mail.enviar(disciplina, tipo, subtipo, ano, semestre, fds);                
     }  
     
-    public void DenunciaMaterial(String mensagem){
+    public void DenunciaMaterial(String mensagem, String disciplina, String tipo, String semestre){
         Mail.main();
-        Mail.denuncia(mensagem);
+        Mail.denuncia(mensagem, disciplina, tipo, semestre);
     }
 }
