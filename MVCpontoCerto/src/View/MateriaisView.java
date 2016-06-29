@@ -306,7 +306,17 @@ public class MateriaisView extends javax.swing.JFrame {
         
         if(Remove != 1){
             //remove
+            
+            String removeMaterial = (String) materialTb.getValueAt(materialTb.getSelectedRow(), 2);
+            System.out.println(removeMaterial);
+            
+            MySQL_POST.main("DELETE FROM MATERIAL WHERE URL = '" + removeMaterial.trim() +"';");
+            
         }
+        
+        
+        
+        
     }//GEN-LAST:event_RemBtActionPerformed
 
     public JButton getAddBt(){
