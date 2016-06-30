@@ -5,22 +5,25 @@
  */
 package Controller;
 import Model.AdmModel;
+import Util.MySQL_POST;
 /**
  *
  * @author labccet
  */
 public class AdmController {
     AdmModel adm;
+    String password = "admin";
 
     public AdmController() {
         adm = new AdmModel();        
+        password = MySQL_POST.carregaListaDisc("SELECT SENHA FROM USUARIO WHERE NOME = 'ADM'").get(0).toString().trim();
     }
     
     
     
     public void Logado(String user, String senha){
             
-        if(user.equals("adm") && senha.equals("admin")){
+        if(user.equals("adm") && senha.equals(password)){
             adm.SetLog(true);
             
             
