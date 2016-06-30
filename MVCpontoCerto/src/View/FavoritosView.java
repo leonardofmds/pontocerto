@@ -366,32 +366,41 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 
     private void VerMateriasBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerMateriasBtActionPerformed
         MateriaisView MatView = FluxoTelasController.getCdv();
-        //DiscView.setVisible(true);
-        if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
-        {
-            JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
-        }
-        else if((FavoritosLt.getSelectedIndex() != -1)&&(DisciplinasLt.getSelectedIndex() != -1)){
+        
+        try{            
+            //DiscView.setVisible(true);
+            if((FavoritosLt.getSelectedIndices().length>1 || FavoritosLt.getSelectedIndices().length==0)&&(DisciplinasLt.getSelectedIndices().length>1 || DisciplinasLt.getSelectedIndices().length==0))
+            {
+                JOptionPane.showMessageDialog(null, "Por favor selecione uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+            }
+            else if((FavoritosLt.getSelectedIndex() != -1)&&(DisciplinasLt.getSelectedIndex() != -1)){
             
-            Reseta();
+                Reseta();
                     
-            JOptionPane.showMessageDialog(null, "Por favor selecione apenas uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));            
+                JOptionPane.showMessageDialog(null, "Por favor selecione apenas uma disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));            
+            }
+        
+            else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
+            {
+                MatView.setVisible(true);
+                MatView.setNomeDisciplina(FavoritosLt.getSelectedValue());
+                this.setVisible(false);
+                Reseta();
+                MatView.carregaMaterial();
+            }
+            else
+            {
+                MatView.setVisible(true);
+                MatView.setNomeDisciplina(DisciplinasLt.getSelectedValue());
+                this.setVisible(false);
+                Reseta();
+                MatView.carregaMaterial();
+            }
         }
-        else if(FavoritosLt.isSelectedIndex(FavoritosLt.getSelectedIndex()))
-        {
-            MatView.setVisible(true);
-            MatView.setNomeDisciplina(FavoritosLt.getSelectedValue());
-            this.setVisible(false);
-            Reseta();
-            MatView.carregaMaterial();
-        }
-        else
-        {
-            MatView.setVisible(true);
-            MatView.setNomeDisciplina(DisciplinasLt.getSelectedValue());
-            this.setVisible(false);
-            Reseta();
-            MatView.carregaMaterial();
+        catch(Exception e){
+            this.setVisible(true);
+            MatView.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Por favor verifique sua conexão e tente novamente", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
     }//GEN-LAST:event_VerMateriasBtActionPerformed
 
