@@ -7,6 +7,7 @@ package View;
 
 import Controller.FluxoTelasController;
 import Controller.MateriaisController;
+import Util.doSomethingOnClose;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -23,6 +24,7 @@ public class DenunciarView extends javax.swing.JFrame {
     
     public DenunciarView() {
         initComponents();
+        doSomethingOnClose.newWindowEvent(this);
     }
 
     /**
@@ -136,7 +138,7 @@ public class DenunciarView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    private void Reseta(){
+    public void Reseta(){
         DenunciaTA.setText("");
     }
     public static void main(String args[]) {

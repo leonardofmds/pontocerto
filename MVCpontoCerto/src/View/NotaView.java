@@ -7,6 +7,7 @@ package View;
 
 import Controller.*;
 import Model.NotaModel;
+import Util.doSomethingOnClose;
 import View.FavoritosView;
 import java.util.Vector;
 import javax.swing.ImageIcon;
@@ -28,6 +29,7 @@ public class NotaView extends javax.swing.JFrame {
         initComponents();
         dc = FluxoTelasController.getDc2();  
         defaultTableModel = (DefaultTableModel) NotasTb.getModel();
+        doSomethingOnClose.newWindowEvent(this);
     }
     
     public void calculaMedia()

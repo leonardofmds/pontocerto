@@ -11,6 +11,7 @@ package View;
  * @author labccet
  */
 import Controller.*;
+import Util.doSomethingOnClose;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -23,6 +24,7 @@ public class LoginView extends javax.swing.JFrame {
     AdmController adm = FluxoTelasController.getAdm();
     public LoginView() {
         initComponents();
+        doSomethingOnClose.newWindowEvent(this);
     }
 
     /**
@@ -208,7 +210,7 @@ public class LoginView extends javax.swing.JFrame {
     }//GEN-LAST:event_UserTfKeyPressed
     
     //Método para limpar os campos
-    private void Reseta(){
+    public void Reseta(){
         UserTf.setText("");
         SenhaPf.setText("");
     }

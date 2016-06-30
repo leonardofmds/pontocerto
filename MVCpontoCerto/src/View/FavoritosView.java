@@ -13,6 +13,8 @@ import java.util.List;
 import javax.swing.*;
 import Util.*;
 import Util.MySQL_POST;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 //import javax.swing.ListModel;
 
 /**
@@ -51,9 +53,12 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
 //            FavoritosLt.setModel(fav.getNomeFavoritos());
 //            //System.out.println(FavoritosLt.getModel());
 //        }
-        
-    }
+        doSomethingOnClose.newWindowEvent(this);
 
+
+
+     }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -428,12 +433,15 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
        return AddBt;
    }
    
-   private void Reseta(){
+   public void Reseta(){
        int[] x = {};
        
        DisciplinasLt.setSelectedIndices(x);
        FavoritosLt.setSelectedIndices(x);
    }
+   
+
+   
     
     /**
      * @param args the command line arguments

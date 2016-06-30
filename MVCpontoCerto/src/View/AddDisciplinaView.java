@@ -7,6 +7,7 @@ package View;
 
 import Controller.FluxoTelasController;
 import Util.MySQL_POST;
+import Util.doSomethingOnClose;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -21,6 +22,7 @@ public class AddDisciplinaView extends javax.swing.JFrame {
      */
     public AddDisciplinaView() {
         initComponents();
+        doSomethingOnClose.newWindowEvent(this);
     }
 
     /**
@@ -138,7 +140,7 @@ public class AddDisciplinaView extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    private void Reseta(){
+    public void Reseta(){
         NomeTf.setText("");
     }
     

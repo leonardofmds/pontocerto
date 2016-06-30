@@ -7,6 +7,7 @@ package View;
 
 import Controller.*;
 import Util.Order;
+import Util.doSomethingOnClose;
 import java.io.File;
 import java.util.Calendar;
 import javax.activation.FileDataSource;
@@ -32,6 +33,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     public EnviarMaterialView() {
         initComponents(); 
         DisciplinasCB.setModel(Order.ordenaComboModel(dc.comboDisciplinas()));
+        doSomethingOnClose.newWindowEvent(this);
                
     }
 
@@ -325,7 +327,7 @@ public class EnviarMaterialView extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         Reseta();
     }//GEN-LAST:event_formWindowOpened
-    private void Reseta(){
+    public void Reseta(){
             DisciplinasCB.setSelectedIndex(0);
             AnoTf.setText("");
             ArquivoTf.setText("");

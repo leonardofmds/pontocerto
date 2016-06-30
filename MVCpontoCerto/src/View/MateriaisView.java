@@ -8,6 +8,7 @@ package View;
 import Controller.FluxoTelasController;
 import Util.Download;
 import Util.MySQL_POST;
+import Util.doSomethingOnClose;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
@@ -35,6 +36,7 @@ public class MateriaisView extends javax.swing.JFrame {
      */
     public MateriaisView() {
         initComponents();
+        doSomethingOnClose.newWindowEvent(this);
     }
     
      public void carregaMaterial()

@@ -9,6 +9,7 @@ import Controller.*;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Util.MySQL_POST;
+import Util.doSomethingOnClose;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
