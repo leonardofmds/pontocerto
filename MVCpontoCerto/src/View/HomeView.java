@@ -179,7 +179,7 @@ public class HomeView extends javax.swing.JFrame {
     }//GEN-LAST:event_EnviarBtActionPerformed
 
     private void AdmBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmBtActionPerformed
-        this.setEnabled(false);
+        this.setVisible(false);
         FluxoTelasController.getLgv().setVisible(true);        
     }//GEN-LAST:event_AdmBtActionPerformed
 
