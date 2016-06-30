@@ -39,17 +39,18 @@ public class MateriaisView extends javax.swing.JFrame {
     
      public void carregaMaterial()
     {
+        
         //System.out.println("SELECT COUNT(1) FROM MATERIAL WHERE DISCIPLINA_NOME = '"+ DisciplinaLb1.getText().trim()+"'");
         String c = (String) MySQL_POST.carregaListaDisc("SELECT COUNT(1) FROM MATERIAL WHERE DISCIPLINA_NOME = '"+ DisciplinaLb1.getText().trim()+"'").get(0);
 
         int count = Integer.parseInt(c.replace("	", ""));
-        
+            
         DefaultTableModel dtm= new DefaultTableModel();
         dtm = (DefaultTableModel) materialTb.getModel();
         
         if(count>dtm.getRowCount())
         {
-            dtm.setRowCount(count);
+           dtm.setRowCount(count);
         }
         
         ArrayList<String> semestres = MySQL_POST.carregaListaDisc("SELECT SEMESTRE FROM MATERIAL WHERE DISCIPLINA_NOME = '"+DisciplinaLb1.getText().trim()+"' ORDER BY SEMESTRE DESC");
@@ -71,6 +72,7 @@ public class MateriaisView extends javax.swing.JFrame {
             //System.out.println(MySQL_POST.carregaListaDiscModel("select url from ENDERECO where NOME_DISCIPLINA = "+ DisciplinaLb1.getText()));
         
         //MaterialLt.setModel(lt);
+
     }
 
     /**
@@ -302,11 +304,10 @@ public class MateriaisView extends javax.swing.JFrame {
     }//GEN-LAST:event_AddBtActionPerformed
 
     private void RemBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemBtActionPerformed
-        int Remove = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deslogar?", "Aviso", JOptionPane.YES_NO_OPTION, 0, new ImageIcon ("src/Imagens/Pergunta.png"));  
+        int Remove = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o material?", "Aviso", JOptionPane.YES_NO_OPTION, 0, new ImageIcon ("src/Imagens/Pergunta.png"));  
         
         if(Remove != 1){
-            //remove
-            
+                      
             String removeMaterial = (String) materialTb.getValueAt(materialTb.getSelectedRow(), 2);
             System.out.println(removeMaterial);
             

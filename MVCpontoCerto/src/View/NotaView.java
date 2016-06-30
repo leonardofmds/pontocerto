@@ -9,6 +9,7 @@ import Controller.*;
 import Model.NotaModel;
 import View.FavoritosView;
 import java.util.Vector;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -309,11 +310,14 @@ public class NotaView extends javax.swing.JFrame {
 //       double aPeso;       
   
         
+        
        int nNotas = NotasTb.getModel().getRowCount();
        double aNota;
        String aTipo;
-       double aPeso;   
+       double aPeso;       
        
+       
+       try{
 //       if(dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size()<nNotas)
 //       {
 //           for(int i = 0; i < (nNotas - dc.getDisciplinasEspecifica(DisciplinaLb.getText()).getNotas().size());i++)
@@ -347,6 +351,10 @@ public class NotaView extends javax.swing.JFrame {
        
        dc.serializaDisciplinas();     
        calculaMedia();
+       }
+       catch(Exception e){           
+           JOptionPane.showMessageDialog(null, "Por favor desecelecione a coluna e tente novamente.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+       }
         
     }//GEN-LAST:event_SalvarNotaBtActionPerformed
 

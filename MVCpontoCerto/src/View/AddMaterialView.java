@@ -192,25 +192,30 @@ public class AddMaterialView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
+       try{
         if ( AnoTf.getText().trim().equals("")||BaixarTf.getText().trim().equals(""))
-           JOptionPane.showMessageDialog(null, "Por favor insira todos os dados.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
-       else{        
+            JOptionPane.showMessageDialog(null, "Por favor insira todos os dados.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+        else{        
            
             
-            String DISCIPLINA_NOME = DisciplinaLb.getText().trim();
-            String SEMESTRE = AnoTf.getText()+"-"+SemestreCb.getSelectedItem();
-            String TIPO = TipoMaterialCb.getSelectedItem().toString()+SubTipoCb.getSelectedItem().toString();
-            String URL = BaixarTf.getText();
-            String VALUES = "'"+DISCIPLINA_NOME+"','"+SEMESTRE+"','"+TIPO+"','"+URL+"'";
-            MySQL_POST.main("INSERT INTO MATERIAL (DISCIPLINA_NOME,SEMESTRE,TIPO,URL) VALUES("+VALUES+");");
+                String DISCIPLINA_NOME = DisciplinaLb.getText().trim();
+                String SEMESTRE = AnoTf.getText()+"-"+SemestreCb.getSelectedItem();
+                String TIPO = TipoMaterialCb.getSelectedItem().toString()+SubTipoCb.getSelectedItem().toString();
+                String URL = BaixarTf.getText();
+                String VALUES = "'"+DISCIPLINA_NOME+"','"+SEMESTRE+"','"+TIPO+"','"+URL+"'";
+                MySQL_POST.main("INSERT INTO MATERIAL (DISCIPLINA_NOME,SEMESTRE,TIPO,URL) VALUES("+VALUES+");");
             
             
-           Reseta();
-           JOptionPane.showMessageDialog(null, "Material adicionado com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
+            Reseta();
+            JOptionPane.showMessageDialog(null, "Material adicionado com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
-           FluxoTelasController.getCdv().setVisible(true); 
-           FluxoTelasController.getCdv().setEnabled(true);
-           this.setVisible(false);
+            FluxoTelasController.getCdv().setVisible(true); 
+            FluxoTelasController.getCdv().setEnabled(true);
+            this.setVisible(false);
+        }
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(null, "Por favor verifique sua conexão e tente novamente", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        }
     }//GEN-LAST:event_SalvarBtActionPerformed
 
