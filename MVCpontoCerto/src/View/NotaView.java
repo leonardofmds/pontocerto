@@ -355,7 +355,7 @@ public class NotaView extends javax.swing.JFrame {
        calculaMedia();
        }
        catch(Exception e){           
-           JOptionPane.showMessageDialog(null, "Por favor desecelecione a coluna e tente novamente.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+           JOptionPane.showMessageDialog(null, "Por favor descelecione a coluna ou entre com todos os valores.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
        }
         
     }//GEN-LAST:event_SalvarNotaBtActionPerformed
