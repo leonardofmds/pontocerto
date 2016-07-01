@@ -111,7 +111,7 @@ public class AddDisciplinaView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
-        try{    
+      
             if ( NomeTf.getText().trim().equals("") )
                 JOptionPane.showMessageDialog(null, "Por favor insira o nome da disciplina.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
             else{        
@@ -121,19 +121,15 @@ public class AddDisciplinaView extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Disciplina adicionada com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
                 FluxoTelasController.getCfv().setVisible(true);
-                FluxoTelasController.getCfv().setEnabled(true);
+                //FluxoTelasController.getCfv().setVisible(true);
                 this.setVisible(false);
-            }
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null, "Por favor verifique sua conexão e tente novamente", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
-        }
+            }        
     }//GEN-LAST:event_SalvarBtActionPerformed
 
     private void CancelarAddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAddBtActionPerformed
         Reseta();
         FluxoTelasController.getCfv().setVisible(true);
-        FluxoTelasController.getCfv().setEnabled(true);
+        //FluxoTelasController.getCfv().setEnabled(true);
         this.setVisible(false);
     }//GEN-LAST:event_CancelarAddBtActionPerformed
 

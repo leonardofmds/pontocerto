@@ -8,6 +8,8 @@ package Controller;
 import Model.DisciplinaModel;
 import Util.MySQL_POST;
 import Util.XML;
+import java.io.IOException;
+import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
@@ -19,7 +21,7 @@ import javax.swing.ListModel;
 public class DisciplinasController2 
 {
         DisciplinaModel disciplinas[];
-        String d[];
+        ArrayList<String> d;
 
     public DisciplinasController2() 
     {
@@ -41,7 +43,62 @@ public class DisciplinasController2
         //Object o = XML.reader("Projeto e Construção de Sistemas");
         
         
-//        d = MySQL_POST.carregaListaDisc("select nome from disciplina").getItems();
+        //d = MySQL_POST.carregaListaDisc("select nome from disciplina");
+//        
+        try
+        {
+
+        disciplinas = (DisciplinaModel[])XML.reader("Disciplinas/Disciplinas"); 
+        
+        int count = Integer.parseInt(MySQL_POST.carregaListaDisc("SELECT COUNT(1) FROM DISCIPLINA").get(0).toString().trim());
+        ArrayList<String> diff = null;
+        
+        if(count>disciplinas.length)
+        {
+            diff = MySQL_POST.carregaListaDisc("SELECT NOME FROM `DISCIPLINA` ORDER BY ID DESC LIMIT "+ (count-disciplinas.length));
+        }
+        
+        DisciplinaModel disciplinaAux[] = new DisciplinaModel[count];
+        
+        for(int i = 0; i<disciplinas.length;i++)
+        {
+            disciplinaAux[i] = new DisciplinaModel();
+            disciplinaAux[i] = disciplinas[i];            
+        }
+        int contador = 0;
+        for(int i = disciplinas.length;i<count;i++)
+        {
+            if(contador<diff.size())
+            {
+            disciplinaAux[i] = new DisciplinaModel();
+            disciplinaAux[i].setNomeDisc(diff.get(contador));
+            contador++;
+            }            
+        }
+        
+        disciplinas = disciplinaAux;
+        
+        }
+        
+        catch(Exception e)
+        {
+            disciplinas = (DisciplinaModel[])XML.reader("Disciplinas/Disciplinas"); 
+        }
+//        
+        
+        
+//        for(int i = 0; i< d.size();i++)
+//        {
+//            for(int j = 0; j<disciplinas.length;j++)
+//            {
+//                if(disciplinas[i].getNomeDisc().equals(d.get(i)))
+//                {
+//
+//                }
+//            }
+//        }
+//        
+        
 //        //String id[] = MySQL_POST.carregaListaDisc("select id from disciplina").getItems();
 //        disciplinas = new DisciplinaModel[d.length];
 //        for(int i = 0; i< d.length; i++)
@@ -51,7 +108,7 @@ public class DisciplinasController2
 //            disciplinas[i].setFavorito(false);
 //        }
         
-        disciplinas = (DisciplinaModel[])XML.reader("Disciplinas/Disciplinas");
+//        disciplinas = (DisciplinaModel[])XML.reader("Disciplinas/Disciplinas");
         
         
         

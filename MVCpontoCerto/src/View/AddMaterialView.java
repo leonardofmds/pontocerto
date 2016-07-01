@@ -8,6 +8,7 @@ package View;
 import Controller.FluxoTelasController;
 import Util.MySQL_POST;
 import Util.doSomethingOnClose;
+import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -194,9 +195,22 @@ public class AddMaterialView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalvarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarBtActionPerformed
-       try{
+    boolean anob=true;
+    Calendar cal = Calendar.getInstance();
+        for (char letra : AnoTf.getText().toCharArray())  
+        if(letra < '0' || letra > '9')
+            anob=false; 
+        
         if ( AnoTf.getText().trim().equals("")||BaixarTf.getText().trim().equals(""))
             JOptionPane.showMessageDialog(null, "Por favor insira todos os dados.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+        else if(!anob){            
+            JOptionPane.showMessageDialog(null, "Ano inválido.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+            AnoTf.setText("");
+        }
+        else if(Integer.parseInt(AnoTf.getText()) < 2005 || Integer.parseInt(AnoTf.getText()) > cal.get(Calendar.YEAR)){
+            JOptionPane.showMessageDialog(null, "Ano inválido.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+            AnoTf.setText("");
+        }
         else{        
            
             
@@ -212,19 +226,15 @@ public class AddMaterialView extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Material adicionado com sucesso.", "Aviso", JOptionPane.INFORMATION_MESSAGE, new ImageIcon ("src/Imagens/Ok.png"));
            
             FluxoTelasController.getCdv().setVisible(true); 
-            FluxoTelasController.getCdv().setEnabled(true);
+            //FluxoTelasController.getCdv().setEnabled(true);
             this.setVisible(false);
         }
-       }
-       catch(Exception e){
-           JOptionPane.showMessageDialog(null, "Por favor verifique sua conexão e tente novamente", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
-       }
     }//GEN-LAST:event_SalvarBtActionPerformed
 
     private void CancelarAddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarAddBtActionPerformed
         Reseta();
         FluxoTelasController.getCdv().setVisible(true); 
-        FluxoTelasController.getCdv().setEnabled(true);        
+        //FluxoTelasController.getCdv().setEnabled(true);        
         this.setVisible(false);
     }//GEN-LAST:event_CancelarAddBtActionPerformed
 

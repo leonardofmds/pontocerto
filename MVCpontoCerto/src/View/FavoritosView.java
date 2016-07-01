@@ -424,7 +424,7 @@ public class FavoritosView extends javax.swing.JFrame implements Serializable {
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
         AddDisciplinaView AddView = FluxoTelasController.getAdv();
         //DiscView.setVisible(true);
-            this.setEnabled(false);
+            this.setVisible(false);
             AddView.setVisible(true); 
     }//GEN-LAST:event_AddBtActionPerformed
 

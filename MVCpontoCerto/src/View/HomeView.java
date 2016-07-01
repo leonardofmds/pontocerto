@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import Util.MySQL_POST;
 import Util.doSomethingOnClose;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -179,8 +180,18 @@ public class HomeView extends javax.swing.JFrame {
     }//GEN-LAST:event_EnviarBtActionPerformed
 
     private void AdmBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmBtActionPerformed
-        this.setVisible(false);
-        FluxoTelasController.getLgv().setVisible(true);        
+        ArrayList<String> s;
+        s = MySQL_POST.carregaListaDisc("SELECT COUNT(1) FROM USUARIO");
+        if(s.size()==0)
+        {
+            JOptionPane.showMessageDialog(null, "Por favor verifique sua conexão e tente novamente", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+        }
+        else
+        {
+            this.setVisible(false);
+            FluxoTelasController.getLgv().setVisible(true);           
+        }
+              
     }//GEN-LAST:event_AdmBtActionPerformed
 
     private void AdmoutBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdmoutBtActionPerformed

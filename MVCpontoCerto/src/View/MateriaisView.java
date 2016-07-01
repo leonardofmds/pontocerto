@@ -274,7 +274,7 @@ public class MateriaisView extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(materialTb.getSelectedRow() == -1 )
         {
-            JOptionPane.showMessageDialog(null, "Por favor selecione uma material.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+            JOptionPane.showMessageDialog(null, "Por favor selecione um material.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
         else{
             hiperlink hp = new hiperlink();
@@ -291,35 +291,37 @@ public class MateriaisView extends javax.swing.JFrame {
     private void DenunciarBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DenunciarBtActionPerformed
          if(materialTb.getSelectedRow() == -1 )
         {
-            JOptionPane.showMessageDialog(null, "Por favor selecione uma material.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
+            JOptionPane.showMessageDialog(null, "Por favor selecione um material.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
         else{
-            this.setEnabled(false);
+            this.setVisible(false);
             FluxoTelasController.getDv().setVisible(true);
          }
     }//GEN-LAST:event_DenunciarBtActionPerformed
 
     private void AddBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBtActionPerformed
-        this.setEnabled(false);
+        this.setVisible(false);
         FluxoTelasController.getAmv().setVisible(true); 
         FluxoTelasController.getAmv().setNomeDisciplinaLb(DisciplinaLb1.getText());
     }//GEN-LAST:event_AddBtActionPerformed
 
     private void RemBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemBtActionPerformed
-        int Remove = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o material?", "Aviso", JOptionPane.YES_NO_OPTION, 0, new ImageIcon ("src/Imagens/Pergunta.png"));  
-        
-        if(Remove != 1){
-                      
-            String removeMaterial = (String) materialTb.getValueAt(materialTb.getSelectedRow(), 2);
-            System.out.println(removeMaterial);
-            
-            MySQL_POST.main("DELETE FROM MATERIAL WHERE URL = '" + removeMaterial.trim() +"';");
-            
+        if(materialTb.getSelectedRow()== -1)
+        {
+            JOptionPane.showMessageDialog(null, "Por favor selecione um material.", "Erro", JOptionPane.ERROR_MESSAGE, new ImageIcon ("src/Imagens/Aviso.png"));
         }
-        
-        
-        
-        
+        else{
+            int Remove = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover o material?", "Aviso", JOptionPane.YES_NO_OPTION, 0, new ImageIcon ("src/Imagens/Pergunta.png"));  
+
+            if(Remove != 1){
+
+                String removeMaterial = (String) materialTb.getValueAt(materialTb.getSelectedRow(), 2);
+                System.out.println(removeMaterial);
+
+                MySQL_POST.main("DELETE FROM MATERIAL WHERE URL = '" + removeMaterial.trim() +"';");
+
+            }
+        } 
     }//GEN-LAST:event_RemBtActionPerformed
 
     public JButton getAddBt(){

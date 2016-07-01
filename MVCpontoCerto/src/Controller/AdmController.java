@@ -16,7 +16,14 @@ public class AdmController {
 
     public AdmController() {
         adm = new AdmModel();        
+        try{
         password = MySQL_POST.carregaListaDisc("SELECT SENHA FROM USUARIO WHERE NOME = 'ADM'").get(0).toString().trim();
+        }
+        catch(Exception e)
+        {
+            password = "admin";
+        }
+        
     }
     
     
